@@ -1,0 +1,36 @@
+{
+  "name": "googleapis-node",
+  "version": "0.0.3",
+  "description": "google apis library unofficial",
+  "main": "src/js/index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://www.youtube.com/channel/UCj9stNGVvQJspYMp8-lG_ng?sub_confirmation=1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azkadev/googleapis-node.git"
+  },
+  "keywords": [
+    "googleapis",
+    "firestore",
+    "google-sheets",
+    "database",
+    "state",
+    "google",
+    "memori"
+  ],
+  "author": "azkadev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azkadev/googleapis-node/issues"
+  },
+  "homepage": "https://bright-tech.netlify.app/post/googleapis-node",
+  "dependencies": {
+    "firebase-admin": "^9.11.0",
+    "googleapis": "^84.0.0"
+  }
+}
