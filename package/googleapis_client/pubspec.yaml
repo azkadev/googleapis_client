@@ -1,0 +1,21 @@
+name: googleapis_client
+description: A library googleapis_client.
+version: 0.0.0
+repository: https://github.com/azkadev/azkadev.git
+issue_tracker: https://github.com/azkadev/azkadev.git
+homepage: https://youtube.com/@azkadev
+
+environment:
+  sdk: '>=2.19.4 <4.0.0'
+
+dependencies:  
+  path: ^1.8.3
+  galaxeus_lib: ^0.0.66
+  googleapis: ^11.1.0
+  googleapis_auth: ^1.4.0
+  http: ^0.13.6
+  youtube_explode_dart: ^1.12.4
+
+dev_dependencies:
+  lints: ^2.1.0
+  test: ^1.24.2

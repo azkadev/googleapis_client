@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+ln -s /usr/share/example/googleapis_client_flutter_example /usr/bin/example
+chmod +x /usr/bin/example
+exit 0
