@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-rm /usr/bin/package-template-dart 
-exit 0

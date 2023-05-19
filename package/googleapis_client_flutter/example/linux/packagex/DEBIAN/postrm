@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-rm /usr/bin/example 
-exit 0
