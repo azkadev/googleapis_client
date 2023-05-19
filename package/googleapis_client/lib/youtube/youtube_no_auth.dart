@@ -105,7 +105,18 @@ class YoutubeNoAuth {
   Future<googleapis_client_scheme.YoutubeChannelVideos> getChannelVideos({
     required String channel,
   }) async {
-    List<Video> videos = await youtubeExplode.channels.getUploads(channel).toList();
+    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText = GoogleApisClientUtils.parseTextToYoutube(text: channel);
+    if (youtubeSchemaText["@type"] == "error") {
+      return googleapis_client_scheme.YoutubeChannelVideos(youtubeSchemaText.rawData);
+    }
+
+    String channel_id = await () async {
+      if (youtubeSchemaText.type != "channel_id") {
+        return (await getChannel(channel: channel)).id ?? "";
+      } 
+      return channel;
+    }.call();
+    List<Video> videos = await youtubeExplode.channels.getUploads(channel_id).toList();
 
     List<Map> jsonDataVideos = videos.map((Video video) {
       Map jsonDataVideo = {

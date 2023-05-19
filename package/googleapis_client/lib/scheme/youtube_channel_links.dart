@@ -2,21 +2,22 @@
 import "json_dart.dart";
 // import "dart:convert";
 
-
-
 class YoutubeChannelLinks extends JsonScheme {
-
-  
   YoutubeChannelLinks(super.rawData);
-   
+
   static Map get defaultData {
-    return {"@type":"youtubeChannelLinks","title":"Website","url":"https://azkadev.netlify.app/","icon":"https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcRX76DzmMEQBUYSrA9hsWFxyOXNj16cA0ykIv0rO3Bt9RcJ0aZll3MOf6DQ-BQrQQ73lJRU0XekCjJnTEJGbcq8Ql4zlAi5F3KqIcZkjyapLUNuMdOfqlHL"};
+    return {
+      "@type": "youtubeChannelLinks",
+      "title": "Website",
+      "url": "https://azkadev.netlify.app/",
+      "icon":
+          "https://encrypted-tbn2.gstatic.com/favicon-tbn?q=tbn:ANd9GcRX76DzmMEQBUYSrA9hsWFxyOXNj16cA0ykIv0rO3Bt9RcJ0aZll3MOf6DQ-BQrQQ73lJRU0XekCjJnTEJGbcq8Ql4zlAi5F3KqIcZkjyapLUNuMdOfqlHL"
+    };
   }
 
-  
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -25,11 +26,9 @@ class YoutubeChannelLinks extends JsonScheme {
     }
   }
 
-
-  
   String? get title {
     try {
-      if (rawData["title"] is String == false){
+      if (rawData["title"] is String == false) {
         return null;
       }
       return rawData["title"] as String;
@@ -38,11 +37,9 @@ class YoutubeChannelLinks extends JsonScheme {
     }
   }
 
-
-  
   String? get url {
     try {
-      if (rawData["url"] is String == false){
+      if (rawData["url"] is String == false) {
         return null;
       }
       return rawData["url"] as String;
@@ -51,11 +48,9 @@ class YoutubeChannelLinks extends JsonScheme {
     }
   }
 
-
-  
   String? get icon {
     try {
-      if (rawData["icon"] is String == false){
+      if (rawData["icon"] is String == false) {
         return null;
       }
       return rawData["icon"] as String;
@@ -64,27 +59,19 @@ class YoutubeChannelLinks extends JsonScheme {
     }
   }
 
-
-  
   static YoutubeChannelLinks create({
-
     String? special_type,
     String? title,
     String? url,
     String? icon,
-})  {
+  }) {
     YoutubeChannelLinks youtubeChannelLinks = YoutubeChannelLinks({
-  
       "@type": special_type,
       "title": title,
       "url": url,
       "icon": icon,
+    });
 
-
-  });
-
-
-return youtubeChannelLinks;
-
-      }
+    return youtubeChannelLinks;
+  }
 }

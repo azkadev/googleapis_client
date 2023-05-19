@@ -1,5 +1,3 @@
-
-
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:galaxeus_lib/scheme/json_dart.dart';

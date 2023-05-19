@@ -1,6 +1,6 @@
 name: googleapis_client
-description: A library googleapis_client.
-version: 0.0.0
+description: A library googleapis_client for interact with google apis more easy.
+version: 0.0.1
 repository: https://github.com/azkadev/azkadev.git
 issue_tracker: https://github.com/azkadev/azkadev.git
 homepage: https://youtube.com/@azkadev

@@ -2,21 +2,26 @@
 import "json_dart.dart";
 // import "dart:convert";
 
-
-
 class YoutubeChannel extends JsonScheme {
-
-  
   YoutubeChannel(super.rawData);
-   
+
   static Map get defaultData {
-    return {"@type":"youtubeChannel","id":"UC928-F8HenjZD1zNdMY42vA","title":"Azkadev","url":"https://www.youtube.com/channel/UC928-F8HenjZD1zNdMY42vA","subscribers_count":1290,"profile_banner":"https://yt3.googleusercontent.com/958IlGfFeQhVO9bB62ECmLRo0fhxJN3h6J4L2m91qrZj51LzxJYas23Wk0bngHHqcoQUKTHDOg=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj","profile_picture":"https://yt3.googleusercontent.com/dVnF61S2-1uHxCQaYXcUXEYCkX_ZWu2PQwIrtR42o3eYPgOi2_JE9K7-WvUZuCaGRbbMJNMVcw=s900-c-k-c0x00ffffff-no-rj"};
+    return {
+      "@type": "youtubeChannel",
+      "id": "UC928-F8HenjZD1zNdMY42vA",
+      "title": "Azkadev",
+      "url": "https://www.youtube.com/channel/UC928-F8HenjZD1zNdMY42vA",
+      "subscribers_count": 1290,
+      "profile_banner":
+          "https://yt3.googleusercontent.com/958IlGfFeQhVO9bB62ECmLRo0fhxJN3h6J4L2m91qrZj51LzxJYas23Wk0bngHHqcoQUKTHDOg=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+      "profile_picture":
+          "https://yt3.googleusercontent.com/dVnF61S2-1uHxCQaYXcUXEYCkX_ZWu2PQwIrtR42o3eYPgOi2_JE9K7-WvUZuCaGRbbMJNMVcw=s900-c-k-c0x00ffffff-no-rj"
+    };
   }
 
-  
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -25,11 +30,9 @@ class YoutubeChannel extends JsonScheme {
     }
   }
 
-
-  
   String? get id {
     try {
-      if (rawData["id"] is String == false){
+      if (rawData["id"] is String == false) {
         return null;
       }
       return rawData["id"] as String;
@@ -38,11 +41,9 @@ class YoutubeChannel extends JsonScheme {
     }
   }
 
-
-  
   String? get title {
     try {
-      if (rawData["title"] is String == false){
+      if (rawData["title"] is String == false) {
         return null;
       }
       return rawData["title"] as String;
@@ -51,11 +52,9 @@ class YoutubeChannel extends JsonScheme {
     }
   }
 
-
-  
   String? get url {
     try {
-      if (rawData["url"] is String == false){
+      if (rawData["url"] is String == false) {
         return null;
       }
       return rawData["url"] as String;
@@ -64,11 +63,9 @@ class YoutubeChannel extends JsonScheme {
     }
   }
 
-
-  
   int? get subscribers_count {
     try {
-      if (rawData["subscribers_count"] is int == false){
+      if (rawData["subscribers_count"] is int == false) {
         return null;
       }
       return rawData["subscribers_count"] as int;
@@ -77,11 +74,9 @@ class YoutubeChannel extends JsonScheme {
     }
   }
 
-
-  
   String? get profile_banner {
     try {
-      if (rawData["profile_banner"] is String == false){
+      if (rawData["profile_banner"] is String == false) {
         return null;
       }
       return rawData["profile_banner"] as String;
@@ -90,11 +85,9 @@ class YoutubeChannel extends JsonScheme {
     }
   }
 
-
-  
   String? get profile_picture {
     try {
-      if (rawData["profile_picture"] is String == false){
+      if (rawData["profile_picture"] is String == false) {
         return null;
       }
       return rawData["profile_picture"] as String;
@@ -103,10 +96,7 @@ class YoutubeChannel extends JsonScheme {
     }
   }
 
-
-  
   static YoutubeChannel create({
-
     String? special_type,
     String? id,
     String? title,
@@ -114,9 +104,8 @@ class YoutubeChannel extends JsonScheme {
     int? subscribers_count,
     String? profile_banner,
     String? profile_picture,
-})  {
+  }) {
     YoutubeChannel youtubeChannel = YoutubeChannel({
-  
       "@type": special_type,
       "id": id,
       "title": title,
@@ -124,12 +113,8 @@ class YoutubeChannel extends JsonScheme {
       "subscribers_count": subscribers_count,
       "profile_banner": profile_banner,
       "profile_picture": profile_picture,
+    });
 
-
-  });
-
-
-return youtubeChannel;
-
-      }
+    return youtubeChannel;
+  }
 }

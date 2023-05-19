@@ -5,7 +5,8 @@ import "package:googleapis_client/packages/packages.dart";
 import "package:googleapis_client/scopes/scopes.dart";
 
 class GoogleApisClientRaw {
-  GoogleApisClientApiKey google_apis_client_api_key = GoogleApisClientApiKey({});
+  GoogleApisClientApiKey google_apis_client_api_key =
+      GoogleApisClientApiKey({});
 
   GoogleApisClientRaw({
     required GoogleApisClientApiKey googleApisClientApiKey,
@@ -28,7 +29,8 @@ class GoogleApisClientRaw {
     if (googleApisClientApiKey.is_init) {
       return googleApisClientApiKey;
     }
-    if (googleApisClientApiKey["@type"] == "serviceAccount" || googleApisClientApiKey["type"] == "service_account") {
+    if (googleApisClientApiKey["@type"] == "serviceAccount" ||
+        googleApisClientApiKey["type"] == "service_account") {
       googleApisClientApiKey.google_auth_client = await clientViaServiceAccount(
         ServiceAccountCredentials.fromJson(
           googleApisClientApiKey.rawData,
@@ -43,14 +45,15 @@ class GoogleApisClientRaw {
 
   Future<GoogleApisClientApiKey> googleApisClient({
     GoogleApisClientApiKey? googleApisClientApiKey,
-  }) async { 
+  }) async {
     if (googleApisClientApiKey != null) {
       return await initClient(googleApisClientApiKey: googleApisClientApiKey);
     } else {
       if (google_apis_client_api_key.is_init) {
         return google_apis_client_api_key;
       } else {
-        google_apis_client_api_key = await initClient(googleApisClientApiKey: google_apis_client_api_key);
+        google_apis_client_api_key = await initClient(
+            googleApisClientApiKey: google_apis_client_api_key);
         return google_apis_client_api_key;
       }
     }

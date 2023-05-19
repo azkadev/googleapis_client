@@ -13,7 +13,6 @@ class Youtube extends GoogleApisClientRaw {
       googleApisClientApiKey: googleApisClientApiKey,
     );
     YouTubeApi yt = YouTubeApi(google_apis_client.google_auth_client);
-
     return yt;
   }
 

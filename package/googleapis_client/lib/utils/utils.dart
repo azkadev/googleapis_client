@@ -11,10 +11,15 @@ class GoogleApisClientUtils {
     bool hideAtUsername = true,
   }) {
     try {
-      RegExpMatch? regExpMatch = RegExp(r"(^(@[a-z0-9\.\-_]+)$|(((http(s)?://(www\.|m\.|studio\.)?)?(youtube|youtu).(com|be)/(channel/|watch\?v=([a-z0-9\.\-_]+)|([a-z0-9\.\-_]+)|@[a-z0-9\.\-_]+))?([a-z0-9\.\-_]+)?))", caseSensitive: false).firstMatch(text);
+      RegExpMatch? regExpMatch = RegExp(
+        r"(^(@[a-z0-9\.\-_]+)$|(((http(s)?://(www\.|m\.|studio\.)?)?(youtube|youtu).(com|be)/(channel/|watch\?v=([a-z0-9\.\-_]+)|([a-z0-9\.\-_]+)|@[a-z0-9\.\-_]+))?([a-z0-9\.\-_]+)?)|^([a-z0-9\.\-_]+)$)",
+        caseSensitive: false,
+      ).firstMatch(text);
       if (regExpMatch == null) {
+        // print("Sa");
         return googleapis_client_scheme.YoutubeSchemaText({"@type": "error", "message": "cant_parse_text", "description": ""});
       }
+      // print(regExpMatch.groups(List.generate(regExpMatch.groupCount, (index) => index)));
       String username = () {
         try {
           List<String> usernames_raw = regExpMatch.groups([2, 10]).whereType<String>().toList();
@@ -48,6 +53,15 @@ class GoogleApisClientUtils {
           }.call();
           if (RegExp(r"^([a-z0-9\.\-_]+)$", caseSensitive: false).hasMatch(channelId)) {
             if (!is_found_channel) {
+              try {
+                List<String> channel_ids = regExpMatch.groups([0, 1, 3, 13]).whereType<String>().toList().toSet().toList();
+            
+                if (channel_ids.length == 1) {
+                  if (RegExp(r"^([a-z0-9\.\-_]+)$", caseSensitive: false).hasMatch(channel_ids.first)) {
+                    return channelId;
+                  }
+                }
+              } catch (e) {}
               return "";
             }
             return channelId;
@@ -59,7 +73,9 @@ class GoogleApisClientUtils {
               return regExpMatch.group(12) ?? "";
             }
           }
-        } catch (e) {}
+        } catch (e) {
+          print(e);
+        }
 
         return "";
       }.call();
@@ -79,7 +95,6 @@ class GoogleApisClientUtils {
       }.call();
 
       if (username.isNotEmpty) {
-        
         return googleapis_client_scheme.YoutubeSchemaText.create(
           special_type: "youtubeSchemaText",
           type: "channel_username",
