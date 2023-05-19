@@ -1,22 +1,16 @@
-import "package:googleapis/youtube/v3.dart";
-import "package:googleapis_client/packages/packages.dart";
-import "package:googleapis_client/scopes/scopes.dart";
-import "package:http/http.dart" as http;
+// ignore_for_file: non_constant_identifier_names
 
-class GoogleApisClient {
-  late http.Client client;
+import "package:googleapis_client/googleapis_client_raw/google_apis_client_raw.dart";
+import "package:googleapis_client/youtube/youtube.dart";
 
-  bool is_init = false;
-  GoogleApisClient() {
-    Future(() async {
-      client = await clientViaServiceAccount(
-        ServiceAccountCredentials.fromJson({}),
-        scopes,
-      );
-    });
-  }
+class GoogleApisClient extends GoogleApisClientRaw {
+  GoogleApisClient({
+    required super.googleApisClientApiKey,
+  });
 
-  get youtube {
-    // YouTubeApi youTubeApi = YouTubeApi(client);
+  Youtube get youtube {
+    Youtube youtube_client = Youtube(googleApisClientApiKey: google_apis_client_api_key);
+    // Yot
+    return youtube_client;
   }
 }

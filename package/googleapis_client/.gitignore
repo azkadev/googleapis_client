@@ -3,4 +3,4 @@
 .dart_tool/
 
 *.json
-bin/googleapis_client.dart
+bin/
