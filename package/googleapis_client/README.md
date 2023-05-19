@@ -1,5 +1,6 @@
 # Googleapis Client
 
+Library ini di buat agar mempermudah kalian menggunakan googleapis karena library official sulit terutama bagi orang baru / awam / pemula.
 
 ### Membuat Secret Api Key
 
