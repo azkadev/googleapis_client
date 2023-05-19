@@ -13,4 +13,8 @@ class GoogleApisClient extends GoogleApisClientRaw {
     // Yot
     return youtube_client;
   }
+
+  YoutubeNoAuth get youtube_no_auth {
+    return YoutubeNoAuth();
+  }
 }
