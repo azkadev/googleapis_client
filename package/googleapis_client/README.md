@@ -17,8 +17,6 @@ instruksi Full Silahkan liat video di bawah ini
 [create_service_account_googleapis.webm](https://github.com/azkadev/googleapis_client/assets/82513502/bd8b5fca-3329-4f71-ab66-8705727a149e)
 
 
-
-
 ---
 
 ### Install library
@@ -26,6 +24,7 @@ instruksi Full Silahkan liat video di bawah ini
 ```bash
 dart pub add googleapis_client
 ```
+
 ### Add Library
 
 ```dart
@@ -46,9 +45,9 @@ flutter run
 ```
 
 ### Quickstart
+
 ```dart
 import 'dart:convert';
-import 'dart:io';
 import 'package:googleapis_client/googleapis_client.dart';
 
 void prettyPrint(dynamic data) {
@@ -59,11 +58,23 @@ void prettyPrint(dynamic data) {
   }
 }
 
-void main(List<String> args) async {
-  File file = File("./test.json");
-  Map jsonKey = json.decode(file.readAsStringSync());
+void main(List<String> args) async { 
   GoogleApisClient googleApisClient = GoogleApisClient(
-    googleApisClientApiKey: GoogleApisClientApiKey(jsonKey),
+    googleApisClientApiKey: GoogleApisClientApiKey(
+      {
+        "type": "service_account",
+        "project_id": "nod",
+        "private_key_id": "",
+        "private_key": "-----BEGIN -----END PRIVATE KEY-----\n",
+        "client_email": "mkkm",
+        "client_id": "1580",
+        "auth_uri": "https://o/oauth2/auth",
+        "token_uri": "https:/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": "",
+        "universe_domain": "",
+      },
+    ),
   );
 
   await googleApisClient.youtube.subscribeChannel(channel: "@azkadev");
@@ -94,3 +105,7 @@ void main(List<String> args) async {
   );
 }
 ```
+
+### Example client use this library
+
+
