@@ -321,7 +321,7 @@ class YoutubeNoAuth {
     if (youtubeSchemaText["type"] == "channel_username") {
       return googleapis_client_scheme.YoutubeSearchVideos(youtubeSchemaText.rawData);
     }
-  
+ 
     StreamManifest streamManifest = await youtubeExplode.videos.streams.getManifest(youtubeSchemaText.data);
     List<AudioStreamInfo> audios_stream = streamManifest.audio.toList();
     List<VideoStreamInfo> videos_stream = streamManifest.video.toList();
