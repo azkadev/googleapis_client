@@ -21,7 +21,11 @@ class YoutubeNoAuth {
       } else if (youtubeSchemaText.type == "video") {
         return await youtubeExplode.channels.getByVideo(youtubeSchemaText.data);
       } else {
-        return await youtubeExplode.channels.get(youtubeSchemaText.data);
+        try {
+          return await youtubeExplode.channels.get(youtubeSchemaText.data);
+        } catch (e) {
+          return await youtubeExplode.channels.getByUsername(youtubeSchemaText.data);
+        }
       }
     }.call();
     Map jsonData = {
@@ -162,7 +166,16 @@ class YoutubeNoAuth {
   Future<googleapis_client_scheme.YoutubeVideo> getVideo({
     required String video_id,
   }) async {
-    Video video = await youtubeExplode.videos.get(video_id);
+    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText = GoogleApisClientUtils.parseTextToYoutube(text: video_id);
+    if (youtubeSchemaText["@type"] == "error") {
+      return googleapis_client_scheme.YoutubeVideo(youtubeSchemaText.rawData);
+    }
+
+    if (youtubeSchemaText["type"] != "video") {
+      return googleapis_client_scheme.YoutubeVideo(youtubeSchemaText.rawData);
+    }
+
+    Video video = await youtubeExplode.videos.get(youtubeSchemaText.data);
 
     Map jsonDataVideo = {
       "@type": "youtubeVideo",
@@ -200,7 +213,17 @@ class YoutubeNoAuth {
   Future<googleapis_client_scheme.YoutubeVideoComments> getVideoComments({
     required String video_id,
   }) async {
-    Video video = await youtubeExplode.videos.get(video_id);
+    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText = GoogleApisClientUtils.parseTextToYoutube(text: video_id);
+    if (youtubeSchemaText["@type"] == "error") {
+      return googleapis_client_scheme.YoutubeVideoComments(youtubeSchemaText.rawData);
+    }
+
+    if (youtubeSchemaText["type"] == "channel_username") {
+      return googleapis_client_scheme.YoutubeVideoComments(youtubeSchemaText.rawData);
+    }
+
+    Video video = await youtubeExplode.videos.get(youtubeSchemaText.data);
+
     CommentsList? commentsList = await youtubeExplode.videos.comments.getComments(video);
     if (commentsList == null) {
       Map jsonDataVideo = {"@type": "youtubeVideoComments", "count": 0, "comments": []};
@@ -282,6 +305,85 @@ class YoutubeNoAuth {
       "@type": "youtubeSearchVideos",
       "count": videoSearchList.length,
       "videos": jsonDataVideos,
+    };
+
+    return googleapis_client_scheme.YoutubeSearchVideos(jsonData);
+  }
+
+  Future<googleapis_client_scheme.YoutubeSearchVideos> getVideoManifest({
+    required String video_id,
+  }) async {
+    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText = GoogleApisClientUtils.parseTextToYoutube(text: video_id);
+    if (youtubeSchemaText["@type"] == "error") {
+      return googleapis_client_scheme.YoutubeSearchVideos(youtubeSchemaText.rawData);
+    }
+
+    if (youtubeSchemaText["type"] == "channel_username") {
+      return googleapis_client_scheme.YoutubeSearchVideos(youtubeSchemaText.rawData);
+    }
+  
+    StreamManifest streamManifest = await youtubeExplode.videos.streams.getManifest(youtubeSchemaText.data);
+    List<AudioStreamInfo> audios_stream = streamManifest.audio.toList();
+    List<VideoStreamInfo> videos_stream = streamManifest.video.toList();
+    List<StreamInfo> stream_stream = streamManifest.streams.toList();
+    List<Map> jsonAudios = audios_stream.map((AudioStreamInfo audioStreamInfo) {
+      Map jsonData = {
+        "@type": "youtubeVideoManifestAudio",
+        "video_codec": audioStreamInfo.audioCodec,
+        "bitrate": audioStreamInfo.bitrate.bitsPerSecond,
+        "mime_type": audioStreamInfo.codec.mimeType,
+        "container_name": audioStreamInfo.container.name,
+        "is_throttled": audioStreamInfo.isThrottled,
+        "quality": audioStreamInfo.qualityLabel,
+        "size": audioStreamInfo.size.totalBytes,
+        "tag": audioStreamInfo.tag,
+        "url": audioStreamInfo.url.toString(),
+      };
+
+      return jsonData;
+    }).toList();
+
+    List<Map> jsonVideos = videos_stream.map((VideoStreamInfo videoStreamInfo) {
+      Map jsonData = {
+        "@type": "youtubeVideoManifestVideo",
+        "framerate": videoStreamInfo.framerate.framesPerSecond,
+        "video_codec": videoStreamInfo.videoCodec,
+        "video_quality": videoStreamInfo.videoQuality.name,
+        "height": videoStreamInfo.videoResolution.height,
+        "width": videoStreamInfo.videoResolution.width,
+        "bitrate": videoStreamInfo.bitrate.bitsPerSecond,
+        "mime_type": videoStreamInfo.codec.mimeType,
+        "container_name": videoStreamInfo.container.name,
+        "is_throttled": videoStreamInfo.isThrottled,
+        "quality": videoStreamInfo.qualityLabel,
+        "size": videoStreamInfo.size.totalBytes,
+        "tag": videoStreamInfo.tag,
+        "url": videoStreamInfo.url.toString(),
+      };
+
+      return jsonData;
+    }).toList();
+
+    List<Map> jsonStreams = stream_stream.map((StreamInfo streamInfo) {
+      Map jsonData = {
+        "@type": "youtubeVideoManifestStream",
+        "bitrate": streamInfo.bitrate.bitsPerSecond,
+        "mime_type": streamInfo.codec.mimeType,
+        "container_name": streamInfo.container.name,
+        "is_throttled": streamInfo.isThrottled,
+        "quality": streamInfo.qualityLabel,
+        "size": streamInfo.size.totalBytes,
+        "tag": streamInfo.tag,
+        "url": streamInfo.url.toString(),
+      };
+      return jsonData;
+    }).toList();
+
+    Map jsonData = {
+      "@type": "youtubeVideoManifest",
+      "audios": jsonAudios,
+      "videos": jsonVideos,
+      "streams": jsonStreams,
     };
 
     return googleapis_client_scheme.YoutubeSearchVideos(jsonData);
