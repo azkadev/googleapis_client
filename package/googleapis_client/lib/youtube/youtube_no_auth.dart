@@ -113,7 +113,7 @@ class YoutubeNoAuth {
     String channel_id = await () async {
       if (youtubeSchemaText.type != "channel_id") {
         return (await getChannel(channel: channel)).id ?? "";
-      } 
+      }
       return channel;
     }.call();
     List<Video> videos = await youtubeExplode.channels.getUploads(channel_id).toList();

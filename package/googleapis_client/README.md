@@ -32,6 +32,20 @@ dart pub add googleapis_client
 import 'package:googleapis_client/googleapis_client.dart';
 ```
 
+### Documentation
+
+Jika kamu tidak memiliki banyak kuota internet kamu bisa melihat dokumentasi menggunakan cara ini
+
+
+```bash
+git clone https://github.com/azkadev/googleapis_client.git
+cd googleapis_client
+cd web
+flutter clean
+flutter pub get
+flutter run
+```
+
 ### Quickstart
 ```dart
 import 'dart:convert';
@@ -52,7 +66,32 @@ void main(List<String> args) async {
   GoogleApisClient googleApisClient = GoogleApisClient(
     googleApisClientApiKey: GoogleApisClientApiKey(jsonKey),
   );
- 
-  print((await googleApisClient.youtube.addComment(videoId: "HV4kn5j7IwQ", text: "Hai ini pesan automatis")));
+
+  await googleApisClient.youtube.subscribeChannel(channel: "@azkadev");
+  await googleApisClient.youtube.addComment(videoId: "HV4kn5j7IwQ", text: "Hai ini pesan automatis");
+
+  // with dart class scheme
+  await googleApisClient.request(
+    requestData: YoutubeGetChannel.create(
+      special_type: "youtubeGetChannel",
+      channel_id: "@azkadev",
+    ),
+  );
+  // with dart class scheme
+  await googleApisClient.request(
+    requestData: JsonApis({
+      "@type": "youtubeSubscribeChannel",
+      "@client_channel": "",
+      "channel_id": "@azkadev",
+    }),
+  );
+
+  await googleApisClient.request(
+    requestData: JsonApis({
+      "@type": "gmailSendMessage",
+      "email_id": "email@gmail.com",
+      "text": "",
+    }),
+  );
 }
 ```
