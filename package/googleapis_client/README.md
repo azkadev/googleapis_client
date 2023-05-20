@@ -36,7 +36,6 @@ import 'package:googleapis_client/googleapis_client.dart';
 
 Jika kamu tidak memiliki banyak kuota internet kamu bisa melihat dokumentasi menggunakan cara ini
 
-
 ```bash
 git clone https://github.com/azkadev/googleapis_client.git
 cd googleapis_client
