@@ -310,19 +310,20 @@ class YoutubeNoAuth {
     return googleapis_client_scheme.YoutubeSearchVideos(jsonData);
   }
 
-  Future<googleapis_client_scheme.YoutubeSearchVideos> getVideoManifest({
+  Future<googleapis_client_scheme.YoutubeVideoManifest> getVideoManifest({
     required String video_id,
   }) async {
     googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText = GoogleApisClientUtils.parseTextToYoutube(text: video_id);
     if (youtubeSchemaText["@type"] == "error") {
-      return googleapis_client_scheme.YoutubeSearchVideos(youtubeSchemaText.rawData);
+      return googleapis_client_scheme.YoutubeVideoManifest(youtubeSchemaText.rawData);
     }
 
     if (youtubeSchemaText["type"] == "channel_username") {
-      return googleapis_client_scheme.YoutubeSearchVideos(youtubeSchemaText.rawData);
+      return googleapis_client_scheme.YoutubeVideoManifest(youtubeSchemaText.rawData);
     }
- 
+
     StreamManifest streamManifest = await youtubeExplode.videos.streams.getManifest(youtubeSchemaText.data);
+    List<MuxedStreamInfo> muxed_stream = streamManifest.muxed.toList();
     List<AudioStreamInfo> audios_stream = streamManifest.audio.toList();
     List<VideoStreamInfo> videos_stream = streamManifest.video.toList();
     List<StreamInfo> stream_stream = streamManifest.streams.toList();
@@ -338,6 +339,29 @@ class YoutubeNoAuth {
         "size": audioStreamInfo.size.totalBytes,
         "tag": audioStreamInfo.tag,
         "url": audioStreamInfo.url.toString(),
+      };
+
+      return jsonData;
+    }).toList();
+
+    List<Map> jsonMuxeds = muxed_stream.map((MuxedStreamInfo muxedStreamInfo) {
+      // muxedStreamInfo.videoResolution.
+      Map jsonData = {
+        "@type": "youtubeVideoManifestMuxed",
+        "audio_codec": muxedStreamInfo.audioCodec,
+        "framerate": muxedStreamInfo.framerate.framesPerSecond,
+        "video_codec": muxedStreamInfo.videoCodec,
+        "video_quality": muxedStreamInfo.videoQuality.name,
+        "height": muxedStreamInfo.videoResolution.height,
+        "width": muxedStreamInfo.videoResolution.width,
+        "bitrate": muxedStreamInfo.bitrate.bitsPerSecond,
+        "mime_type": muxedStreamInfo.codec.mimeType,
+        "container_name": muxedStreamInfo.container.name,
+        "is_throttled": muxedStreamInfo.isThrottled,
+        "quality": muxedStreamInfo.qualityLabel,
+        "size": muxedStreamInfo.size.totalBytes,
+        "tag": muxedStreamInfo.tag,
+        "url": muxedStreamInfo.url.toString(),
       };
 
       return jsonData;
@@ -383,9 +407,10 @@ class YoutubeNoAuth {
       "@type": "youtubeVideoManifest",
       "audios": jsonAudios,
       "videos": jsonVideos,
+      "muxeds": jsonMuxeds,
       "streams": jsonStreams,
     };
 
-    return googleapis_client_scheme.YoutubeSearchVideos(jsonData);
+    return googleapis_client_scheme.YoutubeVideoManifest(jsonData);
   }
 }

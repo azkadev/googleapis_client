@@ -13,4 +13,8 @@ export "youtube_video.dart";
 export "youtube_video_comment.dart";
 export "youtube_video_comments.dart";
 export "youtube_video_engagement.dart";
+export "youtube_video_manifest.dart";
+export "youtube_video_manifest_audio.dart";
+export "youtube_video_manifest_stream.dart";
+export "youtube_video_manifest_video.dart";
 export "youtube_video_thumbnails.dart";

@@ -2,35 +2,21 @@
 import "json_dart.dart";
 // import "dart:convert";
 
-class YoutubeSearchSuggestions extends JsonScheme {
-  YoutubeSearchSuggestions(super.rawData);
 
+
+class YoutubeSearchSuggestions extends JsonScheme {
+
+  
+  YoutubeSearchSuggestions(super.rawData);
+   
   static Map get defaultData {
-    return {
-      "@type": "youtubeSearchSuggestions",
-      "count": 14,
-      "suggestions": [
-        "galaxus",
-        "galaxus schweiz",
-        "galaxus gutschein",
-        "galaxus digitec",
-        "galaxus geneva",
-        "galaxus erfahrungen",
-        "galaxus store",
-        "galaxus basel",
-        "galaxus lausanne",
-        "galaxus rabattcode",
-        "galaxus deutschland",
-        "galaxus bern",
-        "galaxus telefonnummer",
-        "galaxus francais"
-      ]
-    };
+    return {"@type":"youtubeSearchSuggestions","count":14,"suggestions":["galaxus","galaxus schweiz","galaxus gutschein","galaxus digitec","galaxus geneva","galaxus erfahrungen","galaxus store","galaxus basel","galaxus lausanne","galaxus rabattcode","galaxus deutschland","galaxus bern","galaxus telefonnummer","galaxus francais"]};
   }
 
+  
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false) {
+      if (rawData["@type"] is String == false){
         return null;
       }
       return rawData["@type"] as String;
@@ -39,9 +25,11 @@ class YoutubeSearchSuggestions extends JsonScheme {
     }
   }
 
+
+  
   int? get count {
     try {
-      if (rawData["count"] is int == false) {
+      if (rawData["count"] is int == false){
         return null;
       }
       return rawData["count"] as int;
@@ -50,9 +38,11 @@ class YoutubeSearchSuggestions extends JsonScheme {
     }
   }
 
+
+  
   List<String> get suggestions {
     try {
-      if (rawData["suggestions"] is List == false) {
+      if (rawData["suggestions"] is List == false){
         return [];
       }
       return (rawData["suggestions"] as List).cast<String>();
@@ -61,18 +51,25 @@ class YoutubeSearchSuggestions extends JsonScheme {
     }
   }
 
+
+  
   static YoutubeSearchSuggestions create({
+
     String? special_type,
     int? count,
-    List<String>? suggestions,
-  }) {
-    YoutubeSearchSuggestions youtubeSearchSuggestions =
-        YoutubeSearchSuggestions({
+      List<String>? suggestions,
+})  {
+    YoutubeSearchSuggestions youtubeSearchSuggestions = YoutubeSearchSuggestions({
+  
       "@type": special_type,
       "count": count,
       "suggestions": suggestions,
-    });
 
-    return youtubeSearchSuggestions;
-  }
+
+  });
+
+
+return youtubeSearchSuggestions;
+
+      }
 }
