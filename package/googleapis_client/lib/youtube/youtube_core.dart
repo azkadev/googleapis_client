@@ -8,7 +8,8 @@ class Youtube extends GoogleApisClientRaw {
   Youtube({
     required super.googleApisClientApiKey,
   });
-  Future<YouTubeApi> youTubeApiClient({GoogleApisClientApiKey? googleApisClientApiKey}) async {
+  Future<YouTubeApi> youTubeApiClient(
+      {GoogleApisClientApiKey? googleApisClientApiKey}) async {
     GoogleApisClientApiKey google_apis_client = await googleApisClient(
       googleApisClientApiKey: googleApisClientApiKey,
     );
@@ -22,7 +23,8 @@ class Youtube extends GoogleApisClientRaw {
     String? channelId,
     GoogleApisClientApiKey? googleApisClientApiKey,
   }) async {
-    YouTubeApi youTubeApi = await youTubeApiClient(googleApisClientApiKey: googleApisClientApiKey);
+    YouTubeApi youTubeApi =
+        await youTubeApiClient(googleApisClientApiKey: googleApisClientApiKey);
     String channel_id = await () async {
       if (channelId is String) {
         if (channelId.isNotEmpty) {
@@ -52,7 +54,8 @@ class Youtube extends GoogleApisClientRaw {
     required String channel,
     GoogleApisClientApiKey? googleApisClientApiKey,
   }) async {
-    YouTubeApi youTubeApi = await youTubeApiClient(googleApisClientApiKey: googleApisClientApiKey);
+    YouTubeApi youTubeApi =
+        await youTubeApiClient(googleApisClientApiKey: googleApisClientApiKey);
     channel = "UC_x5XG1OV2P6uZZ5FSM9Ttw";
     return (await youTubeApi.subscriptions.insert(
       Subscription(
@@ -72,7 +75,8 @@ class Youtube extends GoogleApisClientRaw {
     required String channel,
     GoogleApisClientApiKey? googleApisClientApiKey,
   }) async {
-    YouTubeApi youTubeApi = await youTubeApiClient(googleApisClientApiKey: googleApisClientApiKey);
+    YouTubeApi youTubeApi =
+        await youTubeApiClient(googleApisClientApiKey: googleApisClientApiKey);
     return await youTubeApi.subscriptions.delete(
       channel,
     );

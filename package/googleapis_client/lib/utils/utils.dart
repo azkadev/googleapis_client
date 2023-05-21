@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, empty_catches
 
-import "package:googleapis_client/scheme/scheme.dart" as googleapis_client_scheme;
+import "package:googleapis_client/scheme/scheme.dart"
+    as googleapis_client_scheme;
 // import 'package:googleapis_client/scheme/youtube_schema_text.dart';
 
 class GoogleApisClientUtils {
@@ -17,15 +18,21 @@ class GoogleApisClientUtils {
       ).firstMatch(text);
       if (regExpMatch == null) {
         // print("Sa");
-        return googleapis_client_scheme.YoutubeSchemaText({"@type": "error", "message": "cant_parse_text", "description": ""});
+        return googleapis_client_scheme.YoutubeSchemaText({
+          "@type": "error",
+          "message": "cant_parse_text",
+          "description": ""
+        });
       }
       // print(regExpMatch.groups(List.generate(regExpMatch.groupCount, (index) => index)));
       String username = () {
         try {
-          List<String> usernames_raw = regExpMatch.groups([2, 10]).whereType<String>().toList();
+          List<String> usernames_raw =
+              regExpMatch.groups([2, 10]).whereType<String>().toList();
 
           for (var i = 0; i < usernames_raw.length; i++) {
-            if (RegExp(r"^(@[a-z0-9\.\-_]+)$", caseSensitive: false).hasMatch(usernames_raw[i])) {
+            if (RegExp(r"^(@[a-z0-9\.\-_]+)$", caseSensitive: false)
+                .hasMatch(usernames_raw[i])) {
               return usernames_raw[i];
             }
           }
@@ -51,13 +58,20 @@ class GoogleApisClientUtils {
             } catch (e) {}
             return false;
           }.call();
-          if (RegExp(r"^([a-z0-9\.\-_]+)$", caseSensitive: false).hasMatch(channelId)) {
+          if (RegExp(r"^([a-z0-9\.\-_]+)$", caseSensitive: false)
+              .hasMatch(channelId)) {
             if (!is_found_channel) {
               try {
-                List<String> channel_ids = regExpMatch.groups([0, 1, 3, 13]).whereType<String>().toList().toSet().toList();
-            
+                List<String> channel_ids = regExpMatch
+                    .groups([0, 1, 3, 13])
+                    .whereType<String>()
+                    .toList()
+                    .toSet()
+                    .toList();
+
                 if (channel_ids.length == 1) {
-                  if (RegExp(r"^([a-z0-9\.\-_]+)$", caseSensitive: false).hasMatch(channel_ids.first)) {
+                  if (RegExp(r"^([a-z0-9\.\-_]+)$", caseSensitive: false)
+                      .hasMatch(channel_ids.first)) {
                     return channelId;
                   }
                 }
@@ -69,7 +83,8 @@ class GoogleApisClientUtils {
 
           String com_words = regExpMatch.group(9) ?? "";
           if (com_words.toLowerCase() == "com") {
-            if (RegExp(r"^([a-z0-9\.\-_]+)$", caseSensitive: false).hasMatch(regExpMatch.group(12) ?? "")) {
+            if (RegExp(r"^([a-z0-9\.\-_]+)$", caseSensitive: false)
+                .hasMatch(regExpMatch.group(12) ?? "")) {
               return regExpMatch.group(12) ?? "";
             }
           }
@@ -82,10 +97,13 @@ class GoogleApisClientUtils {
 
       String video_watch = () {
         try {
-          List<String> watch_video_raw = regExpMatch.groups([10, 11]).whereType<String>().toList();
+          List<String> watch_video_raw =
+              regExpMatch.groups([10, 11]).whereType<String>().toList();
 
-          if (RegExp(r"^(watch\?v=([a-z0-9\.\-_]+))$", caseSensitive: false).hasMatch(watch_video_raw.first)) {
-            if (RegExp(r"^([a-z0-9\.\-_]+)$", caseSensitive: false).hasMatch(watch_video_raw.last)) {
+          if (RegExp(r"^(watch\?v=([a-z0-9\.\-_]+))$", caseSensitive: false)
+              .hasMatch(watch_video_raw.first)) {
+            if (RegExp(r"^([a-z0-9\.\-_]+)$", caseSensitive: false)
+                .hasMatch(watch_video_raw.last)) {
               return watch_video_raw.last;
             }
           }
@@ -115,6 +133,7 @@ class GoogleApisClientUtils {
       }
     } catch (e) {}
 
-    return googleapis_client_scheme.YoutubeSchemaText({"@type": "error", "message": "cant_parse_text", "description": ""});
+    return googleapis_client_scheme.YoutubeSchemaText(
+        {"@type": "error", "message": "cant_parse_text", "description": ""});
   }
 }

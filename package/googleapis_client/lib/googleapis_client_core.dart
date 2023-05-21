@@ -1,7 +1,8 @@
 // ignore_for_file: non_constant_identifier_names
 
 import "package:googleapis_client/apis/apis.dart" as googleapis_client_apis;
-import "package:googleapis_client/scheme/scheme.dart" as googleapis_client_scheme;
+import "package:googleapis_client/scheme/scheme.dart"
+    as googleapis_client_scheme;
 import "package:googleapis_client/gmail/gmail.dart";
 import "package:googleapis_client/googleapis_client_raw/google_apis_client_raw.dart";
 import "package:googleapis_client/sheets/sheets.dart";
@@ -13,19 +14,22 @@ class GoogleApisClient extends GoogleApisClientRaw {
   });
 
   Gmail get gmail {
-    Gmail gmail_client = Gmail(googleApisClientApiKey: google_apis_client_api_key);
+    Gmail gmail_client =
+        Gmail(googleApisClientApiKey: google_apis_client_api_key);
 
     return gmail_client;
   }
 
   Sheets get sheets {
-    Sheets sheets_client = Sheets(googleApisClientApiKey: google_apis_client_api_key);
+    Sheets sheets_client =
+        Sheets(googleApisClientApiKey: google_apis_client_api_key);
 
     return sheets_client;
   }
 
   Youtube get youtube {
-    Youtube youtube_client = Youtube(googleApisClientApiKey: google_apis_client_api_key);
+    Youtube youtube_client =
+        Youtube(googleApisClientApiKey: google_apis_client_api_key);
     // Yot
     return youtube_client;
   }

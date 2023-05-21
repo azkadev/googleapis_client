@@ -8,7 +8,8 @@ class Sheets extends GoogleApisClientRaw {
   Sheets({
     required super.googleApisClientApiKey,
   });
-  Future<SheetsApi> sheetsApiClient({GoogleApisClientApiKey? googleApisClientApiKey}) async {
+  Future<SheetsApi> sheetsApiClient(
+      {GoogleApisClientApiKey? googleApisClientApiKey}) async {
     GoogleApisClientApiKey google_apis_client = await googleApisClient(
       googleApisClientApiKey: googleApisClientApiKey,
     );

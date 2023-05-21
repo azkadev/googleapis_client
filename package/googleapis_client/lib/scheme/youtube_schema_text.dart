@@ -2,21 +2,16 @@
 import "json_dart.dart";
 // import "dart:convert";
 
-
-
 class YoutubeSchemaText extends JsonScheme {
-
-  
   YoutubeSchemaText(super.rawData);
-   
+
   static Map get defaultData {
-    return {"@type":"youtubeSchemaText","type":"channel","data":""};
+    return {"@type": "youtubeSchemaText", "type": "channel", "data": ""};
   }
 
-  
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -25,11 +20,9 @@ class YoutubeSchemaText extends JsonScheme {
     }
   }
 
-
-  
   String? get type {
     try {
-      if (rawData["type"] is String == false){
+      if (rawData["type"] is String == false) {
         return null;
       }
       return rawData["type"] as String;
@@ -38,11 +31,9 @@ class YoutubeSchemaText extends JsonScheme {
     }
   }
 
-
-  
   String? get data {
     try {
-      if (rawData["data"] is String == false){
+      if (rawData["data"] is String == false) {
         return null;
       }
       return rawData["data"] as String;
@@ -51,25 +42,17 @@ class YoutubeSchemaText extends JsonScheme {
     }
   }
 
-
-  
   static YoutubeSchemaText create({
-
     String? special_type,
     String? type,
     String? data,
-})  {
+  }) {
     YoutubeSchemaText youtubeSchemaText = YoutubeSchemaText({
-  
       "@type": special_type,
       "type": type,
       "data": data,
+    });
 
-
-  });
-
-
-return youtubeSchemaText;
-
-      }
+    return youtubeSchemaText;
+  }
 }

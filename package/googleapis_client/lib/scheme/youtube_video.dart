@@ -5,20 +5,45 @@ import "json_dart.dart";
 import "youtube_video_engagement.dart";
 import "youtube_video_thumbnails.dart";
 
-
 class YoutubeVideo extends JsonScheme {
-
-  
   YoutubeVideo(super.rawData);
-   
+
   static Map get defaultData {
-    return {"@type":"youtubeVideo","id":"VIUCn3xTzMc","author":"Fadz Kuruunii Al Muttaqin","channel_id":"UCOqCFbpjc_XS6GJSmyoWs2Q","title":"CARA MEMBUAT USERBOT TELEGRAM TERBARU VIA WEB | ALBY-USERBOT","description":"CARA MEMBUAT USERBOT TELEGRAM TERBARU VIA WEB | ALBY USERBOT Karena banyaknya keresahan warga Telegram ...","url":"https://www.youtube.com/watch?v=VIUCn3xTzMc","duration":"0:31:30.000000","date":1666368661234,"has_watch_page":false,"is_live":false,"keywords":[],"engagement":{"@type":"youtubeVideoEngagement","average_count":-1,"dislike_count":null,"like_count":null,"view_count":3790},"thumbnails":{"@type":"youtubeVideoThumbnails","low":"https://img.youtube.com/vi/VIUCn3xTzMc/default.jpg","medium":"https://img.youtube.com/vi/VIUCn3xTzMc/mqdefault.jpg","high":"https://img.youtube.com/vi/VIUCn3xTzMc/hqdefault.jpg","max":"https://img.youtube.com/vi/VIUCn3xTzMc/maxresdefault.jpg","standard":"https://img.youtube.com/vi/VIUCn3xTzMc/sddefault.jpg"}};
+    return {
+      "@type": "youtubeVideo",
+      "id": "VIUCn3xTzMc",
+      "author": "Fadz Kuruunii Al Muttaqin",
+      "channel_id": "UCOqCFbpjc_XS6GJSmyoWs2Q",
+      "title": "CARA MEMBUAT USERBOT TELEGRAM TERBARU VIA WEB | ALBY-USERBOT",
+      "description":
+          "CARA MEMBUAT USERBOT TELEGRAM TERBARU VIA WEB | ALBY USERBOT Karena banyaknya keresahan warga Telegram ...",
+      "url": "https://www.youtube.com/watch?v=VIUCn3xTzMc",
+      "duration": "0:31:30.000000",
+      "date": 1666368661234,
+      "has_watch_page": false,
+      "is_live": false,
+      "keywords": [],
+      "engagement": {
+        "@type": "youtubeVideoEngagement",
+        "average_count": -1,
+        "dislike_count": null,
+        "like_count": null,
+        "view_count": 3790
+      },
+      "thumbnails": {
+        "@type": "youtubeVideoThumbnails",
+        "low": "https://img.youtube.com/vi/VIUCn3xTzMc/default.jpg",
+        "medium": "https://img.youtube.com/vi/VIUCn3xTzMc/mqdefault.jpg",
+        "high": "https://img.youtube.com/vi/VIUCn3xTzMc/hqdefault.jpg",
+        "max": "https://img.youtube.com/vi/VIUCn3xTzMc/maxresdefault.jpg",
+        "standard": "https://img.youtube.com/vi/VIUCn3xTzMc/sddefault.jpg"
+      }
+    };
   }
 
-  
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -27,11 +52,9 @@ class YoutubeVideo extends JsonScheme {
     }
   }
 
-
-  
   String? get id {
     try {
-      if (rawData["id"] is String == false){
+      if (rawData["id"] is String == false) {
         return null;
       }
       return rawData["id"] as String;
@@ -40,11 +63,9 @@ class YoutubeVideo extends JsonScheme {
     }
   }
 
-
-  
   String? get author {
     try {
-      if (rawData["author"] is String == false){
+      if (rawData["author"] is String == false) {
         return null;
       }
       return rawData["author"] as String;
@@ -53,11 +74,9 @@ class YoutubeVideo extends JsonScheme {
     }
   }
 
-
-  
   String? get channel_id {
     try {
-      if (rawData["channel_id"] is String == false){
+      if (rawData["channel_id"] is String == false) {
         return null;
       }
       return rawData["channel_id"] as String;
@@ -66,11 +85,9 @@ class YoutubeVideo extends JsonScheme {
     }
   }
 
-
-  
   String? get title {
     try {
-      if (rawData["title"] is String == false){
+      if (rawData["title"] is String == false) {
         return null;
       }
       return rawData["title"] as String;
@@ -79,11 +96,9 @@ class YoutubeVideo extends JsonScheme {
     }
   }
 
-
-  
   String? get description {
     try {
-      if (rawData["description"] is String == false){
+      if (rawData["description"] is String == false) {
         return null;
       }
       return rawData["description"] as String;
@@ -92,11 +107,9 @@ class YoutubeVideo extends JsonScheme {
     }
   }
 
-
-  
   String? get url {
     try {
-      if (rawData["url"] is String == false){
+      if (rawData["url"] is String == false) {
         return null;
       }
       return rawData["url"] as String;
@@ -105,11 +118,9 @@ class YoutubeVideo extends JsonScheme {
     }
   }
 
-
-  
   String? get duration {
     try {
-      if (rawData["duration"] is String == false){
+      if (rawData["duration"] is String == false) {
         return null;
       }
       return rawData["duration"] as String;
@@ -118,11 +129,9 @@ class YoutubeVideo extends JsonScheme {
     }
   }
 
-
-  
   int? get date {
     try {
-      if (rawData["date"] is int == false){
+      if (rawData["date"] is int == false) {
         return null;
       }
       return rawData["date"] as int;
@@ -131,11 +140,9 @@ class YoutubeVideo extends JsonScheme {
     }
   }
 
-
-  
   bool? get has_watch_page {
     try {
-      if (rawData["has_watch_page"] is bool == false){
+      if (rawData["has_watch_page"] is bool == false) {
         return null;
       }
       return rawData["has_watch_page"] as bool;
@@ -144,11 +151,9 @@ class YoutubeVideo extends JsonScheme {
     }
   }
 
-
-  
   bool? get is_live {
     try {
-      if (rawData["is_live"] is bool == false){
+      if (rawData["is_live"] is bool == false) {
         return null;
       }
       return rawData["is_live"] as bool;
@@ -157,11 +162,9 @@ class YoutubeVideo extends JsonScheme {
     }
   }
 
-
-  
   List<Object> get keywords {
     try {
-      if (rawData["keywords"] is List == false){
+      if (rawData["keywords"] is List == false) {
         return [];
       }
       return (rawData["keywords"] as List).cast<Object>();
@@ -170,36 +173,29 @@ class YoutubeVideo extends JsonScheme {
     }
   }
 
-
-  
   YoutubeVideoEngagement get engagement {
     try {
-      if (rawData["engagement"] is Map == false){
-        return YoutubeVideoEngagement({}); 
+      if (rawData["engagement"] is Map == false) {
+        return YoutubeVideoEngagement({});
       }
       return YoutubeVideoEngagement(rawData["engagement"] as Map);
-    } catch (e) {  
-      return YoutubeVideoEngagement({}); 
+    } catch (e) {
+      return YoutubeVideoEngagement({});
     }
   }
 
-
-  
   YoutubeVideoThumbnails get thumbnails {
     try {
-      if (rawData["thumbnails"] is Map == false){
-        return YoutubeVideoThumbnails({}); 
+      if (rawData["thumbnails"] is Map == false) {
+        return YoutubeVideoThumbnails({});
       }
       return YoutubeVideoThumbnails(rawData["thumbnails"] as Map);
-    } catch (e) {  
-      return YoutubeVideoThumbnails({}); 
+    } catch (e) {
+      return YoutubeVideoThumbnails({});
     }
   }
 
-
-  
   static YoutubeVideo create({
-
     String? special_type,
     String? id,
     String? author,
@@ -211,12 +207,11 @@ class YoutubeVideo extends JsonScheme {
     int? date,
     bool? has_watch_page,
     bool? is_live,
-      List<Object>? keywords,
-      YoutubeVideoEngagement? engagement,
-      YoutubeVideoThumbnails? thumbnails,
-})  {
+    List<Object>? keywords,
+    YoutubeVideoEngagement? engagement,
+    YoutubeVideoThumbnails? thumbnails,
+  }) {
     YoutubeVideo youtubeVideo = YoutubeVideo({
-  
       "@type": special_type,
       "id": id,
       "author": author,
@@ -229,14 +224,10 @@ class YoutubeVideo extends JsonScheme {
       "has_watch_page": has_watch_page,
       "is_live": is_live,
       "keywords": keywords,
-      "engagement": (engagement != null)?engagement.toJson(): null,
-      "thumbnails": (thumbnails != null)?thumbnails.toJson(): null,
+      "engagement": (engagement != null) ? engagement.toJson() : null,
+      "thumbnails": (thumbnails != null) ? thumbnails.toJson() : null,
+    });
 
-
-  });
-
-
-return youtubeVideo;
-
-      }
+    return youtubeVideo;
+  }
 }

@@ -8,7 +8,8 @@ class Gmail extends GoogleApisClientRaw {
   Gmail({
     required super.googleApisClientApiKey,
   });
-  Future<GmailApi> gmailApiClient({GoogleApisClientApiKey? googleApisClientApiKey}) async {
+  Future<GmailApi> gmailApiClient(
+      {GoogleApisClientApiKey? googleApisClientApiKey}) async {
     GoogleApisClientApiKey google_apis_client = await googleApisClient(
       googleApisClientApiKey: googleApisClientApiKey,
     );
@@ -18,6 +19,5 @@ class Gmail extends GoogleApisClientRaw {
 
   test() async {
     GmailApi gmailApi = await gmailApiClient();
-  
   }
 }

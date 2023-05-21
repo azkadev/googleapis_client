@@ -3,7 +3,6 @@ import 'dart:convert';
 
 /// return original data json
 class JsonApis {
-  
   /// return original data json
   Map rawData;
 
@@ -135,4 +134,3 @@ class JsonApis {
     return json.encode(rawData);
   }
 }
-

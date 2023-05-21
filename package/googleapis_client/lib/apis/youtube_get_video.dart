@@ -2,21 +2,16 @@
 import "json_dart.dart";
 // import "dart:convert";
 
-
-
 class YoutubeGetVideo extends JsonApis {
-
-  
   YoutubeGetVideo(super.rawData);
-   
+
   static Map get defaultData {
-    return {"@type":"youtubeGetVideo","video_id":""};
+    return {"@type": "youtubeGetVideo", "video_id": ""};
   }
 
-  
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -25,11 +20,9 @@ class YoutubeGetVideo extends JsonApis {
     }
   }
 
-
-  
   String? get video_id {
     try {
-      if (rawData["video_id"] is String == false){
+      if (rawData["video_id"] is String == false) {
         return null;
       }
       return rawData["video_id"] as String;
@@ -38,23 +31,15 @@ class YoutubeGetVideo extends JsonApis {
     }
   }
 
-
-  
   static YoutubeGetVideo create({
-
     String? special_type,
     String? video_id,
-})  {
+  }) {
     YoutubeGetVideo youtubeGetVideo = YoutubeGetVideo({
-  
       "@type": special_type,
       "video_id": video_id,
+    });
 
-
-  });
-
-
-return youtubeGetVideo;
-
-      }
+    return youtubeGetVideo;
+  }
 }
