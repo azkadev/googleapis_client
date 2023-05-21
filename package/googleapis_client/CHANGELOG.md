@@ -1,3 +1,7 @@
+## 0.0.3
+
+- fix web flutter
+
 ## 0.0.2
 
 - revisi youtube no auth
