@@ -1,9 +1,11 @@
+// ignore_for_file: non_constant_identifier_names, empty_catches
+
 import 'dart:convert';
 import 'dart:io';
 
 void main(List<String> args) async {
   File file = File("./scopes.json");
-  String text = """ 
+  String text = """
 
 https://www.googleapis.com/auth/drive	See, edit, create, and delete all of your Google Drive files
 https://www.googleapis.com/auth/drive.file	See, edit, create, and delete only the specific Google Drive files you use with this app
