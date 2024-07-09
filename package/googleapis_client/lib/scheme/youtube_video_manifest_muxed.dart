@@ -36,26 +36,27 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import "json_dart.dart";
 // import "dart:convert";
 
-class YoutubeVideoManifestVideo extends JsonScheme {
-  YoutubeVideoManifestVideo(super.rawData);
+class YoutubeVideoManifestMuxed extends JsonScheme {
+  YoutubeVideoManifestMuxed(super.rawData);
 
   static Map get defaultData {
     return {
-      "@type": "youtubeVideoManifestVideo",
-      "framerate": 15,
-      "video_codec": "vp9",
-      "video_quality": "low144",
-      "height": 256,
-      "width": 116,
-      "bitrate": 28391,
-      "mime_type": "video/webm",
-      "container_name": "webm",
-      "is_throttled": true,
-      "quality": "144p",
-      "size": 110089,
-      "tag": 598,
+      "@type": "youtubeVideoManifestMuxed",
+      "audio_codec": "mp4a.40.2",
+      "framerate": 30,
+      "video_codec": "avc1.64001f",
+      "video_quality": "high720",
+      "height": 1280,
+      "width": 576,
+      "bitrate": 606548,
+      "mime_type": "video/mp4",
+      "container_name": "mp4",
+      "is_throttled": false,
+      "quality": "720p",
+      "size": 2820161,
+      "tag": 22,
       "url":
-          "https://rr5---sn-uxa3vhnxa-n0cl.googlevideo.com/videoplayback?expire=1684661863&ei=B5JpZMrqHOy84t4Pzry18Aw&ip=182.1.86.237&id=o-AKPrabTZA4Z0TPaQHNNIUQv_HN7_aa5Utcx5VrMjbjyt&itag=598&source=youtube&requiressl=yes&mh=TL&mm=31%2C29&mn=sn-uxa3vhnxa-n0cl%2Csn-uxa3vhnxa-jb3y&ms=au%2Crdu&mv=m&mvi=5&pcm2cms=yes&pl=22&ctier=SH&initcwndbps=441250&spc=qEK7B_mYqAOyksp5lp_fzSxXohoWXE4&vprv=1&svpuc=1&mime=video%2Fwebm&gir=yes&clen=110089&dur=37.199&lmt=1664677494839255&mt=1684639991&fvip=3&keepalive=yes&fexp=24007246%2C24362685%2C24363391&c=ANDROID&txp=631A224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cctier%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIgAMBXXePunuUH3p1KvvXip59fHD2YkD8UV7cDli0R9KcCIQDa_YqIpt_pia5H3Dn6Adsi8spZuZxQaWvhk4qaZlDGsQ%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpcm2cms%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAOb-QmRQK-Vj-KtBPGsb5plzBFbi2ntfU7_e093Oiix1AiBH71kzJW51SuI5hp-RYkUkVAHM6nFORXFtNaxJz6s5EA%3D%3D"
+          "https://rr5---sn-uxa3vhnxa-n0cl.googlevideo.com/videoplayback?expire=1684661863&ei=B5JpZMrqHOy84t4Pzry18Aw&ip=182.1.86.237&id=o-AKPrabTZA4Z0TPaQHNNIUQv_HN7_aa5Utcx5VrMjbjyt&itag=22&source=youtube&requiressl=yes&mh=TL&mm=31%2C29&mn=sn-uxa3vhnxa-n0cl%2Csn-uxa3vhnxa-jb3y&ms=au%2Crdu&mv=m&mvi=5&pcm2cms=yes&pl=22&ctier=SH&initcwndbps=441250&spc=qEK7B_mYqAOyksp5lp_fzSxXohoWXE4&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=37.268&lmt=1664677501622239&mt=1684639991&fvip=3&fexp=24007246%2C24362685%2C24363391&c=ANDROID&txp=6318224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cctier%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIgFNaeVcBN9tO9TyItsatY3xsi4GcmIdLtkniFhzgNDfgCIQCj2kW3ukP7qMWsPPiS8H_Ko1MqUkdOP7DX6O873USEjg%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpcm2cms%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAOb-QmRQK-Vj-KtBPGsb5plzBFbi2ntfU7_e093Oiix1AiBH71kzJW51SuI5hp-RYkUkVAHM6nFORXFtNaxJz6s5EA%3D%3D"
     };
   }
 
@@ -65,6 +66,17 @@ class YoutubeVideoManifestVideo extends JsonScheme {
         return null;
       }
       return rawData["@type"] as String;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  String? get audio_codec {
+    try {
+      if (rawData["audio_codec"] is String == false) {
+        return null;
+      }
+      return rawData["audio_codec"] as String;
     } catch (e) {
       return null;
     }
@@ -213,8 +225,9 @@ class YoutubeVideoManifestVideo extends JsonScheme {
     }
   }
 
-  static YoutubeVideoManifestVideo create({
+  static YoutubeVideoManifestMuxed create({
     String? special_type,
+    String? audio_codec,
     int? framerate,
     String? video_codec,
     String? video_quality,
@@ -229,9 +242,10 @@ class YoutubeVideoManifestVideo extends JsonScheme {
     int? tag,
     String? url,
   }) {
-    YoutubeVideoManifestVideo youtubeVideoManifestVideo =
-        YoutubeVideoManifestVideo({
+    YoutubeVideoManifestMuxed youtubeVideoManifestMuxed =
+        YoutubeVideoManifestMuxed({
       "@type": special_type,
+      "audio_codec": audio_codec,
       "framerate": framerate,
       "video_codec": video_codec,
       "video_quality": video_quality,
@@ -247,6 +261,6 @@ class YoutubeVideoManifestVideo extends JsonScheme {
       "url": url,
     });
 
-    return youtubeVideoManifestVideo;
+    return youtubeVideoManifestMuxed;
   }
 }
