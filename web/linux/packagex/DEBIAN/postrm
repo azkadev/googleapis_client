@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-rm /usr/bin/app-ui-template 
-exit 0
