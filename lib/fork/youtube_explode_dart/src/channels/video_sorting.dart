@@ -1,4 +1,3 @@
- 
 /// Metadata about video are sorted with [ChannelClient.getUploadsFromPage]
 enum VideoSorting {
   newest._('dd'),

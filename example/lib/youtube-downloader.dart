@@ -4,7 +4,6 @@
 
 import 'dart:async';
 import 'dart:io';
- 
 
 import 'package:googleapis_client/fork/youtube_explode_dart/youtube_explode_dart.dart';
 import "package:path/path.dart" as path;
@@ -17,9 +16,11 @@ final yt = YoutubeExplode();
 //   output.mp4
 
 Future<void> main() async {
-  final url = "https://www.youtube.com/watch?v=weOGj4Ngahs&list=PLP0zAgTBT330oyPU3o7zJiFhZ8aK_oxVk&index=7";
+  final url =
+      "https://www.youtube.com/watch?v=weOGj4Ngahs&list=PLP0zAgTBT330oyPU3o7zJiFhZ8aK_oxVk&index=7";
 
-  final Directory directory = Directory(path.join(Directory.current.path, "youtube-downloader-temp"));
+  final Directory directory =
+      Directory(path.join(Directory.current.path, "youtube-downloader-temp"));
   if (directory.existsSync() == false) {
     await directory.create(recursive: true);
   }
@@ -44,7 +45,16 @@ Future<void> download({
   // Get the video manifest.
   final manifest = await yt.videos.streamsClient.getManifest(youtubeUrl);
 
-  final fileName = '${video.title}'.replaceAll(r'\', '').replaceAll('/', '').replaceAll('*', '').replaceAll('?', '').replaceAll('"', '').replaceAll('<', '').replaceAll('>', '').replaceAll(':', '').replaceAll('|', '');
+  final fileName = '${video.title}'
+      .replaceAll(r'\', '')
+      .replaceAll('/', '')
+      .replaceAll('*', '')
+      .replaceAll('?', '')
+      .replaceAll('"', '')
+      .replaceAll('<', '')
+      .replaceAll('>', '')
+      .replaceAll(':', '')
+      .replaceAll('|', '');
   final List<File> files = [];
   {
     final streams = manifest.videoOnly;
@@ -53,7 +63,8 @@ Future<void> download({
     final videoStream = yt.videos.streamsClient.get(videoStreamInfo);
 
     // Compose the file name removing the unallowed characters in windows.
-    final file = File(path.join(directory.path, '${fileName}.video.${videoStreamInfo.container.name}'));
+    final file = File(path.join(
+        directory.path, '${fileName}.video.${videoStreamInfo.container.name}'));
 
     // Track the file download status.
     final len = videoStreamInfo.size.totalBytes;
@@ -65,7 +76,8 @@ Future<void> download({
       var count = file.statSync().size;
 
       // Create the message and set the cursor position.
-      final msg = 'Downloading ${video.title}.${videoStreamInfo.container.name}';
+      final msg =
+          'Downloading ${video.title}.${videoStreamInfo.container.name}';
       stdout.writeln(msg);
 
       // Listen for data received.
@@ -92,7 +104,8 @@ Future<void> download({
     final audio = streams.withHighestBitrate();
     final audioStream = yt.videos.streamsClient.get(audio);
 
-    final file = File(path.join(directory.path, '${fileName}.audio.${audio.container.name}'));
+    final file = File(
+        path.join(directory.path, '${fileName}.audio.${audio.container.name}'));
 
     // Track the file download status.
     final len = audio.size.totalBytes;

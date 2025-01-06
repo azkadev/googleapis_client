@@ -44,12 +44,25 @@ class AudioOnlyStreamInfo with StreamInfo, AudioStreamInfo {
   @override
   final AudioTrack? audioTrack;
 
-  AudioOnlyStreamInfo(this.videoId, this.tag, this.url, this.container, this.size, this.bitrate, this.audioCodec, this.qualityLabel, this.fragments, this.codec, this.audioTrack);
+  AudioOnlyStreamInfo(
+      this.videoId,
+      this.tag,
+      this.url,
+      this.container,
+      this.size,
+      this.bitrate,
+      this.audioCodec,
+      this.qualityLabel,
+      this.fragments,
+      this.codec,
+      this.audioTrack);
 
   @override
-  String toString() => 'Audio-only ($tag | $container | ${audioTrack?.displayName})';
+  String toString() =>
+      'Audio-only ($tag | $container | ${audioTrack?.displayName})';
 
-  factory AudioOnlyStreamInfo.fromJson(Map<String, dynamic> json) => _$AudioOnlyStreamInfoFromJson(json);
+  factory AudioOnlyStreamInfo.fromJson(Map<String, dynamic> json) =>
+      _$AudioOnlyStreamInfoFromJson(json);
 
   @override
   Map<String, dynamic> toJson() => _$AudioOnlyStreamInfoToJson(this);

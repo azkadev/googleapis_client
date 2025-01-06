@@ -11,7 +11,8 @@ part of 'playlist_id.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$PlaylistId {
@@ -21,18 +22,22 @@ mixin _$PlaylistId {
   /// Create a copy of PlaylistId
   /// with the given fields replaced by the non-null parameter values.
 
-  $PlaylistIdCopyWith<PlaylistId> get copyWith => throw _privateConstructorUsedError;
+  $PlaylistIdCopyWith<PlaylistId> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PlaylistIdCopyWith<$Res> {
-  factory $PlaylistIdCopyWith(PlaylistId value, $Res Function(PlaylistId) then) = _$PlaylistIdCopyWithImpl<$Res, PlaylistId>;
+  factory $PlaylistIdCopyWith(
+          PlaylistId value, $Res Function(PlaylistId) then) =
+      _$PlaylistIdCopyWithImpl<$Res, PlaylistId>;
 
   $Res call({String value});
 }
 
 /// @nodoc
-class _$PlaylistIdCopyWithImpl<$Res, $Val extends PlaylistId> implements $PlaylistIdCopyWith<$Res> {
+class _$PlaylistIdCopyWithImpl<$Res, $Val extends PlaylistId>
+    implements $PlaylistIdCopyWith<$Res> {
   _$PlaylistIdCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -48,21 +53,28 @@ class _$PlaylistIdCopyWithImpl<$Res, $Val extends PlaylistId> implements $Playli
     Object? value = null,
   }) {
     return _then(_value.copyWith(
-      value:  value is String?value : _value.value ,
+      value: value is String ? value : _value.value,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$PlaylistIdImplCopyWith<$Res> implements $PlaylistIdCopyWith<$Res> {
-  factory _$$PlaylistIdImplCopyWith(_$PlaylistIdImpl value, $Res Function(_$PlaylistIdImpl) then) = __$$PlaylistIdImplCopyWithImpl<$Res>;
+abstract class _$$PlaylistIdImplCopyWith<$Res>
+    implements $PlaylistIdCopyWith<$Res> {
+  factory _$$PlaylistIdImplCopyWith(
+          _$PlaylistIdImpl value, $Res Function(_$PlaylistIdImpl) then) =
+      __$$PlaylistIdImplCopyWithImpl<$Res>;
   @override
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$PlaylistIdImplCopyWithImpl<$Res> extends _$PlaylistIdCopyWithImpl<$Res, _$PlaylistIdImpl> implements _$$PlaylistIdImplCopyWith<$Res> {
-  __$$PlaylistIdImplCopyWithImpl(_$PlaylistIdImpl _value, $Res Function(_$PlaylistIdImpl) _then) : super(_value, _then);
+class __$$PlaylistIdImplCopyWithImpl<$Res>
+    extends _$PlaylistIdCopyWithImpl<$Res, _$PlaylistIdImpl>
+    implements _$$PlaylistIdImplCopyWith<$Res> {
+  __$$PlaylistIdImplCopyWithImpl(
+      _$PlaylistIdImpl _value, $Res Function(_$PlaylistIdImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of PlaylistId
   /// with the given fields replaced by the non-null parameter values.
@@ -72,7 +84,7 @@ class __$$PlaylistIdImplCopyWithImpl<$Res> extends _$PlaylistIdCopyWithImpl<$Res
     Object? value = null,
   }) {
     return _then(_$PlaylistIdImpl(
-       value is String?value : _value.value ,
+      value is String ? value : _value.value,
     ));
   }
 }
@@ -88,7 +100,10 @@ class _$PlaylistIdImpl extends _PlaylistId {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$PlaylistIdImpl && (identical(other.value, value) || other.value == value));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PlaylistIdImpl &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
@@ -99,7 +114,8 @@ class _$PlaylistIdImpl extends _PlaylistId {
 
   @override
   @pragma('vm:prefer-inline')
-  _$$PlaylistIdImplCopyWith<_$PlaylistIdImpl> get copyWith => __$$PlaylistIdImplCopyWithImpl<_$PlaylistIdImpl>(this, _$identity);
+  _$$PlaylistIdImplCopyWith<_$PlaylistIdImpl> get copyWith =>
+      __$$PlaylistIdImplCopyWithImpl<_$PlaylistIdImpl>(this, _$identity);
 }
 
 abstract class _PlaylistId extends PlaylistId {
@@ -113,5 +129,6 @@ abstract class _PlaylistId extends PlaylistId {
   /// Create a copy of PlaylistId
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$PlaylistIdImplCopyWith<_$PlaylistIdImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$PlaylistIdImplCopyWith<_$PlaylistIdImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

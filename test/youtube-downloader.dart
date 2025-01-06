@@ -16,7 +16,8 @@ final yt = YoutubeExplode();
 //   output.mp4
 
 Future<void> main() async {
-  final url = "https://www.youtube.com/watch?v=weOGj4Ngahs&list=PLP0zAgTBT330oyPU3o7zJiFhZ8aK_oxVk&index=7";
+  final url =
+      "https://www.youtube.com/watch?v=weOGj4Ngahs&list=PLP0zAgTBT330oyPU3o7zJiFhZ8aK_oxVk&index=7";
   // Get video metadata.
   final video = await yt.videos.get(url);
 

@@ -22,14 +22,25 @@ export 'src/lexer.dart' show ParseError;
 /// - [annotations]: if true, [Node.parent], [Scope.environment], and [Name.scope] will be initialized (default: true).
 ///
 /// - [parseAsExpression]: if true, parse the input as an expression statement.
-Program parsejs(String text, {String? filename, int firstLine = 1, bool handleNoise = true, bool annotations = true, bool parseAsExpression = false}) {
+Program parsejs(String text,
+    {String? filename,
+    int firstLine = 1,
+    bool handleNoise = true,
+    bool annotations = true,
+    bool parseAsExpression = false}) {
   Offsets offset = Offsets(0, text.length, firstLine);
   if (handleNoise) {
     offset = trimNoise(text, offset);
   }
-  Lexer lexer = Lexer(text, filename: filename, currentLine: offset.line, index: offset.start, endOfFile: offset.end);
+  Lexer lexer = Lexer(text,
+      filename: filename,
+      currentLine: offset.line,
+      index: offset.start,
+      endOfFile: offset.end);
   Parser parser = Parser(lexer);
-  Program ast = parseAsExpression ? parser.parseExpressionProgram() : parser.parseProgram();
+  Program ast = parseAsExpression
+      ? parser.parseExpressionProgram()
+      : parser.parseProgram();
   if (annotations) {
     annotateAST(ast);
   }

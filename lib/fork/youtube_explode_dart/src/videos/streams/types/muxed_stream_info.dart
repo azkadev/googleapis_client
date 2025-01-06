@@ -82,9 +82,11 @@ class MuxedStreamInfo with StreamInfo, AudioStreamInfo, VideoStreamInfo {
   );
 
   @override
-  String toString() => 'Muxed ($tag | ${videoResolution}p${framerate.framesPerSecond} | $container)';
+  String toString() =>
+      'Muxed ($tag | ${videoResolution}p${framerate.framesPerSecond} | $container)';
 
-  factory MuxedStreamInfo.fromJson(Map<String, dynamic> json) => _$MuxedStreamInfoFromJson(json);
+  factory MuxedStreamInfo.fromJson(Map<String, dynamic> json) =>
+      _$MuxedStreamInfoFromJson(json);
 
   @override
   Map<String, dynamic> toJson() => _$MuxedStreamInfoToJson(this);

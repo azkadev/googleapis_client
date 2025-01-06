@@ -11,14 +11,17 @@ class ClosedCaptionTrack {
   final UnmodifiableListView<ClosedCaption> captions;
 
   /// Initializes an instance of [ClosedCaptionTrack].
-  ClosedCaptionTrack(Iterable<ClosedCaption> captions) : captions = UnmodifiableListView(captions);
+  ClosedCaptionTrack(Iterable<ClosedCaption> captions)
+      : captions = UnmodifiableListView(captions);
 
   /// Gets the caption displayed at the specified point in time.
   /// Returns null if not found.
-  ClosedCaption? getByTime(Duration time) => captions.firstWhereOrNull((e) => time >= e.offset && time <= e.end);
+  ClosedCaption? getByTime(Duration time) =>
+      captions.firstWhereOrNull((e) => time >= e.offset && time <= e.end);
 
   ///
-  factory ClosedCaptionTrack.fromJson(Map<String, dynamic> json) => _$ClosedCaptionTrackFromJson(json);
+  factory ClosedCaptionTrack.fromJson(Map<String, dynamic> json) =>
+      _$ClosedCaptionTrackFromJson(json);
 
   ///
   Map<String, dynamic> toJson() => _$ClosedCaptionTrackToJson(this);

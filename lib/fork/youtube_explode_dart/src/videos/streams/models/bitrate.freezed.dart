@@ -11,7 +11,8 @@ part of 'bitrate.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Bitrate _$BitrateFromJson(Map<String, dynamic> json) {
   return _Bitrate.fromJson(json);
@@ -33,13 +34,15 @@ mixin _$Bitrate {
 
 /// @nodoc
 abstract class $BitrateCopyWith<$Res> {
-  factory $BitrateCopyWith(Bitrate value, $Res Function(Bitrate) then) = _$BitrateCopyWithImpl<$Res, Bitrate>;
+  factory $BitrateCopyWith(Bitrate value, $Res Function(Bitrate) then) =
+      _$BitrateCopyWithImpl<$Res, Bitrate>;
 
   $Res call({int bitsPerSecond});
 }
 
 /// @nodoc
-class _$BitrateCopyWithImpl<$Res, $Val extends Bitrate> implements $BitrateCopyWith<$Res> {
+class _$BitrateCopyWithImpl<$Res, $Val extends Bitrate>
+    implements $BitrateCopyWith<$Res> {
   _$BitrateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -55,21 +58,28 @@ class _$BitrateCopyWithImpl<$Res, $Val extends Bitrate> implements $BitrateCopyW
     Object? bitsPerSecond = null,
   }) {
     return _then(_value.copyWith(
-      bitsPerSecond: bitsPerSecond is int ? bitsPerSecond : _value.bitsPerSecond,
+      bitsPerSecond:
+          bitsPerSecond is int ? bitsPerSecond : _value.bitsPerSecond,
     ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$BitrateImplCopyWith<$Res> implements $BitrateCopyWith<$Res> {
-  factory _$$BitrateImplCopyWith(_$BitrateImpl value, $Res Function(_$BitrateImpl) then) = __$$BitrateImplCopyWithImpl<$Res>;
+  factory _$$BitrateImplCopyWith(
+          _$BitrateImpl value, $Res Function(_$BitrateImpl) then) =
+      __$$BitrateImplCopyWithImpl<$Res>;
   @override
   $Res call({int bitsPerSecond});
 }
 
 /// @nodoc
-class __$$BitrateImplCopyWithImpl<$Res> extends _$BitrateCopyWithImpl<$Res, _$BitrateImpl> implements _$$BitrateImplCopyWith<$Res> {
-  __$$BitrateImplCopyWithImpl(_$BitrateImpl _value, $Res Function(_$BitrateImpl) _then) : super(_value, _then);
+class __$$BitrateImplCopyWithImpl<$Res>
+    extends _$BitrateCopyWithImpl<$Res, _$BitrateImpl>
+    implements _$$BitrateImplCopyWith<$Res> {
+  __$$BitrateImplCopyWithImpl(
+      _$BitrateImpl _value, $Res Function(_$BitrateImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Bitrate
   /// with the given fields replaced by the non-null parameter values.
@@ -79,7 +89,7 @@ class __$$BitrateImplCopyWithImpl<$Res> extends _$BitrateCopyWithImpl<$Res, _$Bi
     Object? bitsPerSecond = null,
   }) {
     return _then(_$BitrateImpl(
-       bitsPerSecond is int?bitsPerSecond : _value.bitsPerSecond ,
+      bitsPerSecond is int ? bitsPerSecond : _value.bitsPerSecond,
     ));
   }
 }
@@ -89,7 +99,8 @@ class __$$BitrateImplCopyWithImpl<$Res> extends _$BitrateCopyWithImpl<$Res, _$Bi
 class _$BitrateImpl extends _Bitrate {
   const _$BitrateImpl(this.bitsPerSecond) : super._();
 
-  factory _$BitrateImpl.fromJson(Map<String, dynamic> json) => _$$BitrateImplFromJson(json);
+  factory _$BitrateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BitrateImplFromJson(json);
 
   /// Bits per second.
   @override
@@ -97,7 +108,11 @@ class _$BitrateImpl extends _Bitrate {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$BitrateImpl && (identical(other.bitsPerSecond, bitsPerSecond) || other.bitsPerSecond == bitsPerSecond));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BitrateImpl &&
+            (identical(other.bitsPerSecond, bitsPerSecond) ||
+                other.bitsPerSecond == bitsPerSecond));
   }
 
   @override
@@ -108,7 +123,8 @@ class _$BitrateImpl extends _Bitrate {
 
   @override
   @pragma('vm:prefer-inline')
-  _$$BitrateImplCopyWith<_$BitrateImpl> get copyWith => __$$BitrateImplCopyWithImpl<_$BitrateImpl>(this, _$identity);
+  _$$BitrateImplCopyWith<_$BitrateImpl> get copyWith =>
+      __$$BitrateImplCopyWithImpl<_$BitrateImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -131,5 +147,6 @@ abstract class _Bitrate extends Bitrate {
   /// Create a copy of Bitrate
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$BitrateImplCopyWith<_$BitrateImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$BitrateImplCopyWith<_$BitrateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

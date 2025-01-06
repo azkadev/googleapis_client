@@ -11,7 +11,8 @@ part of 'channel_video.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ChannelVideo {
@@ -37,20 +38,30 @@ mixin _$ChannelVideo {
   /// Create a copy of ChannelVideo
   /// with the given fields replaced by the non-null parameter values.
 
-  $ChannelVideoCopyWith<ChannelVideo> get copyWith => throw _privateConstructorUsedError;
+  $ChannelVideoCopyWith<ChannelVideo> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ChannelVideoCopyWith<$Res> {
-  factory $ChannelVideoCopyWith(ChannelVideo value, $Res Function(ChannelVideo) then) = _$ChannelVideoCopyWithImpl<$Res, ChannelVideo>;
+  factory $ChannelVideoCopyWith(
+          ChannelVideo value, $Res Function(ChannelVideo) then) =
+      _$ChannelVideoCopyWithImpl<$Res, ChannelVideo>;
 
-  $Res call({VideoId videoId, String videoTitle, Duration videoDuration, String videoThumbnail, String videoUploadDate, int videoViews});
+  $Res call(
+      {VideoId videoId,
+      String videoTitle,
+      Duration videoDuration,
+      String videoThumbnail,
+      String videoUploadDate,
+      int videoViews});
 
   $VideoIdCopyWith<$Res> get videoId;
 }
 
 /// @nodoc
-class _$ChannelVideoCopyWithImpl<$Res, $Val extends ChannelVideo> implements $ChannelVideoCopyWith<$Res> {
+class _$ChannelVideoCopyWithImpl<$Res, $Val extends ChannelVideo>
+    implements $ChannelVideoCopyWith<$Res> {
   _$ChannelVideoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -73,9 +84,12 @@ class _$ChannelVideoCopyWithImpl<$Res, $Val extends ChannelVideo> implements $Ch
     return _then(_value.copyWith(
       videoId: videoId is VideoId ? videoId : _value.videoId,
       videoTitle: videoTitle is String ? videoTitle : _value.videoTitle,
-      videoDuration: videoDuration is Duration ? videoDuration : _value.videoDuration,
-      videoThumbnail: videoThumbnail is String ? videoThumbnail : _value.videoThumbnail,
-      videoUploadDate: videoUploadDate is String ? videoUploadDate : _value.videoUploadDate,
+      videoDuration:
+          videoDuration is Duration ? videoDuration : _value.videoDuration,
+      videoThumbnail:
+          videoThumbnail is String ? videoThumbnail : _value.videoThumbnail,
+      videoUploadDate:
+          videoUploadDate is String ? videoUploadDate : _value.videoUploadDate,
       videoViews: videoViews is int ? videoViews : _value.videoViews,
     ) as $Val);
   }
@@ -92,18 +106,31 @@ class _$ChannelVideoCopyWithImpl<$Res, $Val extends ChannelVideo> implements $Ch
 }
 
 /// @nodoc
-abstract class _$$ChannelVideoImplCopyWith<$Res> implements $ChannelVideoCopyWith<$Res> {
-  factory _$$ChannelVideoImplCopyWith(_$ChannelVideoImpl value, $Res Function(_$ChannelVideoImpl) then) = __$$ChannelVideoImplCopyWithImpl<$Res>;
+abstract class _$$ChannelVideoImplCopyWith<$Res>
+    implements $ChannelVideoCopyWith<$Res> {
+  factory _$$ChannelVideoImplCopyWith(
+          _$ChannelVideoImpl value, $Res Function(_$ChannelVideoImpl) then) =
+      __$$ChannelVideoImplCopyWithImpl<$Res>;
   @override
-  $Res call({VideoId videoId, String videoTitle, Duration videoDuration, String videoThumbnail, String videoUploadDate, int videoViews});
+  $Res call(
+      {VideoId videoId,
+      String videoTitle,
+      Duration videoDuration,
+      String videoThumbnail,
+      String videoUploadDate,
+      int videoViews});
 
   @override
   $VideoIdCopyWith<$Res> get videoId;
 }
 
 /// @nodoc
-class __$$ChannelVideoImplCopyWithImpl<$Res> extends _$ChannelVideoCopyWithImpl<$Res, _$ChannelVideoImpl> implements _$$ChannelVideoImplCopyWith<$Res> {
-  __$$ChannelVideoImplCopyWithImpl(_$ChannelVideoImpl _value, $Res Function(_$ChannelVideoImpl) _then) : super(_value, _then);
+class __$$ChannelVideoImplCopyWithImpl<$Res>
+    extends _$ChannelVideoCopyWithImpl<$Res, _$ChannelVideoImpl>
+    implements _$$ChannelVideoImplCopyWith<$Res> {
+  __$$ChannelVideoImplCopyWithImpl(
+      _$ChannelVideoImpl _value, $Res Function(_$ChannelVideoImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ChannelVideo
   /// with the given fields replaced by the non-null parameter values.
@@ -118,12 +145,12 @@ class __$$ChannelVideoImplCopyWithImpl<$Res> extends _$ChannelVideoCopyWithImpl<
     Object? videoViews = null,
   }) {
     return _then(_$ChannelVideoImpl(
-       videoId is VideoId?videoId : _value.videoId,
-       videoTitle is String?videoTitle : _value.videoTitle,
-       videoDuration is Duration?videoDuration : _value.videoDuration ,
-       videoThumbnail is String?videoThumbnail : _value.videoThumbnail ,
-       videoUploadDate is String? videoUploadDate : _value.videoUploadDate,
-      videoViews is int?videoViews : _value.videoViews ,
+      videoId is VideoId ? videoId : _value.videoId,
+      videoTitle is String ? videoTitle : _value.videoTitle,
+      videoDuration is Duration ? videoDuration : _value.videoDuration,
+      videoThumbnail is String ? videoThumbnail : _value.videoThumbnail,
+      videoUploadDate is String ? videoUploadDate : _value.videoUploadDate,
+      videoViews is int ? videoViews : _value.videoViews,
     ));
   }
 }
@@ -131,7 +158,8 @@ class __$$ChannelVideoImplCopyWithImpl<$Res> extends _$ChannelVideoCopyWithImpl<
 /// @nodoc
 
 class _$ChannelVideoImpl implements _ChannelVideo {
-  const _$ChannelVideoImpl(this.videoId, this.videoTitle, this.videoDuration, this.videoThumbnail, this.videoUploadDate, this.videoViews);
+  const _$ChannelVideoImpl(this.videoId, this.videoTitle, this.videoDuration,
+      this.videoThumbnail, this.videoUploadDate, this.videoViews);
 
   /// Video ID.
   @override
@@ -165,22 +193,43 @@ class _$ChannelVideoImpl implements _ChannelVideo {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ChannelVideoImpl && (identical(other.videoId, videoId) || other.videoId == videoId) && (identical(other.videoTitle, videoTitle) || other.videoTitle == videoTitle) && (identical(other.videoDuration, videoDuration) || other.videoDuration == videoDuration) && (identical(other.videoThumbnail, videoThumbnail) || other.videoThumbnail == videoThumbnail) && (identical(other.videoUploadDate, videoUploadDate) || other.videoUploadDate == videoUploadDate) && (identical(other.videoViews, videoViews) || other.videoViews == videoViews));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChannelVideoImpl &&
+            (identical(other.videoId, videoId) || other.videoId == videoId) &&
+            (identical(other.videoTitle, videoTitle) ||
+                other.videoTitle == videoTitle) &&
+            (identical(other.videoDuration, videoDuration) ||
+                other.videoDuration == videoDuration) &&
+            (identical(other.videoThumbnail, videoThumbnail) ||
+                other.videoThumbnail == videoThumbnail) &&
+            (identical(other.videoUploadDate, videoUploadDate) ||
+                other.videoUploadDate == videoUploadDate) &&
+            (identical(other.videoViews, videoViews) ||
+                other.videoViews == videoViews));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, videoId, videoTitle, videoDuration, videoThumbnail, videoUploadDate, videoViews);
+  int get hashCode => Object.hash(runtimeType, videoId, videoTitle,
+      videoDuration, videoThumbnail, videoUploadDate, videoViews);
 
   /// Create a copy of ChannelVideo
   /// with the given fields replaced by the non-null parameter values.
 
   @override
   @pragma('vm:prefer-inline')
-  _$$ChannelVideoImplCopyWith<_$ChannelVideoImpl> get copyWith => __$$ChannelVideoImplCopyWithImpl<_$ChannelVideoImpl>(this, _$identity);
+  _$$ChannelVideoImplCopyWith<_$ChannelVideoImpl> get copyWith =>
+      __$$ChannelVideoImplCopyWithImpl<_$ChannelVideoImpl>(this, _$identity);
 }
 
 abstract class _ChannelVideo implements ChannelVideo {
-  const factory _ChannelVideo(final VideoId videoId, final String videoTitle, final Duration videoDuration, final String videoThumbnail, final String videoUploadDate, final int videoViews) = _$ChannelVideoImpl;
+  const factory _ChannelVideo(
+      final VideoId videoId,
+      final String videoTitle,
+      final Duration videoDuration,
+      final String videoThumbnail,
+      final String videoUploadDate,
+      final int videoViews) = _$ChannelVideoImpl;
 
   /// Video ID.
   @override
@@ -210,5 +259,6 @@ abstract class _ChannelVideo implements ChannelVideo {
   /// Create a copy of ChannelVideo
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$ChannelVideoImplCopyWith<_$ChannelVideoImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$ChannelVideoImplCopyWith<_$ChannelVideoImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

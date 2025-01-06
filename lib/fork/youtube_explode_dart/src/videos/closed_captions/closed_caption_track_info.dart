@@ -40,5 +40,6 @@ class ClosedCaptionTrackInfo with _$ClosedCaptionTrackInfo {
   String toString() => 'CC Track ($language, ${format.formatCode})';
 
   ///
-  factory ClosedCaptionTrackInfo.fromJson(Map<String, dynamic> json) => _$ClosedCaptionTrackInfoFromJson(json);
+  factory ClosedCaptionTrackInfo.fromJson(Map<String, dynamic> json) =>
+      _$ClosedCaptionTrackInfoFromJson(json);
 }

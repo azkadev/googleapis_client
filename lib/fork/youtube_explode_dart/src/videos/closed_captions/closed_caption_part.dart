@@ -17,7 +17,8 @@ class ClosedCaptionPart {
   String toString() => text;
 
   ///
-  factory ClosedCaptionPart.fromJson(Map<String, dynamic> json) => _$ClosedCaptionPartFromJson(json);
+  factory ClosedCaptionPart.fromJson(Map<String, dynamic> json) =>
+      _$ClosedCaptionPartFromJson(json);
 
   ///
   Map<String, dynamic> toJson() => _$ClosedCaptionPartToJson(this);

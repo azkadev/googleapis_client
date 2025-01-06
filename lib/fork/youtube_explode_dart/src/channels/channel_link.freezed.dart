@@ -11,7 +11,8 @@ part of 'channel_link.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ChannelLink {
@@ -23,24 +24,34 @@ mixin _$ChannelLink {
   Uri get url => throw _privateConstructorUsedError;
 
   /// Link Icon URL.
-  @Deprecated('As of at least 26-08-2023 YT no longer provides icons for links, so this URI is always empty')
+  @Deprecated(
+      'As of at least 26-08-2023 YT no longer provides icons for links, so this URI is always empty')
   Uri get icon => throw _privateConstructorUsedError;
 
   /// Create a copy of ChannelLink
   /// with the given fields replaced by the non-null parameter values.
 
-  $ChannelLinkCopyWith<ChannelLink> get copyWith => throw _privateConstructorUsedError;
+  $ChannelLinkCopyWith<ChannelLink> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ChannelLinkCopyWith<$Res> {
-  factory $ChannelLinkCopyWith(ChannelLink value, $Res Function(ChannelLink) then) = _$ChannelLinkCopyWithImpl<$Res, ChannelLink>;
+  factory $ChannelLinkCopyWith(
+          ChannelLink value, $Res Function(ChannelLink) then) =
+      _$ChannelLinkCopyWithImpl<$Res, ChannelLink>;
 
-  $Res call({String title, Uri url, @Deprecated('As of at least 26-08-2023 YT no longer provides icons for links, so this URI is always empty') Uri icon});
+  $Res call(
+      {String title,
+      Uri url,
+      @Deprecated(
+          'As of at least 26-08-2023 YT no longer provides icons for links, so this URI is always empty')
+      Uri icon});
 }
 
 /// @nodoc
-class _$ChannelLinkCopyWithImpl<$Res, $Val extends ChannelLink> implements $ChannelLinkCopyWith<$Res> {
+class _$ChannelLinkCopyWithImpl<$Res, $Val extends ChannelLink>
+    implements $ChannelLinkCopyWith<$Res> {
   _$ChannelLinkCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -66,15 +77,27 @@ class _$ChannelLinkCopyWithImpl<$Res, $Val extends ChannelLink> implements $Chan
 }
 
 /// @nodoc
-abstract class _$$ChannelLinkImplCopyWith<$Res> implements $ChannelLinkCopyWith<$Res> {
-  factory _$$ChannelLinkImplCopyWith(_$ChannelLinkImpl value, $Res Function(_$ChannelLinkImpl) then) = __$$ChannelLinkImplCopyWithImpl<$Res>;
+abstract class _$$ChannelLinkImplCopyWith<$Res>
+    implements $ChannelLinkCopyWith<$Res> {
+  factory _$$ChannelLinkImplCopyWith(
+          _$ChannelLinkImpl value, $Res Function(_$ChannelLinkImpl) then) =
+      __$$ChannelLinkImplCopyWithImpl<$Res>;
   @override
-  $Res call({String title, Uri url, @Deprecated('As of at least 26-08-2023 YT no longer provides icons for links, so this URI is always empty') Uri icon});
+  $Res call(
+      {String title,
+      Uri url,
+      @Deprecated(
+          'As of at least 26-08-2023 YT no longer provides icons for links, so this URI is always empty')
+      Uri icon});
 }
 
 /// @nodoc
-class __$$ChannelLinkImplCopyWithImpl<$Res> extends _$ChannelLinkCopyWithImpl<$Res, _$ChannelLinkImpl> implements _$$ChannelLinkImplCopyWith<$Res> {
-  __$$ChannelLinkImplCopyWithImpl(_$ChannelLinkImpl _value, $Res Function(_$ChannelLinkImpl) _then) : super(_value, _then);
+class __$$ChannelLinkImplCopyWithImpl<$Res>
+    extends _$ChannelLinkCopyWithImpl<$Res, _$ChannelLinkImpl>
+    implements _$$ChannelLinkImplCopyWith<$Res> {
+  __$$ChannelLinkImplCopyWithImpl(
+      _$ChannelLinkImpl _value, $Res Function(_$ChannelLinkImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ChannelLink
   /// with the given fields replaced by the non-null parameter values.
@@ -86,9 +109,9 @@ class __$$ChannelLinkImplCopyWithImpl<$Res> extends _$ChannelLinkCopyWithImpl<$R
     Object? icon = null,
   }) {
     return _then(_$ChannelLinkImpl(
-      title is String?title : _value.title ,
-       url is Uri?url : _value.url,
-       icon is Uri?icon : _value.icon,
+      title is String ? title : _value.title,
+      url is Uri ? url : _value.url,
+      icon is Uri ? icon : _value.icon,
     ));
   }
 }
@@ -96,7 +119,12 @@ class __$$ChannelLinkImplCopyWithImpl<$Res> extends _$ChannelLinkCopyWithImpl<$R
 /// @nodoc
 
 class _$ChannelLinkImpl implements _ChannelLink {
-  const _$ChannelLinkImpl(this.title, this.url, @Deprecated('As of at least 26-08-2023 YT no longer provides icons for links, so this URI is always empty') this.icon);
+  const _$ChannelLinkImpl(
+      this.title,
+      this.url,
+      @Deprecated(
+          'As of at least 26-08-2023 YT no longer provides icons for links, so this URI is always empty')
+      this.icon);
 
   /// Link title.
   @override
@@ -109,7 +137,8 @@ class _$ChannelLinkImpl implements _ChannelLink {
 
   /// Link Icon URL.
   @override
-  @Deprecated('As of at least 26-08-2023 YT no longer provides icons for links, so this URI is always empty')
+  @Deprecated(
+      'As of at least 26-08-2023 YT no longer provides icons for links, so this URI is always empty')
   final Uri icon;
 
   @override
@@ -119,7 +148,12 @@ class _$ChannelLinkImpl implements _ChannelLink {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ChannelLinkImpl && (identical(other.title, title) || other.title == title) && (identical(other.url, url) || other.url == url) && (identical(other.icon, icon) || other.icon == icon));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChannelLinkImpl &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.icon, icon) || other.icon == icon));
   }
 
   @override
@@ -130,11 +164,17 @@ class _$ChannelLinkImpl implements _ChannelLink {
 
   @override
   @pragma('vm:prefer-inline')
-  _$$ChannelLinkImplCopyWith<_$ChannelLinkImpl> get copyWith => __$$ChannelLinkImplCopyWithImpl<_$ChannelLinkImpl>(this, _$identity);
+  _$$ChannelLinkImplCopyWith<_$ChannelLinkImpl> get copyWith =>
+      __$$ChannelLinkImplCopyWithImpl<_$ChannelLinkImpl>(this, _$identity);
 }
 
 abstract class _ChannelLink implements ChannelLink {
-  const factory _ChannelLink(final String title, final Uri url, @Deprecated('As of at least 26-08-2023 YT no longer provides icons for links, so this URI is always empty') final Uri icon) = _$ChannelLinkImpl;
+  const factory _ChannelLink(
+      final String title,
+      final Uri url,
+      @Deprecated(
+          'As of at least 26-08-2023 YT no longer provides icons for links, so this URI is always empty')
+      final Uri icon) = _$ChannelLinkImpl;
 
   /// Link title.
   @override
@@ -147,11 +187,13 @@ abstract class _ChannelLink implements ChannelLink {
 
   /// Link Icon URL.
   @override
-  @Deprecated('As of at least 26-08-2023 YT no longer provides icons for links, so this URI is always empty')
+  @Deprecated(
+      'As of at least 26-08-2023 YT no longer provides icons for links, so this URI is always empty')
   Uri get icon;
 
   /// Create a copy of ChannelLink
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$ChannelLinkImplCopyWith<_$ChannelLinkImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$ChannelLinkImplCopyWith<_$ChannelLinkImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

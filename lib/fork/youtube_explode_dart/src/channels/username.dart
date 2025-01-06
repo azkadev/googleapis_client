@@ -55,7 +55,9 @@ class Username with _$Username {
       return nameOrUrl;
     }
 
-    final regMatch = RegExp(r'youtube\..+?/user/(.*?)(?:\?|&|/|$)').firstMatch(nameOrUrl)?.group(1);
+    final regMatch = RegExp(r'youtube\..+?/user/(.*?)(?:\?|&|/|$)')
+        .firstMatch(nameOrUrl)
+        ?.group(1);
     if (!regMatch.isNullOrWhiteSpace && validateUsername(regMatch!)) {
       return regMatch;
     }

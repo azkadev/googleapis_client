@@ -8,7 +8,8 @@ part of 'hls_muxed_stream_info.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-HlsMuxedStreamInfo _$HlsMuxedStreamInfoFromJson(Map<String, dynamic> json) => HlsMuxedStreamInfo(
+HlsMuxedStreamInfo _$HlsMuxedStreamInfoFromJson(Map<String, dynamic> json) =>
+    HlsMuxedStreamInfo(
       VideoId.fromJson(json['videoId'] as Map<String, dynamic>),
       (json['tag'] as num).toInt(),
       Uri.parse(json['url'] as String),
@@ -24,7 +25,8 @@ HlsMuxedStreamInfo _$HlsMuxedStreamInfoFromJson(Map<String, dynamic> json) => Hl
       mediaTypeFromJson(json['codec'] as String),
     );
 
-Map<String, dynamic> _$HlsMuxedStreamInfoToJson(HlsMuxedStreamInfo instance) => <String, dynamic>{
+Map<String, dynamic> _$HlsMuxedStreamInfoToJson(HlsMuxedStreamInfo instance) =>
+    <String, dynamic>{
       'videoId': instance.videoId,
       'tag': instance.tag,
       'url': instance.url.toString(),

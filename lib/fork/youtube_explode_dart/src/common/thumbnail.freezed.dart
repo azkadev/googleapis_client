@@ -11,7 +11,8 @@ part of 'thumbnail.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Thumbnail {
@@ -27,18 +28,21 @@ mixin _$Thumbnail {
   /// Create a copy of Thumbnail
   /// with the given fields replaced by the non-null parameter values.
 
-  $ThumbnailCopyWith<Thumbnail> get copyWith => throw _privateConstructorUsedError;
+  $ThumbnailCopyWith<Thumbnail> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ThumbnailCopyWith<$Res> {
-  factory $ThumbnailCopyWith(Thumbnail value, $Res Function(Thumbnail) then) = _$ThumbnailCopyWithImpl<$Res, Thumbnail>;
+  factory $ThumbnailCopyWith(Thumbnail value, $Res Function(Thumbnail) then) =
+      _$ThumbnailCopyWithImpl<$Res, Thumbnail>;
 
   $Res call({Uri url, int height, int width});
 }
 
 /// @nodoc
-class _$ThumbnailCopyWithImpl<$Res, $Val extends Thumbnail> implements $ThumbnailCopyWith<$Res> {
+class _$ThumbnailCopyWithImpl<$Res, $Val extends Thumbnail>
+    implements $ThumbnailCopyWith<$Res> {
   _$ThumbnailCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -64,15 +68,22 @@ class _$ThumbnailCopyWithImpl<$Res, $Val extends Thumbnail> implements $Thumbnai
 }
 
 /// @nodoc
-abstract class _$$ThumbnailImplCopyWith<$Res> implements $ThumbnailCopyWith<$Res> {
-  factory _$$ThumbnailImplCopyWith(_$ThumbnailImpl value, $Res Function(_$ThumbnailImpl) then) = __$$ThumbnailImplCopyWithImpl<$Res>;
+abstract class _$$ThumbnailImplCopyWith<$Res>
+    implements $ThumbnailCopyWith<$Res> {
+  factory _$$ThumbnailImplCopyWith(
+          _$ThumbnailImpl value, $Res Function(_$ThumbnailImpl) then) =
+      __$$ThumbnailImplCopyWithImpl<$Res>;
   @override
   $Res call({Uri url, int height, int width});
 }
 
 /// @nodoc
-class __$$ThumbnailImplCopyWithImpl<$Res> extends _$ThumbnailCopyWithImpl<$Res, _$ThumbnailImpl> implements _$$ThumbnailImplCopyWith<$Res> {
-  __$$ThumbnailImplCopyWithImpl(_$ThumbnailImpl _value, $Res Function(_$ThumbnailImpl) _then) : super(_value, _then);
+class __$$ThumbnailImplCopyWithImpl<$Res>
+    extends _$ThumbnailCopyWithImpl<$Res, _$ThumbnailImpl>
+    implements _$$ThumbnailImplCopyWith<$Res> {
+  __$$ThumbnailImplCopyWithImpl(
+      _$ThumbnailImpl _value, $Res Function(_$ThumbnailImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Thumbnail
   /// with the given fields replaced by the non-null parameter values.
@@ -115,7 +126,12 @@ class _$ThumbnailImpl implements _Thumbnail {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ThumbnailImpl && (identical(other.url, url) || other.url == url) && (identical(other.height, height) || other.height == height) && (identical(other.width, width) || other.width == width));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ThumbnailImpl &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.width, width) || other.width == width));
   }
 
   @override
@@ -126,11 +142,13 @@ class _$ThumbnailImpl implements _Thumbnail {
 
   @override
   @pragma('vm:prefer-inline')
-  _$$ThumbnailImplCopyWith<_$ThumbnailImpl> get copyWith => __$$ThumbnailImplCopyWithImpl<_$ThumbnailImpl>(this, _$identity);
+  _$$ThumbnailImplCopyWith<_$ThumbnailImpl> get copyWith =>
+      __$$ThumbnailImplCopyWithImpl<_$ThumbnailImpl>(this, _$identity);
 }
 
 abstract class _Thumbnail implements Thumbnail {
-  const factory _Thumbnail(final Uri url, final int height, final int width) = _$ThumbnailImpl;
+  const factory _Thumbnail(final Uri url, final int height, final int width) =
+      _$ThumbnailImpl;
 
   /// Image url.
   @override
@@ -147,5 +165,6 @@ abstract class _Thumbnail implements Thumbnail {
   /// Create a copy of Thumbnail
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$ThumbnailImplCopyWith<_$ThumbnailImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$ThumbnailImplCopyWith<_$ThumbnailImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

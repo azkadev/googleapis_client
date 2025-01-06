@@ -28,7 +28,8 @@ class ClosedCaptionFormat {
   const ClosedCaptionFormat(this.formatCode);
 
   ///
-  factory ClosedCaptionFormat.fromJson(Map<String, dynamic> json) => _$ClosedCaptionFormatFromJson(json);
+  factory ClosedCaptionFormat.fromJson(Map<String, dynamic> json) =>
+      _$ClosedCaptionFormatFromJson(json);
 
   ///
   Map<String, dynamic> toJson() => _$ClosedCaptionFormatToJson(this);

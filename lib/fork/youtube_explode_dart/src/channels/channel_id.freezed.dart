@@ -11,7 +11,8 @@ part of 'channel_id.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ChannelId {
@@ -21,18 +22,21 @@ mixin _$ChannelId {
   /// Create a copy of ChannelId
   /// with the given fields replaced by the non-null parameter values.
 
-  $ChannelIdCopyWith<ChannelId> get copyWith => throw _privateConstructorUsedError;
+  $ChannelIdCopyWith<ChannelId> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ChannelIdCopyWith<$Res> {
-  factory $ChannelIdCopyWith(ChannelId value, $Res Function(ChannelId) then) = _$ChannelIdCopyWithImpl<$Res, ChannelId>;
+  factory $ChannelIdCopyWith(ChannelId value, $Res Function(ChannelId) then) =
+      _$ChannelIdCopyWithImpl<$Res, ChannelId>;
 
   $Res call({String value});
 }
 
 /// @nodoc
-class _$ChannelIdCopyWithImpl<$Res, $Val extends ChannelId> implements $ChannelIdCopyWith<$Res> {
+class _$ChannelIdCopyWithImpl<$Res, $Val extends ChannelId>
+    implements $ChannelIdCopyWith<$Res> {
   _$ChannelIdCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -48,21 +52,28 @@ class _$ChannelIdCopyWithImpl<$Res, $Val extends ChannelId> implements $ChannelI
     Object? value = null,
   }) {
     return _then(_value.copyWith(
-      value:  value is String?value : _value.value ,
+      value: value is String ? value : _value.value,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$ChannelIdImplCopyWith<$Res> implements $ChannelIdCopyWith<$Res> {
-  factory _$$ChannelIdImplCopyWith(_$ChannelIdImpl value, $Res Function(_$ChannelIdImpl) then) = __$$ChannelIdImplCopyWithImpl<$Res>;
+abstract class _$$ChannelIdImplCopyWith<$Res>
+    implements $ChannelIdCopyWith<$Res> {
+  factory _$$ChannelIdImplCopyWith(
+          _$ChannelIdImpl value, $Res Function(_$ChannelIdImpl) then) =
+      __$$ChannelIdImplCopyWithImpl<$Res>;
   @override
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$ChannelIdImplCopyWithImpl<$Res> extends _$ChannelIdCopyWithImpl<$Res, _$ChannelIdImpl> implements _$$ChannelIdImplCopyWith<$Res> {
-  __$$ChannelIdImplCopyWithImpl(_$ChannelIdImpl _value, $Res Function(_$ChannelIdImpl) _then) : super(_value, _then);
+class __$$ChannelIdImplCopyWithImpl<$Res>
+    extends _$ChannelIdCopyWithImpl<$Res, _$ChannelIdImpl>
+    implements _$$ChannelIdImplCopyWith<$Res> {
+  __$$ChannelIdImplCopyWithImpl(
+      _$ChannelIdImpl _value, $Res Function(_$ChannelIdImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ChannelId
   /// with the given fields replaced by the non-null parameter values.
@@ -72,7 +83,7 @@ class __$$ChannelIdImplCopyWithImpl<$Res> extends _$ChannelIdCopyWithImpl<$Res, 
     Object? value = null,
   }) {
     return _then(_$ChannelIdImpl(
-       value is String?value : _value.value ,
+      value is String ? value : _value.value,
     ));
   }
 }
@@ -88,7 +99,10 @@ class _$ChannelIdImpl extends _ChannelId {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ChannelIdImpl && (identical(other.value, value) || other.value == value));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChannelIdImpl &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
@@ -99,7 +113,8 @@ class _$ChannelIdImpl extends _ChannelId {
 
   @override
   @pragma('vm:prefer-inline')
-  _$$ChannelIdImplCopyWith<_$ChannelIdImpl> get copyWith => __$$ChannelIdImplCopyWithImpl<_$ChannelIdImpl>(this, _$identity);
+  _$$ChannelIdImplCopyWith<_$ChannelIdImpl> get copyWith =>
+      __$$ChannelIdImplCopyWithImpl<_$ChannelIdImpl>(this, _$identity);
 }
 
 abstract class _ChannelId extends ChannelId {
@@ -113,5 +128,6 @@ abstract class _ChannelId extends ChannelId {
   /// Create a copy of ChannelId
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$ChannelIdImplCopyWith<_$ChannelIdImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$ChannelIdImplCopyWith<_$ChannelIdImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

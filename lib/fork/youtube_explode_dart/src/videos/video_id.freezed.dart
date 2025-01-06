@@ -11,7 +11,8 @@ part of 'video_id.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 VideoId _$VideoIdFromJson(Map<String, dynamic> json) {
   return _VideoId.fromJson(json);
@@ -33,13 +34,15 @@ mixin _$VideoId {
 
 /// @nodoc
 abstract class $VideoIdCopyWith<$Res> {
-  factory $VideoIdCopyWith(VideoId value, $Res Function(VideoId) then) = _$VideoIdCopyWithImpl<$Res, VideoId>;
+  factory $VideoIdCopyWith(VideoId value, $Res Function(VideoId) then) =
+      _$VideoIdCopyWithImpl<$Res, VideoId>;
 
   $Res call({String value});
 }
 
 /// @nodoc
-class _$VideoIdCopyWithImpl<$Res, $Val extends VideoId> implements $VideoIdCopyWith<$Res> {
+class _$VideoIdCopyWithImpl<$Res, $Val extends VideoId>
+    implements $VideoIdCopyWith<$Res> {
   _$VideoIdCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -62,14 +65,20 @@ class _$VideoIdCopyWithImpl<$Res, $Val extends VideoId> implements $VideoIdCopyW
 
 /// @nodoc
 abstract class _$$VideoIdImplCopyWith<$Res> implements $VideoIdCopyWith<$Res> {
-  factory _$$VideoIdImplCopyWith(_$VideoIdImpl value, $Res Function(_$VideoIdImpl) then) = __$$VideoIdImplCopyWithImpl<$Res>;
+  factory _$$VideoIdImplCopyWith(
+          _$VideoIdImpl value, $Res Function(_$VideoIdImpl) then) =
+      __$$VideoIdImplCopyWithImpl<$Res>;
   @override
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$VideoIdImplCopyWithImpl<$Res> extends _$VideoIdCopyWithImpl<$Res, _$VideoIdImpl> implements _$$VideoIdImplCopyWith<$Res> {
-  __$$VideoIdImplCopyWithImpl(_$VideoIdImpl _value, $Res Function(_$VideoIdImpl) _then) : super(_value, _then);
+class __$$VideoIdImplCopyWithImpl<$Res>
+    extends _$VideoIdCopyWithImpl<$Res, _$VideoIdImpl>
+    implements _$$VideoIdImplCopyWith<$Res> {
+  __$$VideoIdImplCopyWithImpl(
+      _$VideoIdImpl _value, $Res Function(_$VideoIdImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of VideoId
   /// with the given fields replaced by the non-null parameter values.
@@ -89,7 +98,8 @@ class __$$VideoIdImplCopyWithImpl<$Res> extends _$VideoIdCopyWithImpl<$Res, _$Vi
 class _$VideoIdImpl extends _VideoId {
   const _$VideoIdImpl(this.value) : super._();
 
-  factory _$VideoIdImpl.fromJson(Map<String, dynamic> json) => _$$VideoIdImplFromJson(json);
+  factory _$VideoIdImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VideoIdImplFromJson(json);
 
   /// ID as string.
   @override
@@ -97,7 +107,10 @@ class _$VideoIdImpl extends _VideoId {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$VideoIdImpl && (identical(other.value, value) || other.value == value));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VideoIdImpl &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
@@ -108,7 +121,8 @@ class _$VideoIdImpl extends _VideoId {
 
   @override
   @pragma('vm:prefer-inline')
-  _$$VideoIdImplCopyWith<_$VideoIdImpl> get copyWith => __$$VideoIdImplCopyWithImpl<_$VideoIdImpl>(this, _$identity);
+  _$$VideoIdImplCopyWith<_$VideoIdImpl> get copyWith =>
+      __$$VideoIdImplCopyWithImpl<_$VideoIdImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -131,5 +145,6 @@ abstract class _VideoId extends VideoId {
   /// Create a copy of VideoId
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$VideoIdImplCopyWith<_$VideoIdImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$VideoIdImplCopyWith<_$VideoIdImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

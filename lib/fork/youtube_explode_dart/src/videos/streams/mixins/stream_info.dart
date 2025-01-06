@@ -11,7 +11,8 @@ mixin StreamInfo {
   VideoId get videoId;
 
   /// Whether the stream is throttled or not.
-  bool get isThrottled => url.queryParameters['ratebypass']?.toLowerCase() != 'yes';
+  bool get isThrottled =>
+      url.queryParameters['ratebypass']?.toLowerCase() != 'yes';
 
   /// Stream tag.
   /// Uniquely identifies a stream inside a manifest.
@@ -48,7 +49,8 @@ extension StreamInfoIterableExt<T extends StreamInfo> on Iterable<T> {
   T withHighestBitrate({String? language}) {
     return where((stream) {
       if (stream is AudioStreamInfo) {
-        if (language == null && (stream.audioTrack == null || stream.audioTrack!.audioIsDefault)) {
+        if (language == null &&
+            (stream.audioTrack == null || stream.audioTrack!.audioIsDefault)) {
           return true;
         }
         return stream.audioTrack?.id == language;
@@ -59,19 +61,31 @@ extension StreamInfoIterableExt<T extends StreamInfo> on Iterable<T> {
 
   /// Gets the video streams sorted by bitrate in ascending order.
   /// This returns new list without editing the original list.
-  List<T> sortByBitrate() => toList()..sort((a, b) => b.bitrate.compareTo(a.bitrate));
+  List<T> sortByBitrate() =>
+      toList()..sort((a, b) => b.bitrate.compareTo(a.bitrate));
 
   /// Print a formatted text of all the streams. Like youtube-dl -F option.
   String describe() {
-    final column = _Column(['format code', 'extension', 'resolution', 'quality', 'bitrate', 'size', 'codecs', 'info']);
+    final column = _Column([
+      'format code',
+      'extension',
+      'resolution',
+      'quality',
+      'bitrate',
+      'size',
+      'codecs',
+      'info'
+    ]);
     // Sort the streams:
     // - First audio only streams.
     // - Then sort by resolution.
     // - Then sort by bitrate.
     final sorted = toList()
       ..sort((a, b) {
-        final aIsOnlyAudio = (a is AudioOnlyStreamInfo) || (a is HlsAudioStreamInfo);
-        final bIsOnlyAudio = (b is AudioOnlyStreamInfo) || (b is HlsAudioStreamInfo);
+        final aIsOnlyAudio =
+            (a is AudioOnlyStreamInfo) || (a is HlsAudioStreamInfo);
+        final bIsOnlyAudio =
+            (b is AudioOnlyStreamInfo) || (b is HlsAudioStreamInfo);
 
         if (aIsOnlyAudio && !bIsOnlyAudio) {
           return -1;
@@ -93,14 +107,18 @@ extension StreamInfoIterableExt<T extends StreamInfo> on Iterable<T> {
         e.tag,
         e.container.name,
         if (e is VideoStreamInfo) e.videoResolution else 'audio only',
-        if (e is VideoStreamInfo) '${e.qualityLabel}${e.framerate.framesPerSecond}' else e.qualityLabel,
+        if (e is VideoStreamInfo)
+          '${e.qualityLabel}${e.framerate.framesPerSecond}'
+        else
+          e.qualityLabel,
         '${e is HlsStreamInfo ? '~' : ''}${e.bitrate}',
         '${e is HlsStreamInfo ? '~' : ''}${e.size}',
         e.codec.parameters['codecs'],
         if (e is VideoOnlyStreamInfo || e is HlsVideoStreamInfo) 'video only',
         // if (e is AudioOnlyStreamInfo) 'audio only',
         if (e is MuxedStreamInfo || e is HlsMuxedStreamInfo) 'muxed',
-        if (e case AudioStreamInfo(:AudioTrack audioTrack)) audioTrack.displayName,
+        if (e case AudioStreamInfo(:AudioTrack audioTrack))
+          audioTrack.displayName,
       ]);
     }
     return column.toString();
@@ -114,7 +132,8 @@ class _Column {
 
   _Column(this.header);
 
-  void write(List<Object?> value) => _values.add(value.where((e) => e != null).map((e) => e.toString()).toList());
+  void write(List<Object?> value) => _values
+      .add(value.where((e) => e != null).map((e) => e.toString()).toList());
 
   @override
   String toString() {
@@ -123,7 +142,10 @@ class _Column {
 
     // Find the longest string for each column.
     final longest = _values.map((e) {
-      return e.reduce((value, element) => value.length > element.length ? value : element).length;
+      return e
+          .reduce((value, element) =>
+              value.length > element.length ? value : element)
+          .length;
     }).toList();
 
     for (final (i, e) in header.indexed) {

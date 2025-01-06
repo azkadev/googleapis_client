@@ -11,7 +11,8 @@ part of 'stream_container.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 StreamContainer _$StreamContainerFromJson(Map<String, dynamic> json) {
   return _StreamContainer.fromJson(json);
@@ -29,18 +30,22 @@ mixin _$StreamContainer {
   /// Create a copy of StreamContainer
   /// with the given fields replaced by the non-null parameter values.
 
-  $StreamContainerCopyWith<StreamContainer> get copyWith => throw _privateConstructorUsedError;
+  $StreamContainerCopyWith<StreamContainer> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $StreamContainerCopyWith<$Res> {
-  factory $StreamContainerCopyWith(StreamContainer value, $Res Function(StreamContainer) then) = _$StreamContainerCopyWithImpl<$Res, StreamContainer>;
+  factory $StreamContainerCopyWith(
+          StreamContainer value, $Res Function(StreamContainer) then) =
+      _$StreamContainerCopyWithImpl<$Res, StreamContainer>;
 
   $Res call({String name});
 }
 
 /// @nodoc
-class _$StreamContainerCopyWithImpl<$Res, $Val extends StreamContainer> implements $StreamContainerCopyWith<$Res> {
+class _$StreamContainerCopyWithImpl<$Res, $Val extends StreamContainer>
+    implements $StreamContainerCopyWith<$Res> {
   _$StreamContainerCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -62,15 +67,22 @@ class _$StreamContainerCopyWithImpl<$Res, $Val extends StreamContainer> implemen
 }
 
 /// @nodoc
-abstract class _$$StreamContainerImplCopyWith<$Res> implements $StreamContainerCopyWith<$Res> {
-  factory _$$StreamContainerImplCopyWith(_$StreamContainerImpl value, $Res Function(_$StreamContainerImpl) then) = __$$StreamContainerImplCopyWithImpl<$Res>;
+abstract class _$$StreamContainerImplCopyWith<$Res>
+    implements $StreamContainerCopyWith<$Res> {
+  factory _$$StreamContainerImplCopyWith(_$StreamContainerImpl value,
+          $Res Function(_$StreamContainerImpl) then) =
+      __$$StreamContainerImplCopyWithImpl<$Res>;
   @override
   $Res call({String name});
 }
 
 /// @nodoc
-class __$$StreamContainerImplCopyWithImpl<$Res> extends _$StreamContainerCopyWithImpl<$Res, _$StreamContainerImpl> implements _$$StreamContainerImplCopyWith<$Res> {
-  __$$StreamContainerImplCopyWithImpl(_$StreamContainerImpl _value, $Res Function(_$StreamContainerImpl) _then) : super(_value, _then);
+class __$$StreamContainerImplCopyWithImpl<$Res>
+    extends _$StreamContainerCopyWithImpl<$Res, _$StreamContainerImpl>
+    implements _$$StreamContainerImplCopyWith<$Res> {
+  __$$StreamContainerImplCopyWithImpl(
+      _$StreamContainerImpl _value, $Res Function(_$StreamContainerImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of StreamContainer
   /// with the given fields replaced by the non-null parameter values.
@@ -90,7 +102,8 @@ class __$$StreamContainerImplCopyWithImpl<$Res> extends _$StreamContainerCopyWit
 class _$StreamContainerImpl extends _StreamContainer {
   const _$StreamContainerImpl(this.name) : super._();
 
-  factory _$StreamContainerImpl.fromJson(Map<String, dynamic> json) => _$$StreamContainerImplFromJson(json);
+  factory _$StreamContainerImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StreamContainerImplFromJson(json);
 
   /// Container name.
   /// Can be used as file extension
@@ -99,7 +112,10 @@ class _$StreamContainerImpl extends _StreamContainer {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$StreamContainerImpl && (identical(other.name, name) || other.name == name));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StreamContainerImpl &&
+            (identical(other.name, name) || other.name == name));
   }
 
   @override
@@ -110,7 +126,9 @@ class _$StreamContainerImpl extends _StreamContainer {
 
   @override
   @pragma('vm:prefer-inline')
-  _$$StreamContainerImplCopyWith<_$StreamContainerImpl> get copyWith => __$$StreamContainerImplCopyWithImpl<_$StreamContainerImpl>(this, _$identity);
+  _$$StreamContainerImplCopyWith<_$StreamContainerImpl> get copyWith =>
+      __$$StreamContainerImplCopyWithImpl<_$StreamContainerImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -124,7 +142,8 @@ abstract class _StreamContainer extends StreamContainer {
   const factory _StreamContainer(final String name) = _$StreamContainerImpl;
   const _StreamContainer._() : super._();
 
-  factory _StreamContainer.fromJson(Map<String, dynamic> json) = _$StreamContainerImpl.fromJson;
+  factory _StreamContainer.fromJson(Map<String, dynamic> json) =
+      _$StreamContainerImpl.fromJson;
 
   /// Container name.
   /// Can be used as file extension
@@ -134,5 +153,6 @@ abstract class _StreamContainer extends StreamContainer {
   /// Create a copy of StreamContainer
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$StreamContainerImplCopyWith<_$StreamContainerImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$StreamContainerImplCopyWith<_$StreamContainerImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

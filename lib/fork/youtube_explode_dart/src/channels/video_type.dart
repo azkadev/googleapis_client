@@ -1,5 +1,3 @@
- 
-
 /// Video types provided by Youtube
 enum VideoType {
   /// Default horizontal video

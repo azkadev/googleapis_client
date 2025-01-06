@@ -36,13 +36,15 @@ class ClosedCaption {
   /// relative to this caption's offset.
   /// Returns null if not found.
   /// Note that some captions may not have any parts at all.
-  ClosedCaptionPart? getPartByTime(Duration offset) => parts.firstWhereOrNull((e) => e.offset >= offset);
+  ClosedCaptionPart? getPartByTime(Duration offset) =>
+      parts.firstWhereOrNull((e) => e.offset >= offset);
 
   @override
   String toString() => 'Text($offset): $text';
 
   ///
-  factory ClosedCaption.fromJson(Map<String, dynamic> json) => _$ClosedCaptionFromJson(json);
+  factory ClosedCaption.fromJson(Map<String, dynamic> json) =>
+      _$ClosedCaptionFromJson(json);
 
   ///
   Map<String, dynamic> toJson() => _$ClosedCaptionToJson(this);

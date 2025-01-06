@@ -11,7 +11,8 @@ part of 'channel.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Channel {
@@ -38,15 +39,22 @@ mixin _$Channel {
 
 /// @nodoc
 abstract class $ChannelCopyWith<$Res> {
-  factory $ChannelCopyWith(Channel value, $Res Function(Channel) then) = _$ChannelCopyWithImpl<$Res, Channel>;
+  factory $ChannelCopyWith(Channel value, $Res Function(Channel) then) =
+      _$ChannelCopyWithImpl<$Res, Channel>;
 
-  $Res call({ChannelId id, String title, String logoUrl, String bannerUrl, int? subscribersCount});
+  $Res call(
+      {ChannelId id,
+      String title,
+      String logoUrl,
+      String bannerUrl,
+      int? subscribersCount});
 
   $ChannelIdCopyWith<$Res> get id;
 }
 
 /// @nodoc
-class _$ChannelCopyWithImpl<$Res, $Val extends Channel> implements $ChannelCopyWith<$Res> {
+class _$ChannelCopyWithImpl<$Res, $Val extends Channel>
+    implements $ChannelCopyWith<$Res> {
   _$ChannelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -70,7 +78,9 @@ class _$ChannelCopyWithImpl<$Res, $Val extends Channel> implements $ChannelCopyW
       title: title is String ? title : _value.title,
       logoUrl: logoUrl is String ? logoUrl : _value.logoUrl,
       bannerUrl: bannerUrl is String ? bannerUrl : _value.bannerUrl,
-      subscribersCount: subscribersCount is num ? (subscribersCount).toInt() : _value.subscribersCount,
+      subscribersCount: subscribersCount is num
+          ? (subscribersCount).toInt()
+          : _value.subscribersCount,
     ) as $Val);
   }
 
@@ -87,17 +97,28 @@ class _$ChannelCopyWithImpl<$Res, $Val extends Channel> implements $ChannelCopyW
 
 /// @nodoc
 abstract class _$$ChannelImplCopyWith<$Res> implements $ChannelCopyWith<$Res> {
-  factory _$$ChannelImplCopyWith(_$ChannelImpl value, $Res Function(_$ChannelImpl) then) = __$$ChannelImplCopyWithImpl<$Res>;
+  factory _$$ChannelImplCopyWith(
+          _$ChannelImpl value, $Res Function(_$ChannelImpl) then) =
+      __$$ChannelImplCopyWithImpl<$Res>;
   @override
-  $Res call({ChannelId id, String title, String logoUrl, String bannerUrl, int? subscribersCount});
+  $Res call(
+      {ChannelId id,
+      String title,
+      String logoUrl,
+      String bannerUrl,
+      int? subscribersCount});
 
   @override
   $ChannelIdCopyWith<$Res> get id;
 }
 
 /// @nodoc
-class __$$ChannelImplCopyWithImpl<$Res> extends _$ChannelCopyWithImpl<$Res, _$ChannelImpl> implements _$$ChannelImplCopyWith<$Res> {
-  __$$ChannelImplCopyWithImpl(_$ChannelImpl _value, $Res Function(_$ChannelImpl) _then) : super(_value, _then);
+class __$$ChannelImplCopyWithImpl<$Res>
+    extends _$ChannelCopyWithImpl<$Res, _$ChannelImpl>
+    implements _$$ChannelImplCopyWith<$Res> {
+  __$$ChannelImplCopyWithImpl(
+      _$ChannelImpl _value, $Res Function(_$ChannelImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Channel
   /// with the given fields replaced by the non-null parameter values.
@@ -115,7 +136,9 @@ class __$$ChannelImplCopyWithImpl<$Res> extends _$ChannelCopyWithImpl<$Res, _$Ch
       title is String ? title : _value.title,
       logoUrl is String ? logoUrl : _value.logoUrl,
       bannerUrl is String ? bannerUrl : _value.bannerUrl,
-      subscribersCount is num ? subscribersCount.toInt() : _value.subscribersCount,
+      subscribersCount is num
+          ? subscribersCount.toInt()
+          : _value.subscribersCount,
     ));
   }
 }
@@ -123,7 +146,9 @@ class __$$ChannelImplCopyWithImpl<$Res> extends _$ChannelCopyWithImpl<$Res, _$Ch
 /// @nodoc
 
 class _$ChannelImpl extends _Channel {
-  const _$ChannelImpl(this.id, this.title, this.logoUrl, this.bannerUrl, this.subscribersCount) : super._();
+  const _$ChannelImpl(
+      this.id, this.title, this.logoUrl, this.bannerUrl, this.subscribersCount)
+      : super._();
 
   /// Channel ID.
   @override
@@ -152,22 +177,38 @@ class _$ChannelImpl extends _Channel {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ChannelImpl && (identical(other.id, id) || other.id == id) && (identical(other.title, title) || other.title == title) && (identical(other.logoUrl, logoUrl) || other.logoUrl == logoUrl) && (identical(other.bannerUrl, bannerUrl) || other.bannerUrl == bannerUrl) && (identical(other.subscribersCount, subscribersCount) || other.subscribersCount == subscribersCount));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChannelImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.logoUrl, logoUrl) || other.logoUrl == logoUrl) &&
+            (identical(other.bannerUrl, bannerUrl) ||
+                other.bannerUrl == bannerUrl) &&
+            (identical(other.subscribersCount, subscribersCount) ||
+                other.subscribersCount == subscribersCount));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, logoUrl, bannerUrl, subscribersCount);
+  int get hashCode =>
+      Object.hash(runtimeType, id, title, logoUrl, bannerUrl, subscribersCount);
 
   /// Create a copy of Channel
   /// with the given fields replaced by the non-null parameter values.
 
   @override
   @pragma('vm:prefer-inline')
-  _$$ChannelImplCopyWith<_$ChannelImpl> get copyWith => __$$ChannelImplCopyWithImpl<_$ChannelImpl>(this, _$identity);
+  _$$ChannelImplCopyWith<_$ChannelImpl> get copyWith =>
+      __$$ChannelImplCopyWithImpl<_$ChannelImpl>(this, _$identity);
 }
 
 abstract class _Channel extends Channel {
-  const factory _Channel(final ChannelId id, final String title, final String logoUrl, final String bannerUrl, final int? subscribersCount) = _$ChannelImpl;
+  const factory _Channel(
+      final ChannelId id,
+      final String title,
+      final String logoUrl,
+      final String bannerUrl,
+      final int? subscribersCount) = _$ChannelImpl;
   const _Channel._() : super._();
 
   /// Channel ID.
@@ -193,5 +234,6 @@ abstract class _Channel extends Channel {
   /// Create a copy of Channel
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$ChannelImplCopyWith<_$ChannelImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$ChannelImplCopyWith<_$ChannelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

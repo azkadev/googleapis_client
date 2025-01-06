@@ -20,7 +20,8 @@ class FileSize with _$FileSize implements Comparable<FileSize> {
     int totalBytes,
   ) = _FileSize;
 
-  factory FileSize.fromJson(Map<String, dynamic> json) => _$FileSizeFromJson(json);
+  factory FileSize.fromJson(Map<String, dynamic> json) =>
+      _$FileSizeFromJson(json);
 
   const FileSize._();
 
@@ -56,5 +57,6 @@ class FileSize with _$FileSize implements Comparable<FileSize> {
   }
 
   @override
-  String toString() => '${_getLargestValue().toStringAsFixed(2)} ${_getLargestSymbol()}';
+  String toString() =>
+      '${_getLargestValue().toStringAsFixed(2)} ${_getLargestSymbol()}';
 }

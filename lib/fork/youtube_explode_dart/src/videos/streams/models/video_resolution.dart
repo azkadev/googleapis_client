@@ -12,7 +12,8 @@ class VideoResolution implements Comparable<VideoResolution> {
   /// Initializes an instance of [VideoResolution]
   const VideoResolution(this.width, this.height);
 
-  factory VideoResolution.fromJson(Map<String, dynamic> json) => _$VideoResolutionFromJson(json);
+  factory VideoResolution.fromJson(Map<String, dynamic> json) =>
+      _$VideoResolutionFromJson(json);
 
   Map<String, dynamic> toJson() => _$VideoResolutionToJson(this);
 

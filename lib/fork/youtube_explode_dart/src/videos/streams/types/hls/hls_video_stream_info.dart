@@ -68,12 +68,27 @@ class HlsVideoStreamInfo with StreamInfo, VideoStreamInfo, HlsStreamInfo {
   final int? audioItag;
 
   /// Initializes an instance of [HlsVideoStreamInfo]
-  HlsVideoStreamInfo(this.videoId, this.tag, this.url, this.container, this.size, this.bitrate, this.videoCodec, this.qualityLabel, this.videoQuality, this.videoResolution, this.framerate, this.codec, this.audioItag);
+  HlsVideoStreamInfo(
+      this.videoId,
+      this.tag,
+      this.url,
+      this.container,
+      this.size,
+      this.bitrate,
+      this.videoCodec,
+      this.qualityLabel,
+      this.videoQuality,
+      this.videoResolution,
+      this.framerate,
+      this.codec,
+      this.audioItag);
 
   @override
-  String toString() => '[HLS] Video-only ($tag | ${videoResolution}p${framerate.framesPerSecond} | $container)';
+  String toString() =>
+      '[HLS] Video-only ($tag | ${videoResolution}p${framerate.framesPerSecond} | $container)';
 
-  factory HlsVideoStreamInfo.fromJson(Map<String, dynamic> json) => _$HlsVideoStreamInfoFromJson(json);
+  factory HlsVideoStreamInfo.fromJson(Map<String, dynamic> json) =>
+      _$HlsVideoStreamInfoFromJson(json);
 
   @override
   Map<String, dynamic> toJson() => _$HlsVideoStreamInfoToJson(this);

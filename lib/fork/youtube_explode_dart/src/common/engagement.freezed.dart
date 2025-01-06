@@ -11,7 +11,8 @@ part of 'engagement.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Engagement {
@@ -27,18 +28,22 @@ mixin _$Engagement {
   /// Create a copy of Engagement
   /// with the given fields replaced by the non-null parameter values.
 
-  $EngagementCopyWith<Engagement> get copyWith => throw _privateConstructorUsedError;
+  $EngagementCopyWith<Engagement> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EngagementCopyWith<$Res> {
-  factory $EngagementCopyWith(Engagement value, $Res Function(Engagement) then) = _$EngagementCopyWithImpl<$Res, Engagement>;
+  factory $EngagementCopyWith(
+          Engagement value, $Res Function(Engagement) then) =
+      _$EngagementCopyWithImpl<$Res, Engagement>;
 
   $Res call({int viewCount, int? likeCount, int? dislikeCount});
 }
 
 /// @nodoc
-class _$EngagementCopyWithImpl<$Res, $Val extends Engagement> implements $EngagementCopyWith<$Res> {
+class _$EngagementCopyWithImpl<$Res, $Val extends Engagement>
+    implements $EngagementCopyWith<$Res> {
   _$EngagementCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -56,7 +61,7 @@ class _$EngagementCopyWithImpl<$Res, $Val extends Engagement> implements $Engage
     Object? dislikeCount = null,
   }) {
     return _then(_value.copyWith(
-      viewCount:  viewCount is int?viewCount : _value.viewCount ,
+      viewCount: viewCount is int ? viewCount : _value.viewCount,
       likeCount: likeCount is int ? likeCount : _value.likeCount,
       dislikeCount: dislikeCount is int ? dislikeCount : _value.dislikeCount,
     ) as $Val);
@@ -64,15 +69,22 @@ class _$EngagementCopyWithImpl<$Res, $Val extends Engagement> implements $Engage
 }
 
 /// @nodoc
-abstract class _$$EngagementImplCopyWith<$Res> implements $EngagementCopyWith<$Res> {
-  factory _$$EngagementImplCopyWith(_$EngagementImpl value, $Res Function(_$EngagementImpl) then) = __$$EngagementImplCopyWithImpl<$Res>;
+abstract class _$$EngagementImplCopyWith<$Res>
+    implements $EngagementCopyWith<$Res> {
+  factory _$$EngagementImplCopyWith(
+          _$EngagementImpl value, $Res Function(_$EngagementImpl) then) =
+      __$$EngagementImplCopyWithImpl<$Res>;
   @override
   $Res call({int viewCount, int? likeCount, int? dislikeCount});
 }
 
 /// @nodoc
-class __$$EngagementImplCopyWithImpl<$Res> extends _$EngagementCopyWithImpl<$Res, _$EngagementImpl> implements _$$EngagementImplCopyWith<$Res> {
-  __$$EngagementImplCopyWithImpl(_$EngagementImpl _value, $Res Function(_$EngagementImpl) _then) : super(_value, _then);
+class __$$EngagementImplCopyWithImpl<$Res>
+    extends _$EngagementCopyWithImpl<$Res, _$EngagementImpl>
+    implements _$$EngagementImplCopyWith<$Res> {
+  __$$EngagementImplCopyWithImpl(
+      _$EngagementImpl _value, $Res Function(_$EngagementImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Engagement
   /// with the given fields replaced by the non-null parameter values.
@@ -84,7 +96,7 @@ class __$$EngagementImplCopyWithImpl<$Res> extends _$EngagementCopyWithImpl<$Res
     Object? dislikeCount = null,
   }) {
     return _then(_$EngagementImpl(
-       viewCount is int?viewCount : _value.viewCount,
+      viewCount is int ? viewCount : _value.viewCount,
       likeCount is int ? likeCount : _value.likeCount,
       dislikeCount is int ? dislikeCount : _value.dislikeCount,
     ));
@@ -94,7 +106,8 @@ class __$$EngagementImplCopyWithImpl<$Res> extends _$EngagementCopyWithImpl<$Res
 /// @nodoc
 
 class _$EngagementImpl extends _Engagement {
-  const _$EngagementImpl(this.viewCount, this.likeCount, this.dislikeCount) : super._();
+  const _$EngagementImpl(this.viewCount, this.likeCount, this.dislikeCount)
+      : super._();
 
   /// View count.
   @override
@@ -115,22 +128,34 @@ class _$EngagementImpl extends _Engagement {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$EngagementImpl && (identical(other.viewCount, viewCount) || other.viewCount == viewCount) && (identical(other.likeCount, likeCount) || other.likeCount == likeCount) && (identical(other.dislikeCount, dislikeCount) || other.dislikeCount == dislikeCount));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EngagementImpl &&
+            (identical(other.viewCount, viewCount) ||
+                other.viewCount == viewCount) &&
+            (identical(other.likeCount, likeCount) ||
+                other.likeCount == likeCount) &&
+            (identical(other.dislikeCount, dislikeCount) ||
+                other.dislikeCount == dislikeCount));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, viewCount, likeCount, dislikeCount);
+  int get hashCode =>
+      Object.hash(runtimeType, viewCount, likeCount, dislikeCount);
 
   /// Create a copy of Engagement
   /// with the given fields replaced by the non-null parameter values.
 
   @override
   @pragma('vm:prefer-inline')
-  _$$EngagementImplCopyWith<_$EngagementImpl> get copyWith => __$$EngagementImplCopyWithImpl<_$EngagementImpl>(this, _$identity);
+  _$$EngagementImplCopyWith<_$EngagementImpl> get copyWith =>
+      __$$EngagementImplCopyWithImpl<_$EngagementImpl>(this, _$identity);
 }
 
 abstract class _Engagement extends Engagement {
-  const factory _Engagement(final int viewCount, final int? likeCount, final int? dislikeCount) = _$EngagementImpl;
+  const factory _Engagement(
+          final int viewCount, final int? likeCount, final int? dislikeCount) =
+      _$EngagementImpl;
   const _Engagement._() : super._();
 
   /// View count.
@@ -148,5 +173,6 @@ abstract class _Engagement extends Engagement {
   /// Create a copy of Engagement
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$EngagementImplCopyWith<_$EngagementImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$EngagementImplCopyWith<_$EngagementImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

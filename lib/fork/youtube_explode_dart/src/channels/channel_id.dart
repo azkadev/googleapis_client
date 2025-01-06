@@ -58,7 +58,9 @@ class ChannelId with _$ChannelId {
       return url;
     }
 
-    final regMatch = RegExp(r'youtube\..+?/channel/(.*?)(?:\?|&|/|$)').firstMatch(url)?.group(1);
+    final regMatch = RegExp(r'youtube\..+?/channel/(.*?)(?:\?|&|/|$)')
+        .firstMatch(url)
+        ?.group(1);
     if (!regMatch.isNullOrWhiteSpace && validateChannelId(regMatch!)) {
       return regMatch;
     }

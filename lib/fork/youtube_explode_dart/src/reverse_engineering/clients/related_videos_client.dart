@@ -1,4 +1,3 @@
-
 import '../../../youtube_explode_dart.dart';
 import '../../extensions/helpers_extension.dart';
 import '../../retry.dart';
@@ -8,14 +7,25 @@ class RelatedVideosClient {
   final List<Map<String, dynamic>> contents;
 
   Iterable<Video> relatedVideos() sync* {
-    final results = contents.where((e) => e.containsKey('compactVideoRenderer')).map((e) => e['compactVideoRenderer']);
+    final results = contents
+        .where((e) => e.containsKey('compactVideoRenderer'))
+        .map((e) => e['compactVideoRenderer']);
 
     for (final video in results) {
       if (video
           case {
             'videoId': final String videoId,
             'title': {'simpleText': final String title},
-            'longBylineText': {'runs': [{'text': final String author, 'navigationEndpoint': {'browseEndpoint': {'browseId': final String channelId}}}]},
+            'longBylineText': {
+              'runs': [
+                {
+                  'text': final String author,
+                  'navigationEndpoint': {
+                    'browseEndpoint': {'browseId': final String channelId}
+                  }
+                }
+              ]
+            },
             'publishedTimeText': {
               'simpleText': final String uploadDate,
             },
@@ -47,7 +57,17 @@ class RelatedVideosClient {
 
   String? getContinuationToken() {
     return switch (contents) {
-      [..., {'continuationItemRenderer': {'continuationEndpoint': {'continuationCommand': {'token': final String token}}}}] => token,
+      [
+        ...,
+        {
+          'continuationItemRenderer': {
+            'continuationEndpoint': {
+              'continuationCommand': {'token': final String token}
+            }
+          }
+        }
+      ] =>
+        token,
       _ => null,
     };
   }
@@ -59,7 +79,8 @@ class RelatedVideosClient {
     if (continuation == null) {
       return null;
     }
-    final response = await client.sendPost('next', {'continuation': continuation});
+    final response =
+        await client.sendPost('next', {'continuation': continuation});
     if (response
         case {
           'onResponseReceivedEndpoints': [

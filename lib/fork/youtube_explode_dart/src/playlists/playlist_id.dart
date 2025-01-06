@@ -5,10 +5,14 @@ part 'playlist_id.freezed.dart';
 /// Encapsulates a valid YouTube playlist ID.
 
 class PlaylistId with _$PlaylistId {
-  static final _regMatchExp = RegExp(r'youtube\..+?/playlist.*?list=(.*?)(?:&|/|$)');
-  static final _compositeMatchExp = RegExp(r'youtube\..+?/watch.*?list=(.*?)(?:&|/|$)');
-  static final _shortCompositeMatchExp = RegExp(r'youtu\.be/.*?/.*?list=(.*?)(?:&|/|$)');
-  static final _embedCompositeMatchExp = RegExp(r'youtube\..+?/embed/.*?/.*?list=(.*?)(?:&|/|$)');
+  static final _regMatchExp =
+      RegExp(r'youtube\..+?/playlist.*?list=(.*?)(?:&|/|$)');
+  static final _compositeMatchExp =
+      RegExp(r'youtube\..+?/watch.*?list=(.*?)(?:&|/|$)');
+  static final _shortCompositeMatchExp =
+      RegExp(r'youtu\.be/.*?/.*?list=(.*?)(?:&|/|$)');
+  static final _embedCompositeMatchExp =
+      RegExp(r'youtube\..+?/embed/.*?/.*?list=(.*?)(?:&|/|$)');
 
   /// Initializes an instance of [PlaylistId]
   factory PlaylistId(String idOrUrl) {
@@ -78,17 +82,22 @@ class PlaylistId with _$PlaylistId {
     }
 
     final compositeMatch = _compositeMatchExp.firstMatch(url)?.group(1);
-    if (!compositeMatch.isNullOrWhiteSpace && validatePlaylistId(compositeMatch!)) {
+    if (!compositeMatch.isNullOrWhiteSpace &&
+        validatePlaylistId(compositeMatch!)) {
       return compositeMatch;
     }
 
-    final shortCompositeMatch = _shortCompositeMatchExp.firstMatch(url)?.group(1);
-    if (!shortCompositeMatch.isNullOrWhiteSpace && validatePlaylistId(shortCompositeMatch!)) {
+    final shortCompositeMatch =
+        _shortCompositeMatchExp.firstMatch(url)?.group(1);
+    if (!shortCompositeMatch.isNullOrWhiteSpace &&
+        validatePlaylistId(shortCompositeMatch!)) {
       return shortCompositeMatch;
     }
 
-    final embedCompositeMatch = _embedCompositeMatchExp.firstMatch(url)?.group(1);
-    if (!embedCompositeMatch.isNullOrWhiteSpace && validatePlaylistId(embedCompositeMatch!)) {
+    final embedCompositeMatch =
+        _embedCompositeMatchExp.firstMatch(url)?.group(1);
+    if (!embedCompositeMatch.isNullOrWhiteSpace &&
+        validatePlaylistId(embedCompositeMatch!)) {
       return embedCompositeMatch;
     }
     return null;

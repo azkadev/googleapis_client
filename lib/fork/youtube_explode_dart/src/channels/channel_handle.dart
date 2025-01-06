@@ -55,7 +55,9 @@ class ChannelHandle with _$ChannelHandle {
       return handleOrUrl;
     }
 
-    final regMatch = RegExp(r'youtube\..+?/(@.*?)(?:\?|&|/|$)').firstMatch(handleOrUrl)?.group(1);
+    final regMatch = RegExp(r'youtube\..+?/(@.*?)(?:\?|&|/|$)')
+        .firstMatch(handleOrUrl)
+        ?.group(1);
     if (!regMatch.isNullOrWhiteSpace && validateChannelHandle(regMatch!)) {
       return regMatch;
     }

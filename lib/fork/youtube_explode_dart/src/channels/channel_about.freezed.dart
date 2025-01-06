@@ -11,7 +11,8 @@ part of 'channel_about.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ChannelAbout {
@@ -40,18 +41,29 @@ mixin _$ChannelAbout {
   /// Create a copy of ChannelAbout
   /// with the given fields replaced by the non-null parameter values.
 
-  $ChannelAboutCopyWith<ChannelAbout> get copyWith => throw _privateConstructorUsedError;
+  $ChannelAboutCopyWith<ChannelAbout> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ChannelAboutCopyWith<$Res> {
-  factory $ChannelAboutCopyWith(ChannelAbout value, $Res Function(ChannelAbout) then) = _$ChannelAboutCopyWithImpl<$Res, ChannelAbout>;
+  factory $ChannelAboutCopyWith(
+          ChannelAbout value, $Res Function(ChannelAbout) then) =
+      _$ChannelAboutCopyWithImpl<$Res, ChannelAbout>;
 
-  $Res call({String? description, int? viewCount, String? joinDate, String title, List<Thumbnail> thumbnails, String? country, List<ChannelLink> channelLinks});
+  $Res call(
+      {String? description,
+      int? viewCount,
+      String? joinDate,
+      String title,
+      List<Thumbnail> thumbnails,
+      String? country,
+      List<ChannelLink> channelLinks});
 }
 
 /// @nodoc
-class _$ChannelAboutCopyWithImpl<$Res, $Val extends ChannelAbout> implements $ChannelAboutCopyWith<$Res> {
+class _$ChannelAboutCopyWithImpl<$Res, $Val extends ChannelAbout>
+    implements $ChannelAboutCopyWith<$Res> {
   _$ChannelAboutCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -77,23 +89,40 @@ class _$ChannelAboutCopyWithImpl<$Res, $Val extends ChannelAbout> implements $Ch
       viewCount: viewCount is int ? viewCount : _value.viewCount,
       joinDate: joinDate is String ? joinDate : _value.joinDate,
       title: title is String ? title : _value.title,
-      thumbnails: thumbnails is List<Thumbnail> ? thumbnails : _value.thumbnails,
+      thumbnails:
+          thumbnails is List<Thumbnail> ? thumbnails : _value.thumbnails,
       country: country is String ? country : _value.country,
-      channelLinks: channelLinks is List<ChannelLink> ? channelLinks : _value.channelLinks,
+      channelLinks: channelLinks is List<ChannelLink>
+          ? channelLinks
+          : _value.channelLinks,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$ChannelAboutImplCopyWith<$Res> implements $ChannelAboutCopyWith<$Res> {
-  factory _$$ChannelAboutImplCopyWith(_$ChannelAboutImpl value, $Res Function(_$ChannelAboutImpl) then) = __$$ChannelAboutImplCopyWithImpl<$Res>;
+abstract class _$$ChannelAboutImplCopyWith<$Res>
+    implements $ChannelAboutCopyWith<$Res> {
+  factory _$$ChannelAboutImplCopyWith(
+          _$ChannelAboutImpl value, $Res Function(_$ChannelAboutImpl) then) =
+      __$$ChannelAboutImplCopyWithImpl<$Res>;
   @override
-  $Res call({String? description, int? viewCount, String? joinDate, String title, List<Thumbnail> thumbnails, String? country, List<ChannelLink> channelLinks});
+  $Res call(
+      {String? description,
+      int? viewCount,
+      String? joinDate,
+      String title,
+      List<Thumbnail> thumbnails,
+      String? country,
+      List<ChannelLink> channelLinks});
 }
 
 /// @nodoc
-class __$$ChannelAboutImplCopyWithImpl<$Res> extends _$ChannelAboutCopyWithImpl<$Res, _$ChannelAboutImpl> implements _$$ChannelAboutImplCopyWith<$Res> {
-  __$$ChannelAboutImplCopyWithImpl(_$ChannelAboutImpl _value, $Res Function(_$ChannelAboutImpl) _then) : super(_value, _then);
+class __$$ChannelAboutImplCopyWithImpl<$Res>
+    extends _$ChannelAboutCopyWithImpl<$Res, _$ChannelAboutImpl>
+    implements _$$ChannelAboutImplCopyWith<$Res> {
+  __$$ChannelAboutImplCopyWithImpl(
+      _$ChannelAboutImpl _value, $Res Function(_$ChannelAboutImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ChannelAbout
   /// with the given fields replaced by the non-null parameter values.
@@ -123,7 +152,14 @@ class __$$ChannelAboutImplCopyWithImpl<$Res> extends _$ChannelAboutCopyWithImpl<
 /// @nodoc
 
 class _$ChannelAboutImpl implements _ChannelAbout {
-  const _$ChannelAboutImpl(this.description, this.viewCount, this.joinDate, this.title, final List<Thumbnail> thumbnails, this.country, final List<ChannelLink> channelLinks)
+  const _$ChannelAboutImpl(
+      this.description,
+      this.viewCount,
+      this.joinDate,
+      this.title,
+      final List<Thumbnail> thumbnails,
+      this.country,
+      final List<ChannelLink> channelLinks)
       : _thumbnails = thumbnails,
         _channelLinks = channelLinks;
 
@@ -179,7 +215,21 @@ class _$ChannelAboutImpl implements _ChannelAbout {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ChannelAboutImpl && (identical(other.description, description) || other.description == description) && (identical(other.viewCount, viewCount) || other.viewCount == viewCount) && (identical(other.joinDate, joinDate) || other.joinDate == joinDate) && (identical(other.title, title) || other.title == title) && const DeepCollectionEquality().equals(other._thumbnails, _thumbnails) && (identical(other.country, country) || other.country == country) && const DeepCollectionEquality().equals(other._channelLinks, _channelLinks));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChannelAboutImpl &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.viewCount, viewCount) ||
+                other.viewCount == viewCount) &&
+            (identical(other.joinDate, joinDate) ||
+                other.joinDate == joinDate) &&
+            (identical(other.title, title) || other.title == title) &&
+            const DeepCollectionEquality()
+                .equals(other._thumbnails, _thumbnails) &&
+            (identical(other.country, country) || other.country == country) &&
+            const DeepCollectionEquality()
+                .equals(other._channelLinks, _channelLinks));
   }
 
   @override
@@ -199,11 +249,19 @@ class _$ChannelAboutImpl implements _ChannelAbout {
 
   @override
   @pragma('vm:prefer-inline')
-  _$$ChannelAboutImplCopyWith<_$ChannelAboutImpl> get copyWith => __$$ChannelAboutImplCopyWithImpl<_$ChannelAboutImpl>(this, _$identity);
+  _$$ChannelAboutImplCopyWith<_$ChannelAboutImpl> get copyWith =>
+      __$$ChannelAboutImplCopyWithImpl<_$ChannelAboutImpl>(this, _$identity);
 }
 
 abstract class _ChannelAbout implements ChannelAbout {
-  const factory _ChannelAbout(final String? description, final int? viewCount, final String? joinDate, final String title, final List<Thumbnail> thumbnails, final String? country, final List<ChannelLink> channelLinks) = _$ChannelAboutImpl;
+  const factory _ChannelAbout(
+      final String? description,
+      final int? viewCount,
+      final String? joinDate,
+      final String title,
+      final List<Thumbnail> thumbnails,
+      final String? country,
+      final List<ChannelLink> channelLinks) = _$ChannelAboutImpl;
 
   /// Full channel description.
   @override
@@ -237,5 +295,6 @@ abstract class _ChannelAbout implements ChannelAbout {
   /// Create a copy of ChannelAbout
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$ChannelAboutImplCopyWith<_$ChannelAboutImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$ChannelAboutImplCopyWith<_$ChannelAboutImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

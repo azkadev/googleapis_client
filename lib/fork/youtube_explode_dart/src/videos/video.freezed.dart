@@ -11,7 +11,8 @@ part of 'video.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Video {
@@ -46,7 +47,8 @@ mixin _$Video {
   ThumbnailSet get thumbnails => throw _privateConstructorUsedError;
 
   /// Search keywords used for this video.
-  UnmodifiableListView<String> get keywords => throw _privateConstructorUsedError;
+  UnmodifiableListView<String> get keywords =>
+      throw _privateConstructorUsedError;
 
   /// Engagement statistics for this video.
   Engagement get engagement => throw _privateConstructorUsedError;
@@ -68,9 +70,24 @@ mixin _$Video {
 
 /// @nodoc
 abstract class $VideoCopyWith<$Res> {
-  factory $VideoCopyWith(Video value, $Res Function(Video) then) = _$VideoCopyWithImpl<$Res, Video>;
+  factory $VideoCopyWith(Video value, $Res Function(Video) then) =
+      _$VideoCopyWithImpl<$Res, Video>;
 
-  $Res call({VideoId id, String title, String author, ChannelId channelId, DateTime? uploadDate, String? uploadDateRaw, DateTime? publishDate, String description, Duration? duration, ThumbnailSet thumbnails, UnmodifiableListView<String> keywords, Engagement engagement, bool isLive, WatchPage? watchPage});
+  $Res call(
+      {VideoId id,
+      String title,
+      String author,
+      ChannelId channelId,
+      DateTime? uploadDate,
+      String? uploadDateRaw,
+      DateTime? publishDate,
+      String description,
+      Duration? duration,
+      ThumbnailSet thumbnails,
+      UnmodifiableListView<String> keywords,
+      Engagement engagement,
+      bool isLive,
+      WatchPage? watchPage});
 
   $VideoIdCopyWith<$Res> get id;
   $ChannelIdCopyWith<$Res> get channelId;
@@ -79,7 +96,8 @@ abstract class $VideoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$VideoCopyWithImpl<$Res, $Val extends Video> implements $VideoCopyWith<$Res> {
+class _$VideoCopyWithImpl<$Res, $Val extends Video>
+    implements $VideoCopyWith<$Res> {
   _$VideoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -113,12 +131,14 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video> implements $VideoCopyWith<$R
       author: author is String ? author : _value.author,
       channelId: channelId is ChannelId ? channelId : _value.channelId,
       uploadDate: uploadDate is DateTime ? uploadDate : _value.uploadDate,
-      uploadDateRaw: uploadDateRaw is String ? uploadDateRaw : _value.uploadDateRaw,
+      uploadDateRaw:
+          uploadDateRaw is String ? uploadDateRaw : _value.uploadDateRaw,
       publishDate: publishDate is DateTime ? publishDate : _value.publishDate,
       description: description is String ? description : _value.description,
       duration: duration is Duration ? duration : _value.duration,
       thumbnails: thumbnails is ThumbnailSet ? thumbnails : _value.thumbnails,
-      keywords: keywords is UnmodifiableListView<String> ? keywords : _value.keywords,
+      keywords:
+          keywords is UnmodifiableListView<String> ? keywords : _value.keywords,
       engagement: engagement is Engagement ? engagement : _value.engagement,
       isLive: isLive is bool ? isLive : _value.isLive,
       watchPage: watchPage is WatchPage ? watchPage : _value.watchPage,
@@ -168,9 +188,25 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video> implements $VideoCopyWith<$R
 
 /// @nodoc
 abstract class _$$VideoImplCopyWith<$Res> implements $VideoCopyWith<$Res> {
-  factory _$$VideoImplCopyWith(_$VideoImpl value, $Res Function(_$VideoImpl) then) = __$$VideoImplCopyWithImpl<$Res>;
+  factory _$$VideoImplCopyWith(
+          _$VideoImpl value, $Res Function(_$VideoImpl) then) =
+      __$$VideoImplCopyWithImpl<$Res>;
   @override
-  $Res call({VideoId id, String title, String author, ChannelId channelId, DateTime? uploadDate, String? uploadDateRaw, DateTime? publishDate, String description, Duration? duration, ThumbnailSet thumbnails, UnmodifiableListView<String> keywords, Engagement engagement, bool isLive, WatchPage? watchPage});
+  $Res call(
+      {VideoId id,
+      String title,
+      String author,
+      ChannelId channelId,
+      DateTime? uploadDate,
+      String? uploadDateRaw,
+      DateTime? publishDate,
+      String description,
+      Duration? duration,
+      ThumbnailSet thumbnails,
+      UnmodifiableListView<String> keywords,
+      Engagement engagement,
+      bool isLive,
+      WatchPage? watchPage});
 
   @override
   $VideoIdCopyWith<$Res> get id;
@@ -183,8 +219,12 @@ abstract class _$$VideoImplCopyWith<$Res> implements $VideoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$VideoImplCopyWithImpl<$Res> extends _$VideoCopyWithImpl<$Res, _$VideoImpl> implements _$$VideoImplCopyWith<$Res> {
-  __$$VideoImplCopyWithImpl(_$VideoImpl _value, $Res Function(_$VideoImpl) _then) : super(_value, _then);
+class __$$VideoImplCopyWithImpl<$Res>
+    extends _$VideoCopyWithImpl<$Res, _$VideoImpl>
+    implements _$$VideoImplCopyWith<$Res> {
+  __$$VideoImplCopyWithImpl(
+      _$VideoImpl _value, $Res Function(_$VideoImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Video
   /// with the given fields replaced by the non-null parameter values.
@@ -228,7 +268,22 @@ class __$$VideoImplCopyWithImpl<$Res> extends _$VideoCopyWithImpl<$Res, _$VideoI
 /// @nodoc
 
 class _$VideoImpl extends _Video {
-  const _$VideoImpl(this.id, this.title, this.author, this.channelId, this.uploadDate, this.uploadDateRaw, this.publishDate, this.description, this.duration, this.thumbnails, this.keywords, this.engagement, this.isLive, [this.watchPage]) : super._();
+  const _$VideoImpl(
+      this.id,
+      this.title,
+      this.author,
+      this.channelId,
+      this.uploadDate,
+      this.uploadDateRaw,
+      this.publishDate,
+      this.description,
+      this.duration,
+      this.thumbnails,
+      this.keywords,
+      this.engagement,
+      this.isLive,
+      [this.watchPage])
+      : super._();
 
   /// Video ID.
   @override
@@ -295,22 +350,77 @@ class _$VideoImpl extends _Video {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$VideoImpl && (identical(other.id, id) || other.id == id) && (identical(other.title, title) || other.title == title) && (identical(other.author, author) || other.author == author) && (identical(other.channelId, channelId) || other.channelId == channelId) && (identical(other.uploadDate, uploadDate) || other.uploadDate == uploadDate) && (identical(other.uploadDateRaw, uploadDateRaw) || other.uploadDateRaw == uploadDateRaw) && (identical(other.publishDate, publishDate) || other.publishDate == publishDate) && (identical(other.description, description) || other.description == description) && (identical(other.duration, duration) || other.duration == duration) && (identical(other.thumbnails, thumbnails) || other.thumbnails == thumbnails) && const DeepCollectionEquality().equals(other.keywords, keywords) && (identical(other.engagement, engagement) || other.engagement == engagement) && (identical(other.isLive, isLive) || other.isLive == isLive) && (identical(other.watchPage, watchPage) || other.watchPage == watchPage));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VideoImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.author, author) || other.author == author) &&
+            (identical(other.channelId, channelId) ||
+                other.channelId == channelId) &&
+            (identical(other.uploadDate, uploadDate) ||
+                other.uploadDate == uploadDate) &&
+            (identical(other.uploadDateRaw, uploadDateRaw) ||
+                other.uploadDateRaw == uploadDateRaw) &&
+            (identical(other.publishDate, publishDate) ||
+                other.publishDate == publishDate) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.duration, duration) ||
+                other.duration == duration) &&
+            (identical(other.thumbnails, thumbnails) ||
+                other.thumbnails == thumbnails) &&
+            const DeepCollectionEquality().equals(other.keywords, keywords) &&
+            (identical(other.engagement, engagement) ||
+                other.engagement == engagement) &&
+            (identical(other.isLive, isLive) || other.isLive == isLive) &&
+            (identical(other.watchPage, watchPage) ||
+                other.watchPage == watchPage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, author, channelId, uploadDate, uploadDateRaw, publishDate, description, duration, thumbnails, const DeepCollectionEquality().hash(keywords), engagement, isLive, watchPage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      title,
+      author,
+      channelId,
+      uploadDate,
+      uploadDateRaw,
+      publishDate,
+      description,
+      duration,
+      thumbnails,
+      const DeepCollectionEquality().hash(keywords),
+      engagement,
+      isLive,
+      watchPage);
 
   /// Create a copy of Video
   /// with the given fields replaced by the non-null parameter values.
 
   @override
   @pragma('vm:prefer-inline')
-  _$$VideoImplCopyWith<_$VideoImpl> get copyWith => __$$VideoImplCopyWithImpl<_$VideoImpl>(this, _$identity);
+  _$$VideoImplCopyWith<_$VideoImpl> get copyWith =>
+      __$$VideoImplCopyWithImpl<_$VideoImpl>(this, _$identity);
 }
 
 abstract class _Video extends Video {
-  const factory _Video(final VideoId id, final String title, final String author, final ChannelId channelId, final DateTime? uploadDate, final String? uploadDateRaw, final DateTime? publishDate, final String description, final Duration? duration, final ThumbnailSet thumbnails, final UnmodifiableListView<String> keywords, final Engagement engagement, final bool isLive, [final WatchPage? watchPage]) = _$VideoImpl;
+  const factory _Video(
+      final VideoId id,
+      final String title,
+      final String author,
+      final ChannelId channelId,
+      final DateTime? uploadDate,
+      final String? uploadDateRaw,
+      final DateTime? publishDate,
+      final String description,
+      final Duration? duration,
+      final ThumbnailSet thumbnails,
+      final UnmodifiableListView<String> keywords,
+      final Engagement engagement,
+      final bool isLive,
+      [final WatchPage? watchPage]) = _$VideoImpl;
   const _Video._() : super._();
 
   /// Video ID.
@@ -374,5 +484,6 @@ abstract class _Video extends Video {
   /// Create a copy of Video
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$VideoImplCopyWith<_$VideoImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$VideoImplCopyWith<_$VideoImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

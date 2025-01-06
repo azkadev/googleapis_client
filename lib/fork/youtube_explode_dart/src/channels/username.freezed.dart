@@ -11,7 +11,8 @@ part of 'username.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Username {
@@ -21,18 +22,21 @@ mixin _$Username {
   /// Create a copy of Username
   /// with the given fields replaced by the non-null parameter values.
 
-  $UsernameCopyWith<Username> get copyWith => throw _privateConstructorUsedError;
+  $UsernameCopyWith<Username> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UsernameCopyWith<$Res> {
-  factory $UsernameCopyWith(Username value, $Res Function(Username) then) = _$UsernameCopyWithImpl<$Res, Username>;
+  factory $UsernameCopyWith(Username value, $Res Function(Username) then) =
+      _$UsernameCopyWithImpl<$Res, Username>;
 
   $Res call({String value});
 }
 
 /// @nodoc
-class _$UsernameCopyWithImpl<$Res, $Val extends Username> implements $UsernameCopyWith<$Res> {
+class _$UsernameCopyWithImpl<$Res, $Val extends Username>
+    implements $UsernameCopyWith<$Res> {
   _$UsernameCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -54,15 +58,22 @@ class _$UsernameCopyWithImpl<$Res, $Val extends Username> implements $UsernameCo
 }
 
 /// @nodoc
-abstract class _$$UsernameImplCopyWith<$Res> implements $UsernameCopyWith<$Res> {
-  factory _$$UsernameImplCopyWith(_$UsernameImpl value, $Res Function(_$UsernameImpl) then) = __$$UsernameImplCopyWithImpl<$Res>;
+abstract class _$$UsernameImplCopyWith<$Res>
+    implements $UsernameCopyWith<$Res> {
+  factory _$$UsernameImplCopyWith(
+          _$UsernameImpl value, $Res Function(_$UsernameImpl) then) =
+      __$$UsernameImplCopyWithImpl<$Res>;
   @override
   $Res call({String value});
 }
 
 /// @nodoc
-class __$$UsernameImplCopyWithImpl<$Res> extends _$UsernameCopyWithImpl<$Res, _$UsernameImpl> implements _$$UsernameImplCopyWith<$Res> {
-  __$$UsernameImplCopyWithImpl(_$UsernameImpl _value, $Res Function(_$UsernameImpl) _then) : super(_value, _then);
+class __$$UsernameImplCopyWithImpl<$Res>
+    extends _$UsernameCopyWithImpl<$Res, _$UsernameImpl>
+    implements _$$UsernameImplCopyWith<$Res> {
+  __$$UsernameImplCopyWithImpl(
+      _$UsernameImpl _value, $Res Function(_$UsernameImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Username
   /// with the given fields replaced by the non-null parameter values.
@@ -93,7 +104,10 @@ class _$UsernameImpl implements _Username {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$UsernameImpl && (identical(other.value, value) || other.value == value));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UsernameImpl &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
@@ -104,7 +118,8 @@ class _$UsernameImpl implements _Username {
 
   @override
   @pragma('vm:prefer-inline')
-  _$$UsernameImplCopyWith<_$UsernameImpl> get copyWith => __$$UsernameImplCopyWithImpl<_$UsernameImpl>(this, _$identity);
+  _$$UsernameImplCopyWith<_$UsernameImpl> get copyWith =>
+      __$$UsernameImplCopyWithImpl<_$UsernameImpl>(this, _$identity);
 }
 
 abstract class _Username implements Username {
@@ -117,5 +132,6 @@ abstract class _Username implements Username {
   /// Create a copy of Username
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$UsernameImplCopyWith<_$UsernameImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$UsernameImplCopyWith<_$UsernameImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

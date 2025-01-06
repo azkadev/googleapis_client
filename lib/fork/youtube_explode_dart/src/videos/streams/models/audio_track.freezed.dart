@@ -11,7 +11,8 @@ part of 'audio_track.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 AudioTrack _$AudioTrackFromJson(Map<String, dynamic> json) {
   return _AudioTrack.fromJson(json);
@@ -29,18 +30,22 @@ mixin _$AudioTrack {
   /// Create a copy of AudioTrack
   /// with the given fields replaced by the non-null parameter values.
 
-  $AudioTrackCopyWith<AudioTrack> get copyWith => throw _privateConstructorUsedError;
+  $AudioTrackCopyWith<AudioTrack> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AudioTrackCopyWith<$Res> {
-  factory $AudioTrackCopyWith(AudioTrack value, $Res Function(AudioTrack) then) = _$AudioTrackCopyWithImpl<$Res, AudioTrack>;
+  factory $AudioTrackCopyWith(
+          AudioTrack value, $Res Function(AudioTrack) then) =
+      _$AudioTrackCopyWithImpl<$Res, AudioTrack>;
 
   $Res call({String displayName, String id, bool audioIsDefault});
 }
 
 /// @nodoc
-class _$AudioTrackCopyWithImpl<$Res, $Val extends AudioTrack> implements $AudioTrackCopyWith<$Res> {
+class _$AudioTrackCopyWithImpl<$Res, $Val extends AudioTrack>
+    implements $AudioTrackCopyWith<$Res> {
   _$AudioTrackCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -60,21 +65,29 @@ class _$AudioTrackCopyWithImpl<$Res, $Val extends AudioTrack> implements $AudioT
     return _then(_value.copyWith(
       displayName: displayName is String ? displayName : _value.displayName,
       id: id is String ? id : _value.id,
-      audioIsDefault: audioIsDefault is bool ? audioIsDefault : _value.audioIsDefault,
+      audioIsDefault:
+          audioIsDefault is bool ? audioIsDefault : _value.audioIsDefault,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$AudioTrackImplCopyWith<$Res> implements $AudioTrackCopyWith<$Res> {
-  factory _$$AudioTrackImplCopyWith(_$AudioTrackImpl value, $Res Function(_$AudioTrackImpl) then) = __$$AudioTrackImplCopyWithImpl<$Res>;
+abstract class _$$AudioTrackImplCopyWith<$Res>
+    implements $AudioTrackCopyWith<$Res> {
+  factory _$$AudioTrackImplCopyWith(
+          _$AudioTrackImpl value, $Res Function(_$AudioTrackImpl) then) =
+      __$$AudioTrackImplCopyWithImpl<$Res>;
   @override
   $Res call({String displayName, String id, bool audioIsDefault});
 }
 
 /// @nodoc
-class __$$AudioTrackImplCopyWithImpl<$Res> extends _$AudioTrackCopyWithImpl<$Res, _$AudioTrackImpl> implements _$$AudioTrackImplCopyWith<$Res> {
-  __$$AudioTrackImplCopyWithImpl(_$AudioTrackImpl _value, $Res Function(_$AudioTrackImpl) _then) : super(_value, _then);
+class __$$AudioTrackImplCopyWithImpl<$Res>
+    extends _$AudioTrackCopyWithImpl<$Res, _$AudioTrackImpl>
+    implements _$$AudioTrackImplCopyWith<$Res> {
+  __$$AudioTrackImplCopyWithImpl(
+      _$AudioTrackImpl _value, $Res Function(_$AudioTrackImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of AudioTrack
   /// with the given fields replaced by the non-null parameter values.
@@ -88,7 +101,8 @@ class __$$AudioTrackImplCopyWithImpl<$Res> extends _$AudioTrackCopyWithImpl<$Res
     return _then(_$AudioTrackImpl(
       displayName: displayName is String ? displayName : _value.displayName,
       id: id is String ? id : _value.id,
-      audioIsDefault: audioIsDefault is bool ? audioIsDefault : _value.audioIsDefault,
+      audioIsDefault:
+          audioIsDefault is bool ? audioIsDefault : _value.audioIsDefault,
     ));
   }
 }
@@ -96,9 +110,13 @@ class __$$AudioTrackImplCopyWithImpl<$Res> extends _$AudioTrackCopyWithImpl<$Res
 /// @nodoc
 
 class _$AudioTrackImpl implements _AudioTrack {
-  const _$AudioTrackImpl({required this.displayName, required this.id, required this.audioIsDefault});
+  const _$AudioTrackImpl(
+      {required this.displayName,
+      required this.id,
+      required this.audioIsDefault});
 
-  factory _$AudioTrackImpl.fromJson(Map<String, dynamic> json) => _$$AudioTrackImplFromJson(json);
+  factory _$AudioTrackImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AudioTrackImplFromJson(json);
 
   @override
   final String displayName;
@@ -114,7 +132,14 @@ class _$AudioTrackImpl implements _AudioTrack {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$AudioTrackImpl && (identical(other.displayName, displayName) || other.displayName == displayName) && (identical(other.id, id) || other.id == id) && (identical(other.audioIsDefault, audioIsDefault) || other.audioIsDefault == audioIsDefault));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AudioTrackImpl &&
+            (identical(other.displayName, displayName) ||
+                other.displayName == displayName) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.audioIsDefault, audioIsDefault) ||
+                other.audioIsDefault == audioIsDefault));
   }
 
   @override
@@ -125,7 +150,8 @@ class _$AudioTrackImpl implements _AudioTrack {
 
   @override
   @pragma('vm:prefer-inline')
-  _$$AudioTrackImplCopyWith<_$AudioTrackImpl> get copyWith => __$$AudioTrackImplCopyWithImpl<_$AudioTrackImpl>(this, _$identity);
+  _$$AudioTrackImplCopyWith<_$AudioTrackImpl> get copyWith =>
+      __$$AudioTrackImplCopyWithImpl<_$AudioTrackImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -136,9 +162,13 @@ class _$AudioTrackImpl implements _AudioTrack {
 }
 
 abstract class _AudioTrack implements AudioTrack {
-  const factory _AudioTrack({required final String displayName, required final String id, required final bool audioIsDefault}) = _$AudioTrackImpl;
+  const factory _AudioTrack(
+      {required final String displayName,
+      required final String id,
+      required final bool audioIsDefault}) = _$AudioTrackImpl;
 
-  factory _AudioTrack.fromJson(Map<String, dynamic> json) = _$AudioTrackImpl.fromJson;
+  factory _AudioTrack.fromJson(Map<String, dynamic> json) =
+      _$AudioTrackImpl.fromJson;
 
   @override
   String get displayName;
@@ -150,5 +180,6 @@ abstract class _AudioTrack implements AudioTrack {
   /// Create a copy of AudioTrack
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$AudioTrackImplCopyWith<_$AudioTrackImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$AudioTrackImplCopyWith<_$AudioTrackImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

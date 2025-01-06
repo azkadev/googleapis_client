@@ -1,4 +1,3 @@
-
 import '../../extensions/helpers_extension.dart';
 
 abstract class InitialData {

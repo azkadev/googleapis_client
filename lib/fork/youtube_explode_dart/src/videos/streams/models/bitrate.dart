@@ -20,7 +20,8 @@ class Bitrate with _$Bitrate implements Comparable<Bitrate> {
     int bitsPerSecond,
   ) = _Bitrate;
 
-  factory Bitrate.fromJson(Map<String, dynamic> json) => _$BitrateFromJson(json);
+  factory Bitrate.fromJson(Map<String, dynamic> json) =>
+      _$BitrateFromJson(json);
 
   const Bitrate._();
 
@@ -56,5 +57,6 @@ class Bitrate with _$Bitrate implements Comparable<Bitrate> {
   }
 
   @override
-  String toString() => '${_getLargestValue().toStringAsFixed(2)} ${_getLargestSymbol()}';
+  String toString() =>
+      '${_getLargestValue().toStringAsFixed(2)} ${_getLargestSymbol()}';
 }

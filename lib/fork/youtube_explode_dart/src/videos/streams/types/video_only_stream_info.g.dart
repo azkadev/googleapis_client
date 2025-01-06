@@ -8,7 +8,8 @@ part of 'video_only_stream_info.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-VideoOnlyStreamInfo _$VideoOnlyStreamInfoFromJson(Map<String, dynamic> json) => VideoOnlyStreamInfo(
+VideoOnlyStreamInfo _$VideoOnlyStreamInfoFromJson(Map<String, dynamic> json) =>
+    VideoOnlyStreamInfo(
       VideoId.fromJson(json['videoId'] as Map<String, dynamic>),
       (json['tag'] as num).toInt(),
       Uri.parse(json['url'] as String),
@@ -20,11 +21,15 @@ VideoOnlyStreamInfo _$VideoOnlyStreamInfoFromJson(Map<String, dynamic> json) => 
       _getVidaosa(data: json['videoQuality']),
       VideoResolution.fromJson(json['videoResolution'] as Map<String, dynamic>),
       Framerate.fromJson(json['framerate'] as Map<String, dynamic>),
-      (json['fragments'] as List<dynamic>).map((e) => Fragment.fromJson(e as Map<String, dynamic>)).toList(),
+      (json['fragments'] as List<dynamic>)
+          .map((e) => Fragment.fromJson(e as Map<String, dynamic>))
+          .toList(),
       mediaTypeFromJson(json['codec'] as String),
     );
 
-Map<String, dynamic> _$VideoOnlyStreamInfoToJson(VideoOnlyStreamInfo instance) => <String, dynamic>{
+Map<String, dynamic> _$VideoOnlyStreamInfoToJson(
+        VideoOnlyStreamInfo instance) =>
+    <String, dynamic>{
       'videoId': instance.videoId,
       'tag': instance.tag,
       'url': instance.url.toString(),

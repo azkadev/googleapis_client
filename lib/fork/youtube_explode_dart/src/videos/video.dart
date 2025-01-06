@@ -136,7 +136,7 @@ class Video with _$Video {
     bool isLive, [
     /// Used internally.
     /// Shouldn't be used in the code.
-     WatchPage? watchPage,
+    WatchPage? watchPage,
   ]) = _Video;
 
   const Video._();

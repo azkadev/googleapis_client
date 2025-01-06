@@ -12,7 +12,8 @@ class Framerate with _$Framerate implements Comparable<Framerate> {
 
   const Framerate._();
 
-  factory Framerate.fromJson(Map<String, dynamic> json) => _$FramerateFromJson(json);
+  factory Framerate.fromJson(Map<String, dynamic> json) =>
+      _$FramerateFromJson(json);
 
   ///
   bool operator >(Framerate other) => framesPerSecond > other.framesPerSecond;
@@ -24,5 +25,6 @@ class Framerate with _$Framerate implements Comparable<Framerate> {
   String toString() => '${framesPerSecond}fps';
 
   @override
-  int compareTo(Framerate other) => framesPerSecond.compareTo(other.framesPerSecond);
+  int compareTo(Framerate other) =>
+      framesPerSecond.compareTo(other.framesPerSecond);
 }

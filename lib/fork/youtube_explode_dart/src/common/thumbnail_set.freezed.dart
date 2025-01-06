@@ -11,7 +11,8 @@ part of 'thumbnail_set.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ThumbnailSet {
@@ -21,18 +22,22 @@ mixin _$ThumbnailSet {
   /// Create a copy of ThumbnailSet
   /// with the given fields replaced by the non-null parameter values.
 
-  $ThumbnailSetCopyWith<ThumbnailSet> get copyWith => throw _privateConstructorUsedError;
+  $ThumbnailSetCopyWith<ThumbnailSet> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ThumbnailSetCopyWith<$Res> {
-  factory $ThumbnailSetCopyWith(ThumbnailSet value, $Res Function(ThumbnailSet) then) = _$ThumbnailSetCopyWithImpl<$Res, ThumbnailSet>;
+  factory $ThumbnailSetCopyWith(
+          ThumbnailSet value, $Res Function(ThumbnailSet) then) =
+      _$ThumbnailSetCopyWithImpl<$Res, ThumbnailSet>;
 
   $Res call({String videoId});
 }
 
 /// @nodoc
-class _$ThumbnailSetCopyWithImpl<$Res, $Val extends ThumbnailSet> implements $ThumbnailSetCopyWith<$Res> {
+class _$ThumbnailSetCopyWithImpl<$Res, $Val extends ThumbnailSet>
+    implements $ThumbnailSetCopyWith<$Res> {
   _$ThumbnailSetCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -48,21 +53,28 @@ class _$ThumbnailSetCopyWithImpl<$Res, $Val extends ThumbnailSet> implements $Th
     Object? videoId = null,
   }) {
     return _then(_value.copyWith(
-      videoId: videoId is String?videoId : _value.videoId ,
+      videoId: videoId is String ? videoId : _value.videoId,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$ThumbnailSetImplCopyWith<$Res> implements $ThumbnailSetCopyWith<$Res> {
-  factory _$$ThumbnailSetImplCopyWith(_$ThumbnailSetImpl value, $Res Function(_$ThumbnailSetImpl) then) = __$$ThumbnailSetImplCopyWithImpl<$Res>;
+abstract class _$$ThumbnailSetImplCopyWith<$Res>
+    implements $ThumbnailSetCopyWith<$Res> {
+  factory _$$ThumbnailSetImplCopyWith(
+          _$ThumbnailSetImpl value, $Res Function(_$ThumbnailSetImpl) then) =
+      __$$ThumbnailSetImplCopyWithImpl<$Res>;
   @override
   $Res call({String videoId});
 }
 
 /// @nodoc
-class __$$ThumbnailSetImplCopyWithImpl<$Res> extends _$ThumbnailSetCopyWithImpl<$Res, _$ThumbnailSetImpl> implements _$$ThumbnailSetImplCopyWith<$Res> {
-  __$$ThumbnailSetImplCopyWithImpl(_$ThumbnailSetImpl _value, $Res Function(_$ThumbnailSetImpl) _then) : super(_value, _then);
+class __$$ThumbnailSetImplCopyWithImpl<$Res>
+    extends _$ThumbnailSetCopyWithImpl<$Res, _$ThumbnailSetImpl>
+    implements _$$ThumbnailSetImplCopyWith<$Res> {
+  __$$ThumbnailSetImplCopyWithImpl(
+      _$ThumbnailSetImpl _value, $Res Function(_$ThumbnailSetImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of ThumbnailSet
   /// with the given fields replaced by the non-null parameter values.
@@ -72,7 +84,7 @@ class __$$ThumbnailSetImplCopyWithImpl<$Res> extends _$ThumbnailSetCopyWithImpl<
     Object? videoId = null,
   }) {
     return _then(_$ThumbnailSetImpl(
-       videoId is String?videoId : _value.videoId,
+      videoId is String ? videoId : _value.videoId,
     ));
   }
 }
@@ -93,7 +105,10 @@ class _$ThumbnailSetImpl extends _ThumbnailSet {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ThumbnailSetImpl && (identical(other.videoId, videoId) || other.videoId == videoId));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ThumbnailSetImpl &&
+            (identical(other.videoId, videoId) || other.videoId == videoId));
   }
 
   @override
@@ -104,7 +119,8 @@ class _$ThumbnailSetImpl extends _ThumbnailSet {
 
   @override
   @pragma('vm:prefer-inline')
-  _$$ThumbnailSetImplCopyWith<_$ThumbnailSetImpl> get copyWith => __$$ThumbnailSetImplCopyWithImpl<_$ThumbnailSetImpl>(this, _$identity);
+  _$$ThumbnailSetImplCopyWith<_$ThumbnailSetImpl> get copyWith =>
+      __$$ThumbnailSetImplCopyWithImpl<_$ThumbnailSetImpl>(this, _$identity);
 }
 
 abstract class _ThumbnailSet extends ThumbnailSet {
@@ -118,5 +134,6 @@ abstract class _ThumbnailSet extends ThumbnailSet {
   /// Create a copy of ThumbnailSet
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$ThumbnailSetImplCopyWith<_$ThumbnailSetImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$ThumbnailSetImplCopyWith<_$ThumbnailSetImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

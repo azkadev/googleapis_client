@@ -33,9 +33,11 @@ class DashManifest {
   }
 
   ///
-  static String? getSignatureFromUrl(String url) => _urlSignatureExp.firstMatch(url)?.group(1);
+  static String? getSignatureFromUrl(String url) =>
+      _urlSignatureExp.firstMatch(url)?.group(1);
 
-  bool _isDrmProtected(xml.XmlElement element) => element.findElements('ContentProtection').isNotEmpty;
+  bool _isDrmProtected(xml.XmlElement element) =>
+      element.findElements('ContentProtection').isNotEmpty;
 
   _SegmentTimeline? extractSegmentTimeline(xml.XmlElement source) {
     final segmentTimeline = source.getElement('SegmentTimeline');
@@ -59,8 +61,10 @@ class DashManifest {
 
     final segmentList = element.getElement('SegmentList');
     if (segmentList != null) {
-      msInfo.segmentTimeline = extractSegmentTimeline(segmentList) ?? msParentInfo.segmentTimeline;
-      msInfo.initializationUrl = segmentList.getElement('Initialization')?.getAttribute('sourceURL');
+      msInfo.segmentTimeline =
+          extractSegmentTimeline(segmentList) ?? msParentInfo.segmentTimeline;
+      msInfo.initializationUrl =
+          segmentList.getElement('Initialization')?.getAttribute('sourceURL');
 
       final segmentUrlsSE = segmentList.findAllElements('SegmentURL');
       if (segmentUrlsSE.isNotEmpty) {
@@ -111,8 +115,10 @@ class DashManifest {
         if (_isDrmProtected(adaptionSet)) {
           continue;
         }
-        final adaptionSetMsInfo = extractMultiSegmentInfo(adaptionSet, periodMsInfo);
-        for (final representation in adaptionSet.findAllElements('Representation')) {
+        final adaptionSetMsInfo =
+            extractMultiSegmentInfo(adaptionSet, periodMsInfo);
+        for (final representation
+            in adaptionSet.findAllElements('Representation')) {
           if (_isDrmProtected(representation)) {
             continue;
           }
@@ -142,20 +148,25 @@ class DashManifest {
                 .trim();
 
             if (baseUrl == null || !baseUrl.startsWith('http')) {
-              throw UnimplementedError('This kind of DASH Stream is not yet implemented. '
+              throw UnimplementedError(
+                  'This kind of DASH Stream is not yet implemented. '
                   'Please open a new issue on this project GitHub.');
             }
 
-            final representationMsInfo = extractMultiSegmentInfo(representation, adaptionSetMsInfo);
+            final representationMsInfo =
+                extractMultiSegmentInfo(representation, adaptionSetMsInfo);
 
-            if (representationMsInfo.segmentUrls != null && representationMsInfo.segmentTimeline != null) {
+            if (representationMsInfo.segmentUrls != null &&
+                representationMsInfo.segmentTimeline != null) {
               final fragments = <Fragment>[];
               var segmentIndex = 0;
               for (final s in representationMsInfo.segmentTimeline!.segments) {
                 for (var i = 0; i < (s.r + 1); i++) {
-                  final segmentUri = representationMsInfo.segmentUrls![segmentIndex];
+                  final segmentUri =
+                      representationMsInfo.segmentUrls![segmentIndex];
                   if (segmentUri.contains(RegExp('^https?://'))) {
-                    throw UnimplementedError('This kind of DASH Stream is not yet implemented. '
+                    throw UnimplementedError(
+                        'This kind of DASH Stream is not yet implemented. '
                         'Please open a new issue on this project GitHub.');
                   }
                   fragments.add(Fragment(segmentUri));
@@ -166,7 +177,9 @@ class DashManifest {
             }
 
             final fragments = <Fragment>[
-              if (representationMsInfo.fragments != null && representationMsInfo.initializationUrl != null) Fragment(representationMsInfo.initializationUrl!),
+              if (representationMsInfo.fragments != null &&
+                  representationMsInfo.initializationUrl != null)
+                Fragment(representationMsInfo.initializationUrl!),
               ...?representationMsInfo.fragments,
             ];
 

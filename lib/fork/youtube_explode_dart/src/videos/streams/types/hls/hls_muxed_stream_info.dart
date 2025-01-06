@@ -12,7 +12,8 @@ part 'hls_muxed_stream_info.g.dart';
 /// YouTube media stream that contains both audio and video, in HLS format.
 /// This is not directly downloadable but returns a file with a list of the video fragments urls.
 
-class HlsMuxedStreamInfo with StreamInfo, AudioStreamInfo, VideoStreamInfo, HlsStreamInfo {
+class HlsMuxedStreamInfo
+    with StreamInfo, AudioStreamInfo, VideoStreamInfo, HlsStreamInfo {
   @override
   final VideoId videoId;
 
@@ -88,9 +89,11 @@ class HlsMuxedStreamInfo with StreamInfo, AudioStreamInfo, VideoStreamInfo, HlsS
   );
 
   @override
-  String toString() => '[HLS] Muxed ($tag | ${videoResolution}p${framerate.framesPerSecond} | $container)';
+  String toString() =>
+      '[HLS] Muxed ($tag | ${videoResolution}p${framerate.framesPerSecond} | $container)';
 
-  factory HlsMuxedStreamInfo.fromJson(Map<String, dynamic> json) => _$HlsMuxedStreamInfoFromJson(json);
+  factory HlsMuxedStreamInfo.fromJson(Map<String, dynamic> json) =>
+      _$HlsMuxedStreamInfoFromJson(json);
 
   @override
   Map<String, dynamic> toJson() => _$HlsMuxedStreamInfoToJson(this);

@@ -16,7 +16,10 @@ abstract class YoutubePage<T extends InitialData> {
   final T Function(JsonMap)? initialDataBuilder;
 
   T _getInitialData() {
-    final scriptText = root!.querySelectorAll('script').map((e) => e.text).toList(growable: false);
+    final scriptText = root!
+        .querySelectorAll('script')
+        .map((e) => e.text)
+        .toList(growable: false);
     return scriptText.extractGenericData(
       ['var ytInitialData = ', 'window["ytInitialData"] ='],
       initialDataBuilder!,

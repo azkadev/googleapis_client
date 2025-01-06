@@ -68,9 +68,11 @@ class VideoOnlyStreamInfo with StreamInfo, VideoStreamInfo {
   );
 
   @override
-  String toString() => 'Video-only ($tag | ${videoResolution}p${framerate.framesPerSecond} | $container)';
+  String toString() =>
+      'Video-only ($tag | ${videoResolution}p${framerate.framesPerSecond} | $container)';
 
-  factory VideoOnlyStreamInfo.fromJson(Map<String, dynamic> json) => _$VideoOnlyStreamInfoFromJson(json);
+  factory VideoOnlyStreamInfo.fromJson(Map<String, dynamic> json) =>
+      _$VideoOnlyStreamInfoFromJson(json);
 
   @override
   Map<String, dynamic> toJson() => _$VideoOnlyStreamInfoToJson(this);

@@ -11,7 +11,8 @@ part of 'playlist.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Playlist {
@@ -41,14 +42,23 @@ mixin _$Playlist {
   /// Create a copy of Playlist
   /// with the given fields replaced by the non-null parameter values.
 
-  $PlaylistCopyWith<Playlist> get copyWith => throw _privateConstructorUsedError;
+  $PlaylistCopyWith<Playlist> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PlaylistCopyWith<$Res> {
-  factory $PlaylistCopyWith(Playlist value, $Res Function(Playlist) then) = _$PlaylistCopyWithImpl<$Res, Playlist>;
+  factory $PlaylistCopyWith(Playlist value, $Res Function(Playlist) then) =
+      _$PlaylistCopyWithImpl<$Res, Playlist>;
 
-  $Res call({PlaylistId id, String title, String author, String description, ThumbnailSet thumbnails, Engagement engagement, int? videoCount});
+  $Res call(
+      {PlaylistId id,
+      String title,
+      String author,
+      String description,
+      ThumbnailSet thumbnails,
+      Engagement engagement,
+      int? videoCount});
 
   $PlaylistIdCopyWith<$Res> get id;
   $ThumbnailSetCopyWith<$Res> get thumbnails;
@@ -56,7 +66,8 @@ abstract class $PlaylistCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PlaylistCopyWithImpl<$Res, $Val extends Playlist> implements $PlaylistCopyWith<$Res> {
+class _$PlaylistCopyWithImpl<$Res, $Val extends Playlist>
+    implements $PlaylistCopyWith<$Res> {
   _$PlaylistCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -120,10 +131,20 @@ class _$PlaylistCopyWithImpl<$Res, $Val extends Playlist> implements $PlaylistCo
 }
 
 /// @nodoc
-abstract class _$$PlaylistImplCopyWith<$Res> implements $PlaylistCopyWith<$Res> {
-  factory _$$PlaylistImplCopyWith(_$PlaylistImpl value, $Res Function(_$PlaylistImpl) then) = __$$PlaylistImplCopyWithImpl<$Res>;
+abstract class _$$PlaylistImplCopyWith<$Res>
+    implements $PlaylistCopyWith<$Res> {
+  factory _$$PlaylistImplCopyWith(
+          _$PlaylistImpl value, $Res Function(_$PlaylistImpl) then) =
+      __$$PlaylistImplCopyWithImpl<$Res>;
   @override
-  $Res call({PlaylistId id, String title, String author, String description, ThumbnailSet thumbnails, Engagement engagement, int? videoCount});
+  $Res call(
+      {PlaylistId id,
+      String title,
+      String author,
+      String description,
+      ThumbnailSet thumbnails,
+      Engagement engagement,
+      int? videoCount});
 
   @override
   $PlaylistIdCopyWith<$Res> get id;
@@ -134,8 +155,12 @@ abstract class _$$PlaylistImplCopyWith<$Res> implements $PlaylistCopyWith<$Res> 
 }
 
 /// @nodoc
-class __$$PlaylistImplCopyWithImpl<$Res> extends _$PlaylistCopyWithImpl<$Res, _$PlaylistImpl> implements _$$PlaylistImplCopyWith<$Res> {
-  __$$PlaylistImplCopyWithImpl(_$PlaylistImpl _value, $Res Function(_$PlaylistImpl) _then) : super(_value, _then);
+class __$$PlaylistImplCopyWithImpl<$Res>
+    extends _$PlaylistCopyWithImpl<$Res, _$PlaylistImpl>
+    implements _$$PlaylistImplCopyWith<$Res> {
+  __$$PlaylistImplCopyWithImpl(
+      _$PlaylistImpl _value, $Res Function(_$PlaylistImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Playlist
   /// with the given fields replaced by the non-null parameter values.
@@ -165,7 +190,9 @@ class __$$PlaylistImplCopyWithImpl<$Res> extends _$PlaylistCopyWithImpl<$Res, _$
 /// @nodoc
 
 class _$PlaylistImpl extends _Playlist {
-  const _$PlaylistImpl(this.id, this.title, this.author, this.description, this.thumbnails, this.engagement, this.videoCount) : super._();
+  const _$PlaylistImpl(this.id, this.title, this.author, this.description,
+      this.thumbnails, this.engagement, this.videoCount)
+      : super._();
 
   /// Playlist ID.
   @override
@@ -204,22 +231,44 @@ class _$PlaylistImpl extends _Playlist {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$PlaylistImpl && (identical(other.id, id) || other.id == id) && (identical(other.title, title) || other.title == title) && (identical(other.author, author) || other.author == author) && (identical(other.description, description) || other.description == description) && (identical(other.thumbnails, thumbnails) || other.thumbnails == thumbnails) && (identical(other.engagement, engagement) || other.engagement == engagement) && (identical(other.videoCount, videoCount) || other.videoCount == videoCount));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PlaylistImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.author, author) || other.author == author) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.thumbnails, thumbnails) ||
+                other.thumbnails == thumbnails) &&
+            (identical(other.engagement, engagement) ||
+                other.engagement == engagement) &&
+            (identical(other.videoCount, videoCount) ||
+                other.videoCount == videoCount));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, author, description, thumbnails, engagement, videoCount);
+  int get hashCode => Object.hash(runtimeType, id, title, author, description,
+      thumbnails, engagement, videoCount);
 
   /// Create a copy of Playlist
   /// with the given fields replaced by the non-null parameter values.
 
   @override
   @pragma('vm:prefer-inline')
-  _$$PlaylistImplCopyWith<_$PlaylistImpl> get copyWith => __$$PlaylistImplCopyWithImpl<_$PlaylistImpl>(this, _$identity);
+  _$$PlaylistImplCopyWith<_$PlaylistImpl> get copyWith =>
+      __$$PlaylistImplCopyWithImpl<_$PlaylistImpl>(this, _$identity);
 }
 
 abstract class _Playlist extends Playlist {
-  const factory _Playlist(final PlaylistId id, final String title, final String author, final String description, final ThumbnailSet thumbnails, final Engagement engagement, final int? videoCount) = _$PlaylistImpl;
+  const factory _Playlist(
+      final PlaylistId id,
+      final String title,
+      final String author,
+      final String description,
+      final ThumbnailSet thumbnails,
+      final Engagement engagement,
+      final int? videoCount) = _$PlaylistImpl;
   const _Playlist._() : super._();
 
   /// Playlist ID.
@@ -255,5 +304,6 @@ abstract class _Playlist extends Playlist {
   /// Create a copy of Playlist
   /// with the given fields replaced by the non-null parameter values.
   @override
-  _$$PlaylistImplCopyWith<_$PlaylistImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$PlaylistImplCopyWith<_$PlaylistImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

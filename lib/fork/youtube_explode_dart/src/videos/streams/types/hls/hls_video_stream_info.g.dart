@@ -18,7 +18,7 @@ HlsVideoStreamInfo _$HlsVideoStreamInfoFromJson(Map<String, dynamic> json) =>
       Bitrate.fromJson(json['bitrate'] as Map<String, dynamic>),
       json['videoCodec'] as String,
       json['qualityLabel'] as String,
-      _getVidaosa(data:json['videoQuality']),
+      _getVidaosa(data: json['videoQuality']),
       VideoResolution.fromJson(json['videoResolution'] as Map<String, dynamic>),
       Framerate.fromJson(json['framerate'] as Map<String, dynamic>),
       mediaTypeFromJson(json['codec'] as String),
@@ -56,7 +56,6 @@ const _$VideoQualityEnumMap = {
   VideoQuality.high3072: 'high3072',
   VideoQuality.high4320: 'high4320',
 };
-
 
 VideoQuality _getVidaosa({
   required dynamic data,

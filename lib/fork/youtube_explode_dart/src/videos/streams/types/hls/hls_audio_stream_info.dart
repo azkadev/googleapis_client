@@ -65,7 +65,8 @@ class HlsAudioStreamInfo with StreamInfo, AudioStreamInfo, HlsStreamInfo {
   @override
   String toString() => '[HLS] Audio-only ($tag | $container)';
 
-  factory HlsAudioStreamInfo.fromJson(Map<String, dynamic> json) => _$HlsAudioStreamInfoFromJson(json);
+  factory HlsAudioStreamInfo.fromJson(Map<String, dynamic> json) =>
+      _$HlsAudioStreamInfoFromJson(json);
 
   @override
   Map<String, dynamic> toJson() => _$HlsAudioStreamInfoToJson(this);
