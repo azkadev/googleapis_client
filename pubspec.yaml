@@ -1,0 +1,36 @@
+name: 'googleapis_client'
+description: 'A library googleapis_client for interact with google apis more easy.'
+version: '0.0.24'
+repository: 'https://github.com/azkadev/googleapis_client.git'
+issue_tracker: 'https://github.com/azkadev/azkadev.git'
+homepage: 'https://youtube.com/@azkadev'
+environment:
+  sdk: '>=3.6.0 <4.0.0'
+
+false_secrets:
+  - 'lib/fork/youtube_explode_dart/src/reverse_engineering/youtube_http_client.dart'
+  - 'lib/fork/youtube_explode_dart/src/videos/video_controller.dart'
+  - 'lib/fork/youtube_explode_dart/src/videos/youtube_api_client.dart'
+dependencies:
+  path: '^1.9.0'
+  googleapis: '^13.2.0'
+  googleapis_auth: '^1.6.0'
+  http: '^1.2.2'
+  # youtube_explode_dart: '^2.3.0+1'
+  general_lib: '^0.0.54'
+  collection: '^1.19.0'
+  html: '^0.15.0' 
+  http_parser: '^4.0.0' 
+  meta: '>=1.11.0 <=1.16.0'
+  xml: '^6.1.0'
+  logging: '^1.2.0'
+  unicode: '^0.3.1' 
+dev_dependencies:
+  lints: '^5.0.0'
+dependency_overrides:
+  pointycastle: '3.8.0'
+  mime: '^2.0.0'
+funding:
+  - 'https://github.com/sponsors/azkadev'
+  - 'https://github.com/sponsors/generalfoss'
+documentation: 'https://youtube.com/@azkadev'
