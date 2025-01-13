@@ -16,8 +16,7 @@ final yt = YoutubeExplode();
 //   output.mp4
 
 Future<void> main() async {
-  final url =
-      "https://www.youtube.com/watch?v=weOGj4Ngahs&list=PLP0zAgTBT330oyPU3o7zJiFhZ8aK_oxVk&index=7";
+  final url = "https://www.youtube.com/watch?v=_qDML_BCju8";
 
   final Directory directory =
       Directory(path.join(Directory.current.path, "youtube-downloader-temp"));
