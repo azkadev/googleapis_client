@@ -41,7 +41,8 @@ import 'dart:io';
 
 import 'package:googleapis_client/fork/youtube_explode_dart/youtube_explode_dart.dart';
 import 'package:googleapis_client/utils/utils.dart';
-import "package:googleapis_client/scheme/scheme.dart" as googleapis_client_scheme;
+import "package:googleapis_client/scheme/scheme.dart"
+    as googleapis_client_scheme;
 import "package:path/path.dart" as path;
 
 class YoutubeNoAuth {
@@ -51,20 +52,23 @@ class YoutubeNoAuth {
   Future<googleapis_client_scheme.YoutubeChannel> getChannel({
     required String channel,
   }) async {
-    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText = GoogleApisClientUtils.parseTextToYoutube(text: channel);
+    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText =
+        GoogleApisClientUtils.parseTextToYoutube(text: channel);
     if (youtubeSchemaText["@type"] == "error") {
       return googleapis_client_scheme.YoutubeChannel(youtubeSchemaText.rawData);
     }
     Channel channel_result = await () async {
       if (youtubeSchemaText.type == "channel_username") {
-        return await youtubeExplode.channels.getByUsername(youtubeSchemaText.data);
+        return await youtubeExplode.channels
+            .getByUsername(youtubeSchemaText.data);
       } else if (youtubeSchemaText.type == "video") {
         return await youtubeExplode.channels.getByVideo(youtubeSchemaText.data);
       } else {
         try {
           return await youtubeExplode.channels.get(youtubeSchemaText.data);
         } catch (e) {
-          return await youtubeExplode.channels.getByUsername(youtubeSchemaText.data);
+          return await youtubeExplode.channels
+              .getByUsername(youtubeSchemaText.data);
         }
       }
     }.call();
@@ -103,17 +107,22 @@ class YoutubeNoAuth {
   Future<googleapis_client_scheme.YoutubeChannelFullInfo> getChannelFullInfo({
     required String channel,
   }) async {
-    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText = GoogleApisClientUtils.parseTextToYoutube(text: channel);
+    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText =
+        GoogleApisClientUtils.parseTextToYoutube(text: channel);
     if (youtubeSchemaText["@type"] == "error") {
-      return googleapis_client_scheme.YoutubeChannelFullInfo(youtubeSchemaText.rawData);
+      return googleapis_client_scheme.YoutubeChannelFullInfo(
+          youtubeSchemaText.rawData);
     }
 
-    googleapis_client_scheme.YoutubeChannel youtubeChannel = await getChannel(channel: channel);
+    googleapis_client_scheme.YoutubeChannel youtubeChannel =
+        await getChannel(channel: channel);
     ChannelAbout channel_result = await () async {
       if (youtubeSchemaText.type == "channel_username") {
-        return await youtubeExplode.channels.getAboutPageByUsername(youtubeSchemaText.data);
+        return await youtubeExplode.channels
+            .getAboutPageByUsername(youtubeSchemaText.data);
       } else {
-        return await youtubeExplode.channels.getAboutPage(youtubeChannel.id ?? youtubeSchemaText.data);
+        return await youtubeExplode.channels
+            .getAboutPage(youtubeChannel.id ?? youtubeSchemaText.data);
       }
     }.call();
 
@@ -133,7 +142,8 @@ class YoutubeNoAuth {
       };
       return jsonDataThumbnails;
     }).toList();
-    jsonData["channelLinks"] = channel_result.channelLinks.map((ChannelLink channelLink) {
+    jsonData["channelLinks"] =
+        channel_result.channelLinks.map((ChannelLink channelLink) {
       Map jsonDataLinks = {
         "@type": "youtubeChannelLinks",
         "title": channelLink.title,
@@ -149,9 +159,11 @@ class YoutubeNoAuth {
   Future<googleapis_client_scheme.YoutubeChannelVideos> getChannelVideos({
     required String channel,
   }) async {
-    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText = GoogleApisClientUtils.parseTextToYoutube(text: channel);
+    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText =
+        GoogleApisClientUtils.parseTextToYoutube(text: channel);
     if (youtubeSchemaText["@type"] == "error") {
-      return googleapis_client_scheme.YoutubeChannelVideos(youtubeSchemaText.rawData);
+      return googleapis_client_scheme.YoutubeChannelVideos(
+          youtubeSchemaText.rawData);
     }
 
     String channel_id = await () async {
@@ -160,7 +172,8 @@ class YoutubeNoAuth {
       }
       return channel;
     }.call();
-    final List<Video> videos = await youtubeExplode.channels.getUploads(channel_id).toList();
+    final List<Video> videos =
+        await youtubeExplode.channels.getUploads(channel_id).toList();
 
     List<Map> jsonDataVideos = videos.map((Video video) {
       final Map jsonDataVideo = {
@@ -206,7 +219,8 @@ class YoutubeNoAuth {
   Future<googleapis_client_scheme.YoutubeVideo> getVideo({
     required String video_id,
   }) async {
-    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText = GoogleApisClientUtils.parseTextToYoutube(text: video_id);
+    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText =
+        GoogleApisClientUtils.parseTextToYoutube(text: video_id);
     if (youtubeSchemaText["@type"] == "error") {
       return googleapis_client_scheme.YoutubeVideo(youtubeSchemaText.rawData);
     }
@@ -253,20 +267,28 @@ class YoutubeNoAuth {
   Future<googleapis_client_scheme.YoutubeVideoComments> getVideoComments({
     required String video_id,
   }) async {
-    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText = GoogleApisClientUtils.parseTextToYoutube(text: video_id);
+    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText =
+        GoogleApisClientUtils.parseTextToYoutube(text: video_id);
     if (youtubeSchemaText["@type"] == "error") {
-      return googleapis_client_scheme.YoutubeVideoComments(youtubeSchemaText.rawData);
+      return googleapis_client_scheme.YoutubeVideoComments(
+          youtubeSchemaText.rawData);
     }
 
     if (youtubeSchemaText["type"] == "channel_username") {
-      return googleapis_client_scheme.YoutubeVideoComments(youtubeSchemaText.rawData);
+      return googleapis_client_scheme.YoutubeVideoComments(
+          youtubeSchemaText.rawData);
     }
 
     Video video = await youtubeExplode.videos.get(youtubeSchemaText.data);
 
-    CommentsList? commentsList = await youtubeExplode.videos.comments.getComments(video);
+    CommentsList? commentsList =
+        await youtubeExplode.videos.comments.getComments(video);
     if (commentsList == null) {
-      Map jsonDataVideo = {"@type": "youtubeVideoComments", "count": 0, "comments": []};
+      Map jsonDataVideo = {
+        "@type": "youtubeVideoComments",
+        "count": 0,
+        "comments": []
+      };
       return googleapis_client_scheme.YoutubeVideoComments(jsonDataVideo);
     }
     Map jsonDataVideo = {
@@ -291,10 +313,12 @@ class YoutubeNoAuth {
     return googleapis_client_scheme.YoutubeVideoComments(jsonDataVideo);
   }
 
-  Future<googleapis_client_scheme.YoutubeSearchSuggestions> getQuerySuggestions({
+  Future<googleapis_client_scheme.YoutubeSearchSuggestions>
+      getQuerySuggestions({
     required String query,
   }) async {
-    List<String> suggestions = await youtubeExplode.search.getQuerySuggestions(query);
+    List<String> suggestions =
+        await youtubeExplode.search.getQuerySuggestions(query);
     Map jsonDataVideo = {
       "@type": "youtubeSearchSuggestions",
       "count": suggestions.length,
@@ -353,16 +377,20 @@ class YoutubeNoAuth {
   Future<googleapis_client_scheme.YoutubeVideoManifest> getVideoManifest({
     required String video_id,
   }) async {
-    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText = GoogleApisClientUtils.parseTextToYoutube(text: video_id);
+    googleapis_client_scheme.YoutubeSchemaText youtubeSchemaText =
+        GoogleApisClientUtils.parseTextToYoutube(text: video_id);
     if (youtubeSchemaText["@type"] == "error") {
-      return googleapis_client_scheme.YoutubeVideoManifest(youtubeSchemaText.rawData);
+      return googleapis_client_scheme.YoutubeVideoManifest(
+          youtubeSchemaText.rawData);
     }
 
     if (youtubeSchemaText["type"] == "channel_username") {
-      return googleapis_client_scheme.YoutubeVideoManifest(youtubeSchemaText.rawData);
+      return googleapis_client_scheme.YoutubeVideoManifest(
+          youtubeSchemaText.rawData);
     }
 
-    StreamManifest streamManifest = await youtubeExplode.videos.streams.getManifest(youtubeSchemaText.data);
+    StreamManifest streamManifest =
+        await youtubeExplode.videos.streams.getManifest(youtubeSchemaText.data);
     List<MuxedStreamInfo> muxed_stream = streamManifest.muxed.toList();
     List<AudioStreamInfo> audios_stream = streamManifest.audio.toList();
     List<VideoStreamInfo> videos_stream = streamManifest.video.toList();
@@ -456,11 +484,13 @@ class YoutubeNoAuth {
   }
 
   final List<YoutubeDownloaderTask> youtubeDownloaderTasks = [];
+
   Stream downloadAsAudio({
     required String youtubeUrl,
     required Directory directory,
   }) async* {
-    final YoutubeVideoDownloadDetail youtubeVideoDownloadDetail = await getDownloadDetail(
+    final YoutubeVideoDownloadDetail youtubeVideoDownloadDetail =
+        await getDownloadDetail(
       directory: directory,
       youtubeUrl: youtubeUrl,
       isAudioOnly: true,
@@ -476,15 +506,36 @@ class YoutubeNoAuth {
     return;
   }
 
-  Stream downloadAsVideo() async* {}
+  Stream downloadAsVideo({
+    required String youtubeUrl,
+    required Directory directory,
+  }) async* {
+    final YoutubeVideoDownloadDetail youtubeVideoDownloadDetail =
+        await getDownloadDetail(
+      directory: directory,
+      youtubeUrl: youtubeUrl,
+      isAudioOnly: false,
+    );
+    await for (final _ in download(
+      directoryDownload: directory,
+      directoryTemporary: Directory(path.join(directory.path, "temp")),
+      youtubeUrl: youtubeUrl,
+      output: null,
+      isAudioOnly: false,
+      youtubeVideoDownloadDetail: youtubeVideoDownloadDetail,
+    )) {}
+    return;
+  }
 
   Future<YoutubeVideoDownloadDetail> getDownloadDetail({
     required Directory directory,
     required String youtubeUrl,
     required bool isAudioOnly,
   }) async {
-    final manifest = await youtubeExplode.videos.streamsClient.getManifest(youtubeUrl);
-    final audioTotalBytes = manifest.audioOnly.withHighestBitrate().size.totalBytes;
+    final manifest =
+        await youtubeExplode.videos.streamsClient.getManifest(youtubeUrl);
+    final audioTotalBytes =
+        manifest.audioOnly.withHighestBitrate().size.totalBytes;
     if (isAudioOnly) {
       return YoutubeVideoDownloadDetail(
         totalSize: audioTotalBytes,
@@ -492,7 +543,8 @@ class YoutubeNoAuth {
       );
     } else {
       return YoutubeVideoDownloadDetail(
-        totalSize: manifest.videoOnly.withHighestBitrate().size.totalBytes + audioTotalBytes,
+        totalSize: manifest.videoOnly.withHighestBitrate().size.totalBytes +
+            audioTotalBytes,
         streamManifest: manifest,
       );
     }
@@ -509,11 +561,22 @@ class YoutubeNoAuth {
     final video = await youtubeExplode.videos.get(youtubeUrl);
 
     final streamManifest = youtubeVideoDownloadDetail.streamManifest;
-    final fileName = '${video.title}'.replaceAll(r'\', '').replaceAll('/', '').replaceAll('*', '').replaceAll('?', '').replaceAll('"', '').replaceAll('<', '').replaceAll('>', '').replaceAll(':', '').replaceAll('|', '');
+    final fileName = '${video.title}'
+        .replaceAll(r'\', '')
+        .replaceAll('/', '')
+        .replaceAll('*', '')
+        .replaceAll('?', '')
+        .replaceAll('"', '')
+        .replaceAll('<', '')
+        .replaceAll('>', '')
+        .replaceAll(':', '')
+        .replaceAll('|', '');
 
     final File fileOutput = File(path.join(
       directoryDownload.path,
-      (output ?? "${((isAudioOnly == true) ? "${video.author}-${fileName}.mp3" : "${fileName}.mp4")}").replaceAll(RegExp("([ ]+)"), "_"),
+      (output ??
+              "${((isAudioOnly == true) ? "${video.author}-${fileName}.mp3" : "${fileName}.mp4")}")
+          .replaceAll(RegExp("([ ]+)"), "_"),
     ));
     final List<File> files = [];
     if (isAudioOnly == false) {
@@ -521,8 +584,10 @@ class YoutubeNoAuth {
         final streams = streamManifest.videoOnly;
 
         final videoStreamInfo = streams.withHighestBitrate();
-        final videoStream = youtubeExplode.videos.streamsClient.get(videoStreamInfo);
-        final file = File(path.join(directoryTemporary.path, '${fileName}.video.${videoStreamInfo.container.name}'));
+        final videoStream =
+            youtubeExplode.videos.streamsClient.get(videoStreamInfo);
+        final file = File(path.join(directoryTemporary.path,
+            '${fileName}.video.${videoStreamInfo.container.name}'));
 
         // Track the file download status.
         final len = videoStreamInfo.size.totalBytes;
@@ -538,7 +603,8 @@ class YoutubeNoAuth {
           int count = file.statSync().size;
 
           // Create the message and set the cursor position.
-          final msg = 'Downloading ${video.title}.${videoStreamInfo.container.name}';
+          final msg =
+              'Downloading ${video.title}.${videoStreamInfo.container.name}';
           stdout.writeln(msg);
           // Listen for data received.
           await for (final data in videoStream) {
@@ -565,7 +631,8 @@ class YoutubeNoAuth {
       final audio = streams.withHighestBitrate();
       final audioStream = youtubeExplode.videos.streamsClient.get(audio);
 
-      final file = File(path.join(directoryTemporary.path, '${fileName}.audio.${audio.container.name}'));
+      final file = File(path.join(directoryTemporary.path,
+          '${fileName}.audio.${audio.container.name}'));
       // Track the file download status.
       final len = audio.size.totalBytes;
       if (file.statSync().size != len) {
