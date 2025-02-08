@@ -15,7 +15,7 @@ dependencies:
   googleapis: '^13.2.0'
   googleapis_auth: '^1.6.0'
   http: '^1.2.2'
-  general_lib: '^0.0.62'
+  general_lib: '^0.0.63'
   collection: '^1.19.0'
   html: '^0.15.0'
   http_parser: '^4.0.0'
