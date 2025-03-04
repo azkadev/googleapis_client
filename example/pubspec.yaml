@@ -12,7 +12,7 @@ dependencies:
     path: '../'
 dependency_overrides:
   path: '^1.9.0'
-  pointycastle: '3.8.0'
+  pointycastle: '4.0.0'
   mime: '^2.0.0'
 dev_dependencies:
   flutter_test:
@@ -27,3 +27,5 @@ homepage: 'https://youtube.com/@azkadev'
 repository: 'https://github.com/azkadev/general_framework'
 issue_tracker: 'https://t.me/DEVELOPER_GLOBAL_PUBLIC'
 documentation: 'https://youtube.com/@azkadev'
+project:
+  type: ''

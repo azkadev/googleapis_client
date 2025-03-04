@@ -117,10 +117,10 @@ packages:
     dependency: "direct main"
     description:
       name: general_lib
-      sha256: bb10daf66b67e80315ebc19641f241cf2a0d911801c9fe120a24defcd140e99c
+      sha256: ed9f11661e992cda08817809861370747e2156960166768c72caed8cd76d74ab
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.55"
+    version: "0.0.64"
   google_identity_services_web:
     dependency: transitive
     description:
@@ -181,18 +181,18 @@ packages:
     dependency: transitive
     description:
       name: io
-      sha256: "2ec25704aba361659e10e3e5f5d672068d332fc8ac516421d483a11e5cbd061e"
+      sha256: dfd5a80599cf0165756e3181807ed3e77daf6dd4137caaad72d0b7931597650b
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.4"
+    version: "1.0.5"
   io_universe:
     dependency: transitive
     description:
       name: io_universe
-      sha256: "18eb40422cfe7f689e75184fc01e91109dd80f4dced47cd54cc8ca314d581002"
+      sha256: d2e6860d90486d60f608266e32c4280300354adc00625d64c52d1785d7b81ada
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.3"
+    version: "0.0.5"
   js:
     dependency: transitive
     description:
@@ -225,14 +225,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.0"
-  mason_logger:
-    dependency: transitive
-    description:
-      name: mason_logger
-      sha256: b6d6d159927a4165f197ffc5993ea680dd41c59daf35bff23bae28390c09a36e
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.1"
   meta:
     dependency: "direct main"
     description:
@@ -349,10 +341,10 @@ packages:
     dependency: transitive
     description:
       name: win32
-      sha256: "68d1e89a91ed61ad9c370f9f8b6effed9ae5e0ede22a270bdfa6daf79fc2290a"
+      sha256: daf97c9d80197ed7b619040e86c8ab9a9dad285e7671ee7390f9180cc828a51e
       url: "https://pub.dev"
     source: hosted
-    version: "5.5.4"
+    version: "5.10.1"
   xml:
     dependency: "direct main"
     description:
@@ -365,10 +357,10 @@ packages:
     dependency: transitive
     description:
       name: yaml
-      sha256: "75769501ea3489fca56601ff33454fe45507ea3bfb014161abc3b43ae25989d5"
+      sha256: b9da305ac7c39faa3f030eccd175340f968459dae4af175130b3fc47e40d76ce
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.2"
+    version: "3.1.3"
   zxing2:
     dependency: transitive
     description:
