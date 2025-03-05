@@ -7,8 +7,8 @@ import "package:path/path.dart" as path;
 
 void main(List<String> args) async {
   final YoutubeNoAuth youtubeNoAuth = YoutubeNoAuth();
-  final String url = "https://www.youtube.com/watch?v=zQjgD3WlUTE";
-  bool isAudio = true;
+  final String url = "https://www.youtube.com/watch?v=TY1lWh20VSw";
+  bool isAudio = false;
   if (isAudio) {
     await for (final _ in youtubeNoAuth.downloadAsAudio(
       youtubeUrl: url,
